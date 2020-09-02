@@ -21,7 +21,12 @@ export default {
       ],
     },
     {
-      title: 'Meny-items',
+      title: 'Vill du att öppettiderna ska synas på startsidan?',
+      name: 'showOrHideOpenHours',
+      type: 'boolean',
+    },
+    {
+      title: 'Meny',
       name: 'menuItems',
       type: 'array',
       of: [

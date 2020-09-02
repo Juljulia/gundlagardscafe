@@ -9,6 +9,11 @@ export default {
       type: 'string',
     },
     {
+      title: 'Launchpad Location',
+      name: 'location',
+      type: 'geopoint',
+    },
+    {
       title: 'Telefonnummer',
       name: 'number',
       type: 'string',
