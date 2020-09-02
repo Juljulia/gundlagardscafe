@@ -5,7 +5,7 @@
     "dataset": "production"
   },
   "project": {
-    "name": "gundlagardscafe"
+    "name": "Gundla Gårdscafé"
   },
   "plugins": [
     "@sanity/base",
