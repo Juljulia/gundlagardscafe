@@ -1,9 +1,9 @@
-import "../styles/sass/style.scss";
+import '../styles/sass/style.scss';
 
 const Index = () => {
   return (
     <div>
-      <p>Hello world!</p>
+      <p>Hello world!!!!!</p>
     </div>
   );
 };
