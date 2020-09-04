@@ -1,8 +1,13 @@
 export default {
-  title: 'contact',
-  name: 'contact',
+  title: 'Hitta hit/Öppettider',
+  name: 'find-us',
   type: 'document',
   fields: [
+    {
+      title: 'Rubrik',
+      name: 'header',
+      type: 'string',
+    },
     {
       title: 'Adress',
       name: 'adress',

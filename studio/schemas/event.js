@@ -1,15 +1,20 @@
 export default {
-  title: 'Event',
+  title: 'Evenemang',
   name: 'event',
   type: 'document',
   fields: [
     {
-      title: 'Event',
+      title: 'Rubrik',
+      name: 'header',
+      type: 'string',
+    },
+    {
+      title: 'Evenemang',
       name: 'eventList',
       type: 'array',
       of: [
         {
-          title: 'Event',
+          title: 'Evenemang',
           name: 'eventItem',
           type: 'object',
           fields: [
