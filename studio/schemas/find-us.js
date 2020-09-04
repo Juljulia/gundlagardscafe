@@ -1,6 +1,6 @@
 export default {
-  title: 'contact',
-  name: 'contact',
+  title: 'Hitta hit/Öppettider',
+  name: 'findUs',
   type: 'document',
   fields: [
     {
