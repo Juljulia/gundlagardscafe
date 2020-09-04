@@ -4,6 +4,11 @@ export default {
   type: 'document',
   fields: [
     {
+      title: 'Rubrik',
+      name: 'header',
+      type: 'string',
+    },
+    {
       title: 'Evenemang',
       name: 'eventList',
       type: 'array',
