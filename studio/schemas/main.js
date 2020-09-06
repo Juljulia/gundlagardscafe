@@ -1,3 +1,4 @@
+const imageName = 'Bilder till grid';
 export default {
   title: 'Startsida',
   name: 'main',
@@ -26,31 +27,27 @@ export default {
       type: 'boolean',
     },
     {
-      title: 'Meny',
-      name: 'menuItems',
+      title: 'Bilder',
+      name: 'imageGrid',
       type: 'array',
       of: [
         {
-          title: 'Meny-item',
-          name: 'menuItems',
+          title: 'Bilder',
+          name: 'imageGrid',
           type: 'object',
           fields: [
             {
-              title: 'Title',
-              name: 'title',
-              type: 'string',
-            },
-            {
-              title: 'Ingrediens',
-              name: 'ingredient',
-              type: 'string',
-            },
-            {
-              title: 'Pris',
-              name: 'price',
-              type: 'number',
+              title: 'Bild',
+              name: 'image',
+              type: 'image',
             },
           ],
+          preview: {
+            select: {
+              media: 'image',
+              title: imageName,
+            },
+          },
         },
       ],
     },
