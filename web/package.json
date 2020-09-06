@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@sanity/client": "^1.150.1",
+    "@sanity/image-url": "^0.140.19",
     "@zeit/next-sass": "^1.0.1",
     "groq": "^1.150.1",
     "next": "^9.5.3",
