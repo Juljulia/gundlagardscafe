@@ -10,7 +10,7 @@ export default {
       type: 'object',
       fields: [
         {
-          title: 'Bild',
+          title: 'Ikon',
           name: 'image',
           type: 'image',
         },
@@ -24,12 +24,13 @@ export default {
           },
         },
         {
+          title: 'Länk',
           type: 'object',
           name: 'links',
-          fieldsets: [{ name: 'iconLink', title: 'Ikon och länk' }],
+          fieldsets: [{ name: 'iconLink' }],
           fields: [
             {
-              title: 'Länk',
+              title: 'Välj en sida',
               name: 'link',
               type: 'string',
               options: {
@@ -47,7 +48,7 @@ export default {
       preview: {
         select: {
           media: 'image',
-          title: 'Bilder till Grid',
+          title: 'links.link',
         },
       },
     },
