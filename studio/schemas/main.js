@@ -27,6 +27,36 @@ export default {
       type: 'boolean',
     },
     {
+      name: 'iconLink',
+      type: 'object',
+      fieldsets: [
+        {
+          name: 'iconLink',
+          title: 'Ikon och länk',
+        },
+      ],
+      fields: [
+        {
+          title: 'Länk',
+          name: 'link',
+          type: 'string',
+          options: {
+            list: [
+              { title: 'Mat', value: 'food' },
+              { title: 'Privata event', value: 'private-event' },
+              { title: 'Hitta hit', value: 'find-us' },
+              { title: 'Frågor och svar', value: 'qa' },
+            ],
+          },
+        },
+        {
+          title: 'Ikon',
+          name: 'icon',
+          type: 'image',
+        },
+      ],
+    },
+    {
       title: 'Bilder',
       name: 'imageGrid',
       type: 'array',
