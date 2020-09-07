@@ -1,4 +1,3 @@
-const imageName = 'Bilder till grid';
 export default {
   title: 'Mat',
   name: 'food',
@@ -13,6 +12,7 @@ export default {
       title: 'Bild',
       name: 'image',
       type: 'image',
+
       fields: [
         {
           title: 'Alternative Text',
@@ -30,6 +30,7 @@ export default {
       title: 'Bilder',
       name: 'imageGrid',
       type: 'array',
+      validation: (Rule) => [Rule.required().length(5).error('Fem bilder')],
       of: [
         {
           title: 'Bilder',
@@ -38,14 +39,27 @@ export default {
           fields: [
             {
               title: 'Bild',
-              name: 'image',
+              name: 'gridImage',
               type: 'image',
+              fields: [
+                {
+                  title: 'Alternativtext',
+                  name: 'alt',
+                  type: 'string',
+                },
+              ],
             },
           ],
           preview: {
             select: {
-              media: 'image',
-              title: imageName,
+              media: 'gridImage',
+            },
+            prepare(selection) {
+              const { title = '', media } = selection;
+              return {
+                title: title,
+                media: media,
+              };
             },
           },
         },
