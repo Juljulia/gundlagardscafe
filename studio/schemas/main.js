@@ -1,4 +1,3 @@
-const imageName = 'Bilder till grid';
 export default {
   title: 'Startsida',
   name: 'main',
@@ -10,16 +9,10 @@ export default {
       type: 'string',
     },
     {
-      title: 'Bild',
-      name: 'image',
-      type: 'image',
-      fields: [
-        {
-          title: 'Alternative Text',
-          name: 'alt',
-          type: 'string',
-        },
-      ],
+      name: 'heroImage',
+      type: 'heroImage',
+      title: 'Helbild',
+      description: 'Första helbilden på sidan',
     },
     {
       title: 'Vill du att öppettiderna ska synas på startsidan?',
@@ -28,58 +21,15 @@ export default {
     },
     {
       name: 'iconLink',
-      type: 'object',
-      fieldsets: [
-        {
-          name: 'iconLink',
-          title: 'Ikon och länk',
-        },
-      ],
-      fields: [
-        {
-          title: 'Länk',
-          name: 'link',
-          type: 'string',
-          options: {
-            list: [
-              { title: 'Mat', value: 'food' },
-              { title: 'Privata event', value: 'private-event' },
-              { title: 'Hitta hit', value: 'find-us' },
-              { title: 'Frågor och svar', value: 'qa' },
-            ],
-          },
-        },
-        {
-          title: 'Ikon',
-          name: 'icon',
-          type: 'image',
-        },
-      ],
+      type: 'iconLink',
+      title: 'Ikon och länk',
+      description: 'Här väljer du vilka fyra sidor som länkas på förstasidan.',
     },
     {
-      title: 'Bilder',
       name: 'imageGrid',
-      type: 'array',
-      of: [
-        {
-          title: 'Bilder',
-          name: 'imageGrid',
-          type: 'object',
-          fields: [
-            {
-              title: 'Bild',
-              name: 'image',
-              type: 'image',
-            },
-          ],
-          preview: {
-            select: {
-              media: 'image',
-              title: imageName,
-            },
-          },
-        },
-      ],
+      type: 'imageGrid',
+      title: 'Bilder till collage',
+      description: 'Välj fem bilder.',
     },
   ],
 };
