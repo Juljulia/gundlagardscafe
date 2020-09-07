@@ -9,6 +9,12 @@ export default {
       type: 'string',
     },
     {
+      name: 'heroImage',
+      type: 'heroImage',
+      title: 'Helbild',
+      description: 'Första helbilden på sidan',
+    },
+    {
       title: 'Evenemang',
       name: 'eventList',
       type: 'array',
@@ -59,6 +65,12 @@ export default {
           },
         },
       ],
+    },
+    {
+      name: 'imageGrid',
+      type: 'imageGrid',
+      title: 'Bilder till collage',
+      description: 'Välj fem bilder.',
     },
   ],
 };
