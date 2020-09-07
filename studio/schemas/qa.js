@@ -6,6 +6,11 @@ export default {
   type: 'document',
   fields: [
     {
+      title: 'Rubrik',
+      name: 'header',
+      type: 'string',
+    },
+    {
       title: 'Huvudbild',
       name: 'hero',
       type: 'image',
@@ -30,24 +35,19 @@ export default {
       ],
     },
     {
-      title: 'Rubrik',
-      name: 'header',
-      type: 'string',
-    },
-    {
       title: 'Frågor och svar',
-      name: 'qa',
+      name: 'questionAndAnswer',
       type: 'array',
       of: [
         {
           title: 'Frågor och svar',
-          name: 'qa',
+          name: 'questionAndAnswer',
           type: 'object',
           icon: MdQuestionAnswer,
           fields: [
             {
-              title: 'Frågor',
-              name: 'questions',
+              title: 'Fråga',
+              name: 'question',
               type: 'string',
             },
             {
@@ -58,7 +58,7 @@ export default {
           ],
           preview: {
             select: {
-              title: 'questions',
+              title: 'question',
             },
           },
         },
