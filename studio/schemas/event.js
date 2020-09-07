@@ -22,6 +22,7 @@ export default {
               title: 'Rubrik',
               name: 'header',
               type: 'string',
+              description: 'En kortare titel är att föredra',
               validation: (Rule) =>
                 Rule.max(30).warning('Shorter titles are usually better'),
             },
