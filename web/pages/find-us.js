@@ -2,16 +2,11 @@ import groq from 'groq';
 import imageUrlBuilder from '@sanity/image-url';
 import client from '../client';
 import '../styles/sass/style.scss';
-import GoogleMapReact from 'google-map-react';
 
 const builder = imageUrlBuilder(client);
-const GMAPS_API_KEY = 'AIzaSyAg2P6hIKXKXhHKSP5lnNaqcdtsG9oXu8Y';
-
-export const location = [{ id: 0, lat: 38.9095, lng: -77.0469 }];
 
 const FindUs = (props) => {
   const { hero, icon, header, subheading, description, availability } = props;
-  console.log(hero);
   return (
     <div>
       <img src={builder.image(hero.asset).url()} alt={hero.alt}></img>
@@ -19,18 +14,15 @@ const FindUs = (props) => {
       <h1>{header}</h1>
       <p>{subheading}</p>
       <p>{description}</p>
-      <div style={{ height: '50vh', width: '50%' }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: GMAPS_API_KEY }}
-          defaultCenter={{ lat: 57.686324, lng: 12.028271 }}
-          defaultZoom={15}
-        ></GoogleMapReact>
-        <style jsx global>{`
-          body {
-            margin: 0;
-          }
-        `}</style>
-      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2132.7756947796547!2d12.02605491600651!3d57.68629018111437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464ff3a5d0157c63%3A0xdd291fa6017dc04a!2zR3VuZGxhIEfDpXJkc2NhZsOp!5e0!3m2!1sen!2sse!4v1599492272828!5m2!1sen!2sse"
+        width="600"
+        height="450"
+        frameborder="0"
+        allowfullscreen=""
+        aria-hidden="false"
+        tabindex="0"
+      ></iframe>
       {availability.map((object) => (
         <div key={object._key}>
           <img
