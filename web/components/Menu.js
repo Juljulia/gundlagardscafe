@@ -1,34 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-const Menu = () => (
-  <Navigation>
-    <Link href="/about">
-      <a>Om oss</a>
-    </Link>
-
-    <Link href="/find-us">
-      <a>Hitta hit / Öppettider</a>
-    </Link>
-
-    <Link href="/event">
-      <a>Evenemang</a>
-    </Link>
-
-    <Link href="/food">
-      <a>Mat</a>
-    </Link>
-
-    <Link href="/qa">
-      <a>Frågor och svar</a>
-    </Link>
-
-    <Link href="/private-event">
-      <a>Privata event</a>
-    </Link>
-  </Navigation>
-);
-
 const Navigation = styled.nav`
   height: 100vh;
   display: flex;
@@ -40,4 +12,33 @@ const Navigation = styled.nav`
     color: black;
   }
 `;
+
+const Menu = () => (
+  <Navigation>
+    <Link href="/om">
+      <a>Om oss</a>
+    </Link>
+
+    <Link href="/hitta-hit">
+      <a>Hitta hit / Öppettider</a>
+    </Link>
+
+    <Link href="/event">
+      <a>Evenemang</a>
+    </Link>
+
+    <Link href="/mat">
+      <a>Mat</a>
+    </Link>
+
+    <Link href="/fragor-svar">
+      <a>Frågor och svar</a>
+    </Link>
+
+    <Link href="/privata-event">
+      <a>Privata event</a>
+    </Link>
+  </Navigation>
+);
+
 export default Menu;
