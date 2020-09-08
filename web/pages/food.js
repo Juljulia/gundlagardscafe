@@ -1,8 +1,7 @@
 import groq from 'groq';
 import client from '../client';
 
-const Food = (props) => {
-  const { header = '', image = '', alt = '', description = '' } = props;
+const Food = ({ header = '', image = '', alt = '', description = '' }) => {
   return (
     <div>
       <h1>{header}</h1>
