@@ -3,7 +3,6 @@ import imageUrlBuilder from '@sanity/image-url';
 import Link from 'next/link';
 
 import client from '../client';
-import '../styles/sass/style.scss';
 import IconLink from '../components/Iconlink';
 import Hero from '../components/Hero';
 

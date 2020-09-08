@@ -1,7 +1,6 @@
 import groq from 'groq';
 import imageUrlBuilder from '@sanity/image-url';
 import client from '../client';
-import '../styles/sass/style.scss';
 import ContactForm from '../components/ContactForm';
 
 const builder = imageUrlBuilder(client);
