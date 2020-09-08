@@ -1,4 +1,3 @@
-import '../styles/sass/style.scss';
 import groq from 'groq';
 import client from '../client';
 

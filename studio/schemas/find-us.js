@@ -4,6 +4,11 @@ export default {
   type: 'document',
   fields: [
     {
+      title: 'Rubrik',
+      name: 'header',
+      type: 'string',
+    },
+    {
       title: 'Huvudbild',
       name: 'hero',
       type: 'image',
@@ -28,19 +33,9 @@ export default {
       ],
     },
     {
-      title: 'Rubrik',
-      name: 'header',
-      type: 'string',
-    },
-    {
       title: 'Underrubrik',
       name: 'subheading',
       type: 'string',
-    },
-    {
-      title: 'Launchpad Location',
-      name: 'location',
-      type: 'geopoint',
     },
     {
       title: 'Beskrivning',
