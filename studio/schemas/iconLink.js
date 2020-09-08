@@ -1,5 +1,5 @@
 export default {
-  name: 'iconLink',
+  name: 'iconLinks',
   title: 'Ikon och Länk',
   type: 'array',
   validation: (Rule) => [Rule.required().length(4).error('Välj 4 bilder')],
@@ -35,10 +35,10 @@ export default {
               type: 'string',
               options: {
                 list: [
-                  { title: 'Mat', value: 'food' },
-                  { title: 'Privata event', value: 'private-event' },
-                  { title: 'Hitta hit', value: 'find-us' },
-                  { title: 'Frågor och svar', value: 'qa' },
+                  { title: 'Mat', value: 'mat' },
+                  { title: 'Privata event', value: 'privata-event' },
+                  { title: 'Hitta hit', value: 'hitta-hit' },
+                  { title: 'Frågor och svar', value: 'fragor-svar' },
                 ],
               },
             },

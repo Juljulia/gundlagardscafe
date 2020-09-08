@@ -20,8 +20,8 @@ export default {
       type: 'boolean',
     },
     {
-      name: 'iconLink',
-      type: 'iconLink',
+      name: 'iconLinks',
+      type: 'iconLinks',
       title: 'Ikon och länk',
       description: 'Här väljer du vilka fyra sidor som länkas på förstasidan.',
     },
