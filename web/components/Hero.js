@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import colors from '../config/colors';
-
 const StyledHero = styled.div`
   height: 90vh;
   width: 100%;
@@ -10,7 +8,6 @@ const StyledHero = styled.div`
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border: 2px solid ${colors.primary};
   }
 `;
 
