@@ -1,6 +1,6 @@
 import groq from 'groq';
 import imageUrlBuilder from '@sanity/image-url';
-import client from '../client';
+import client from '../sanity/client';
 
 const builder = imageUrlBuilder(client);
 

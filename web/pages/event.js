@@ -1,5 +1,5 @@
 import groq from 'groq';
-import client from '../client';
+import client from '../sanity/client';
 
 const Event = ({ header }) => {
   return (
