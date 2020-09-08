@@ -4,8 +4,14 @@ import client from '../client';
 
 const builder = imageUrlBuilder(client);
 
-const FindUs = (props) => {
-  const { hero, icon, header, subheading, description, availability } = props;
+const FindUs = ({
+  hero,
+  icon,
+  header,
+  subheading,
+  description,
+  availability,
+}) => {
   return (
     <div>
       <img src={builder.image(hero.asset).url()} alt={hero.alt}></img>

@@ -5,8 +5,7 @@ import ContactForm from '../components/ContactForm';
 
 const builder = imageUrlBuilder(client);
 
-const Qa = (props) => {
-  const { hero, icon, header, questionAndAnswer } = props;
+const Qa = ({ hero, icon, header, questionAndAnswer }) => {
   return (
     <div>
       <img src={builder.image(hero.asset).url()} alt={hero.alt}></img>
