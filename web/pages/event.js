@@ -1,8 +1,7 @@
 import groq from 'groq';
 import client from '../client';
 
-const Event = (props) => {
-  const { header = '' } = props;
+const Event = ({ header }) => {
   return (
     <div>
       <h1>{header}</h1>
