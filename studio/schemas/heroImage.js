@@ -1,34 +1,38 @@
 // mainImage.js
 export default {
-  name: 'heroImage',
-  title: 'Image',
-  type: 'image',
-  //   options: {
-  //     hotspot: true,
-  //   },
+  name: 'hero',
+  title: 'hero',
+  type: 'document',
   fields: [
     {
-      name: 'alt',
-      type: 'string',
-      title: 'Beskrivande text',
-      description:
-        'Viktigt för sökbarhet och träffar på Google. Syns ej på hemsidan.',
+      name: 'heroImage',
+      type: 'image',
+      title: 'Huvudbild',
       options: {
         isHighlighted: true,
       },
+      fields: [
+        {
+          title: 'Beskrivande text för huvudbilden',
+          name: 'heroImageAlt',
+          type: 'string',
+        },
+      ],
     },
     {
-      name: 'icon',
+      name: 'heroIcon',
       type: 'image',
       title: 'Ikon ovanför bilden',
       options: {
         isHighlighted: true,
       },
+      fields: [
+        {
+          title: 'Beskrivande text för iconen',
+          name: 'heroIconAlt',
+          type: 'string',
+        },
+      ],
     },
   ],
-  preview: {
-    select: {
-      imageUrl: 'asset.url',
-    },
-  },
 };

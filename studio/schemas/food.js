@@ -9,17 +9,10 @@ export default {
       type: 'string',
     },
     {
-      title: 'Bild',
-      name: 'image',
-      type: 'image',
-
-      fields: [
-        {
-          title: 'Alternative Text',
-          name: 'alt',
-          type: 'string',
-        },
-      ],
+      name: 'hero',
+      type: 'hero',
+      title: 'Helbild',
+      description: 'Första helbilden på sidan',
     },
     {
       title: 'Beskrivning',

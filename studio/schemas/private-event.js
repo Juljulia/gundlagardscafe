@@ -9,8 +9,8 @@ export default {
       type: 'string',
     },
     {
-      name: 'heroImage',
-      type: 'heroImage',
+      name: 'hero',
+      type: 'hero',
       title: 'Helbild',
       description: 'Första helbilden på sidan',
     },
