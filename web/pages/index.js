@@ -16,7 +16,7 @@ const Index = ({ content, instagram }) => {
     instagram.graphql.user.edge_owner_to_timeline_media.edges;
   const instaFour = instagramFeed.slice(0, 4);
   return (
-    <Layout>
+    <Layout pageTitle={content.header}>
       {content && (
         <Hero
           heroImage={heroImage}
