@@ -2,25 +2,37 @@ import groq from 'groq';
 import client from '../sanity/client';
 import ContactForm from '../components/ContactForm';
 import urlBuild from '../sanity/imageBuilder';
+import Layout from '../components/Layout';
+import Hero from '../components/Hero';
 
 const Qa = ({ content }) => {
   const questionAndAnswer = content.questionAndAnswer;
+  const heroImage = urlBuild(content.hero.heroImage.asset);
+  const heroIcon = urlBuild(content.hero.heroIcon.asset);
   return (
-    <div>
-      <img src={urlBuild(content.hero.asset)} alt={content.hero.alt}></img>
-      <img src={urlBuild(content.icon.asset)} alt={content.icon.alt}></img>
-      <h1>{content.header}</h1>
+    <Layout>
+      {content && (
+        <Hero
+          heroImage={heroImage}
+          heroImageAlt={content.heroImageAlt}
+          heroIcon={heroIcon}
+          heroIconAlt={content.heroIconAlt}
+        ></Hero>
+      )}
       <div>
-        {questionAndAnswer &&
-          questionAndAnswer.map((object) => (
-            <div key={object._key}>
-              <h3>{object.question}</h3>
-              <p>{object.answer}</p>
-            </div>
-          ))}
+        <h1>{content.header}</h1>
+        <div>
+          {questionAndAnswer &&
+            questionAndAnswer.map((object) => (
+              <div key={object._key}>
+                <h3>{object.question}</h3>
+                <p>{object.answer}</p>
+              </div>
+            ))}
+        </div>
+        <ContactForm />
       </div>
-      <ContactForm />
-    </div>
+    </Layout>
   );
 };
 

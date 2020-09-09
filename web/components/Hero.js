@@ -9,12 +9,12 @@ const StyledHero = styled.div`
   }
 `;
 
-const Hero = ({ image, icon, alt }) => {
+const Hero = ({ heroImage, heroImageAlt, heroIcon, heroIconAlt }) => {
   return (
     <StyledHero>
-      <img src={image} alt={alt}></img>
+      <img src={heroImage} alt={heroImageAlt}></img>
       <div>
-        <img src={icon}></img>
+        <img src={heroIcon} alt={heroIconAlt}></img>
       </div>
     </StyledHero>
   );
