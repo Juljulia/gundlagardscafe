@@ -23,12 +23,9 @@ export default {
       name: 'heroIcon',
       type: 'image',
       title: 'Ikon ovanför bilden',
-      options: {
-        isHighlighted: true,
-      },
       fields: [
         {
-          title: 'Beskrivande text för iconen',
+          title: 'Beskrivande text för ikonen',
           name: 'heroIconAlt',
           type: 'string',
         },
