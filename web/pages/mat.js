@@ -7,8 +7,9 @@ import urlBuild from '../sanity/imageBuilder';
 const Food = ({ content }) => {
   const heroImage = urlBuild(content.hero.heroImage.asset);
   const heroIcon = urlBuild(content.hero.heroIcon.asset);
+  const imageGrid = content.imageGrid;
   return (
-    <Layout>
+    <Layout pageTitle={content.header}>
       {content && (
         <Hero
           heroImage={heroImage}
@@ -34,13 +35,13 @@ const query = groq`*[_type == 'food'][0]{
     description
   }`;
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
   const content = await client.fetch(query);
   return {
     props: {
       content,
     },
   };
-};
+}
 
 export default Food;

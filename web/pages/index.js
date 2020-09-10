@@ -7,14 +7,14 @@ import IconLink from '../components/Iconlink';
 
 const Index = ({ content, instagram }) => {
   const heroImage = urlBuild(content.hero.heroImage.asset);
-  const heroIcon = urlBuild(content.hero.heroImage.icon);
+  const heroIcon = urlBuild(content.hero.heroImage.heroIcon.asset);
   const iconLinks = content.iconLink;
   const imageGrid = content.imageGrid;
   const instagramFeed =
     instagram.graphql.user.edge_owner_to_timeline_media.edges;
   const instaFour = instagramFeed.slice(0, 4);
   return (
-    <Layout>
+    <Layout pageTitle={content.header}>
       {content && (
         <Hero
           heroImage={heroImage}
@@ -47,6 +47,15 @@ const Index = ({ content, instagram }) => {
               <img key={i} src={image.node.display_url}></img>
             ))}
         </div>
+        <div>
+          <h4>{content.aboutUs.header}</h4>
+          <p>{content.aboutUs.text}</p>
+        </div>
+        <div>
+          <h4>{content.history.header}</h4>
+          <p>{content.history.text}</p>
+          <img src={urlBuild(content.history.image.asset)}></img>
+        </div>
       </section>
     </Layout>
   );
@@ -57,6 +66,8 @@ const query = groq`*[_type == 'main'][0]{
     hero,
     iconLink,
     imageGrid,
+    aboutUs,
+    history,
   }`;
 
 export async function getStaticProps() {

@@ -5,12 +5,18 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../styles/global';
 import { theme } from '../styles/themes';
 
-function Layout({ children }) {
+function Layout({ children, pageTitle = '' }) {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <main>
-        <Head></Head>
+        <Head>
+          <title>Gundla Gårdscafé | {pageTitle}</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+        </Head>
         <Header></Header>
         {children}
         <Footer></Footer>

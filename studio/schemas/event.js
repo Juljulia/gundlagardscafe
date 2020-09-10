@@ -21,7 +21,7 @@ export default {
       of: [
         {
           title: 'Evenemang',
-          name: 'eventItem',
+          name: 'event',
           type: 'object',
           fields: [
             {
@@ -40,12 +40,30 @@ export default {
             {
               title: 'Beskrivning',
               name: 'description',
-              type: 'string',
+              type: 'text',
             },
             {
               title: 'Datum och tid',
               name: 'date',
               type: 'datetime',
+            },
+            {
+              title: 'Ska det vara möjligt att köpa biljetter till eventet?',
+              description: 'Grön: Ja | Blå: Nej',
+              name: 'tickets',
+              type: 'boolean',
+            },
+            {
+              title: 'Välj ett tema',
+              name: 'link',
+              type: 'string',
+              options: {
+                list: [
+                  { title: 'Mindfullness', value: 'Mindfullness' },
+                  { title: 'Event', value: 'Event' },
+                  { title: 'Marknad', value: 'Marknad' },
+                ],
+              },
             },
           ],
           preview: {
