@@ -9,7 +9,7 @@ const PrivateEvent = ({ content }) => {
   const heroImage = urlBuild(content.hero.heroImage.asset);
   const heroIcon = urlBuild(content.hero.heroIcon.asset);
   return (
-    <Layout>
+    <Layout pageTitle={content.header}>
       {content && (
         <Hero
           heroImage={heroImage}

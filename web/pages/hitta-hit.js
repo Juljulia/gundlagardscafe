@@ -9,7 +9,7 @@ const FindUs = ({ content }) => {
   const heroIcon = urlBuild(content.hero.heroIcon.asset);
   const availability = content.availability;
   return (
-    <Layout>
+    <Layout pageTitle={content.header}>
       {content && (
         <Hero
           heroImage={heroImage}

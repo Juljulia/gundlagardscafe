@@ -33,7 +33,7 @@ export default {
               type: 'string',
               options: {
                 list: [
-                  { title: 'Mat', value: 'mat' },
+                  { title: 'Mat', value: 'mat', name: 'mat' },
                   { title: 'Privata event', value: 'privata-event' },
                   { title: 'Hitta hit', value: 'hitta-hit' },
                   { title: 'Frågor och svar', value: 'fragor-svar' },
