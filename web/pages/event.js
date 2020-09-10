@@ -3,10 +3,12 @@ import client from '../sanity/client';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import urlBuild from '../sanity/imageBuilder';
+import BookingForm from '../components/BookingForm';
 
 const Event = ({ content }) => {
   const heroImage = urlBuild(content.hero.heroImage.asset);
   const heroIcon = urlBuild(content.hero.heroIcon.asset);
+  const eventList = content.eventList;
   return (
     <Layout pageTitle={content.header}>
       {content && (
@@ -18,8 +20,17 @@ const Event = ({ content }) => {
         ></Hero>
       )}
       <div>
-        <h1>{content.header}</h1>
+        {eventList &&
+          eventList.map((object) => (
+            <div key={object._key}>
+              <h3>{object.header}</h3>
+              <img src={urlBuild(object.image.asset)}></img>
+              <p>{object.description}</p>
+              <p>{object.date}</p>
+            </div>
+          ))}
       </div>
+      <BookingForm></BookingForm>
     </Layout>
   );
 };
@@ -27,6 +38,7 @@ const Event = ({ content }) => {
 const query = groq`*[_type == 'event'][0]{
     header,
     hero,
+    eventList,
   }`;
 
 export const getStaticProps = async function () {

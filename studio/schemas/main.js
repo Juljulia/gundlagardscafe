@@ -31,5 +31,44 @@ export default {
       title: 'Bilder till collage',
       description: 'Välj fem bilder.',
     },
+    {
+      title: 'Om oss',
+      name: 'aboutUs',
+      type: 'object',
+      fields: [
+        {
+          title: 'Rubrik',
+          name: 'header',
+          type: 'string',
+        },
+        {
+          title: 'Text',
+          name: 'text',
+          type: 'text',
+        },
+      ],
+    },
+    {
+      title: 'Historian',
+      name: 'history',
+      type: 'object',
+      fields: [
+        {
+          title: 'Rubrik',
+          name: 'header',
+          type: 'string',
+        },
+        {
+          title: 'Text',
+          name: 'text',
+          type: 'text',
+        },
+        {
+          name: 'image',
+          type: 'image',
+          title: 'Bild',
+        },
+      ],
+    },
   ],
 };
