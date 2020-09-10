@@ -5,7 +5,6 @@ import Hero from '../components/Hero';
 import urlBuild from '../sanity/imageBuilder';
 
 const PrivateEvent = ({ content }) => {
-  console.log(content.hero);
   const heroImage = urlBuild(content.hero.heroImage.asset);
   const heroIcon = urlBuild(content.hero.heroIcon.asset);
   return (

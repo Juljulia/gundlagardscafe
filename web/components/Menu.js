@@ -1,20 +1,42 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Navigation = styled.nav`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  margin: 25px 0 0 25px;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 90;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
 
+  visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
+  width: ${(props) => (props.show ? '100%' : '0px')};
+
+  a:first-child {
+    margin-top: 100px;
+  }
   a {
     text-decoration: none;
     color: black;
+    font-size: 20px;
+    line-height: 35px;
+  }
+  a:hover {
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;
 
-const Menu = () => (
-  <Navigation>
+const Menu = ({ show = false }) => (
+  <Navigation show={show}>
+    <Link href="/">
+      <a>Hem</a>
+    </Link>
     <Link href="/om">
       <a>Om oss</a>
     </Link>
@@ -40,5 +62,9 @@ const Menu = () => (
     </Link>
   </Navigation>
 );
+
+Menu.propTypes = {
+  show: PropTypes.bool,
+};
 
 export default Menu;

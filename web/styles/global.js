@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.primary};
 }
 
+
 h1 {
     color: black;
     font-size: 50px;
