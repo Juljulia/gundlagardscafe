@@ -5,7 +5,6 @@ import Hero from '../components/Hero';
 import urlBuild from '../sanity/imageBuilder';
 
 const FindUs = ({ content }) => {
-  console.log(content.hero.heroIcon.asset);
   const heroImage = urlBuild(content.hero.heroImage.asset);
   const heroIcon = urlBuild(content.hero.heroIcon.asset);
   const availability = content.availability;
