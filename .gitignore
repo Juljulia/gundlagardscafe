@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 
+# next.js build output
 dist
 .next
 out

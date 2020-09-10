@@ -17,17 +17,17 @@ export default {
           name: 'heroImageAlt',
           type: 'string',
         },
+      ],
+    },
+    {
+      name: 'heroIcon',
+      type: 'image',
+      title: 'Ikon ovanför bilden',
+      fields: [
         {
-          name: 'heroIcon',
-          type: 'image',
-          title: 'Ikon ovanför bilden',
-          fields: [
-            {
-              title: 'Beskrivande text för iconen',
-              name: 'heroIconAlt',
-              type: 'string',
-            },
-          ],
+          title: 'Beskrivande text för ikonen',
+          name: 'heroIconAlt',
+          type: 'string',
         },
       ],
     },

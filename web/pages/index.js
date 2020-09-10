@@ -1,10 +1,8 @@
 import groq from 'groq';
-import Link from 'next/link';
 import Layout from '../components/Layout';
 import client from '../sanity/client';
 import Hero from '../components/Hero';
 import urlBuild from '../sanity/imageBuilder';
-import Menu from '../components/Menu';
 import IconLink from '../components/Iconlink';
 
 const Index = ({ content, instagram }) => {

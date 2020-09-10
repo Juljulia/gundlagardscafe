@@ -1,5 +1,5 @@
 export default {
-  name: 'iconLinks',
+  name: 'iconLink',
   title: 'Ikon och Länk',
   type: 'array',
   validation: (Rule) => [Rule.required().length(4).error('Välj 4 bilder')],
@@ -13,15 +13,13 @@ export default {
           title: 'Ikon',
           name: 'image',
           type: 'image',
-        },
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Beskrivande text',
-          description: 'Viktigt för sökbarhet och träffar på Google',
-          options: {
-            isHighlighted: true,
-          },
+          fields: [
+            {
+              title: 'Beskrivande text för ikonen',
+              name: 'heroIconAlt',
+              type: 'string',
+            },
+          ],
         },
         {
           title: 'Länk',
