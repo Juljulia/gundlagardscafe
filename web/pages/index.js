@@ -22,7 +22,7 @@ const Index = ({ content, instagram }) => {
           heroImageAlt={content.heroImageAlt}
           heroIcon={heroIcon}
           heroIconAlt={content.heroIconAlt}
-        ></Hero>
+        />
       )}
       <section>
         <h1>{content.header}</h1>

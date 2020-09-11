@@ -8,7 +8,7 @@ import Hero from '../components/Hero';
 const Qa = ({ content }) => {
   const questionAndAnswer = content.questionAndAnswer;
   const heroImage = urlBuild(content.hero.heroImage.asset);
-  const heroIcon = urlBuild(content.hero.heroIcon.asset);
+  const heroIcon = urlBuild(content.hero.heroImage.heroIcon.asset);
   return (
     <Layout pageTitle={content.header}>
       {content && (
