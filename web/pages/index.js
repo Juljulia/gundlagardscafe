@@ -35,19 +35,19 @@ const Index = ({ content, instagram }) => {
               />
             ))}
         </div>
-        <div>
+        {/* <div>
           {imageGrid &&
             imageGrid.map((image, i) => (
               <img key={i} src={urlBuild(image.image.asset)}></img>
             ))}
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           {instaFour &&
             instaFour.map((image, i) => (
               <img key={i} src={image.node.display_url}></img>
             ))}
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <h4>{content.aboutUs.header}</h4>
           <p>{content.aboutUs.text}</p>
         </div>
@@ -55,7 +55,7 @@ const Index = ({ content, instagram }) => {
           <h4>{content.history.header}</h4>
           <p>{content.history.text}</p>
           <img src={urlBuild(content.history.image.asset)}></img>
-        </div>
+        </div> */}
       </section>
     </Layout>
   );
