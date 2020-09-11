@@ -15,11 +15,6 @@ export default {
       description: 'Första helbilden på sidan',
     },
     {
-      title: 'Vill du att öppettiderna ska synas på startsidan?',
-      name: 'showOrHideOpenHours',
-      type: 'boolean',
-    },
-    {
       name: 'iconLink',
       type: 'iconLink',
       title: 'Ikon och länk',
