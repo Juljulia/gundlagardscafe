@@ -43,25 +43,22 @@ export default {
               type: 'text',
             },
             {
-              title: 'Datum och tid',
-              name: 'date',
-              type: 'datetime',
-            },
-            {
-              title: 'Ska det vara möjligt att köpa biljetter till eventet?',
-              description: 'Grön: Ja | Blå: Nej',
-              name: 'tickets',
-              type: 'boolean',
+              title: 'Pris',
+              description: 'Om eventet går att boka, fyll i pris här',
+              name: 'price',
+              type: 'number',
             },
             {
               title: 'Välj ett tema',
-              name: 'link',
+              name: 'category',
               type: 'string',
               options: {
                 list: [
-                  { title: 'Mindfullness', value: 'Mindfullness' },
-                  { title: 'Event', value: 'Event' },
-                  { title: 'Marknad', value: 'Marknad' },
+                  { title: 'Musik', value: '#BD4101;' },
+                  { title: 'Marknad', value: '#959967' },
+                  { title: 'Teater', value: '#CD8501' },
+                  { title: 'Aktiviteter', value: '#FF5D84' },
+                  { title: 'Barn', value: '##6C5301' },
                 ],
               },
             },
@@ -71,14 +68,6 @@ export default {
               title: 'header',
               media: 'image',
               date: 'date',
-            },
-            prepare(selection) {
-              const { title, date, media } = selection;
-              return {
-                title: title,
-                media: media,
-                subtitle: date.split('T')[0], // YYYY-MM-DD --> YYYY
-              };
             },
           },
         },

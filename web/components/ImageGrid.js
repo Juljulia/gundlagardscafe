@@ -4,12 +4,11 @@ import urlBuild from '../sanity/imageBuilder';
 const StyledGrid = styled.div`
   .gridcontainter {
     display: grid;
-    grid-template-columns: 18% 45% 33%;
-    grid-template-rows: 15% 15% 15% 15% 15% 15%;
+    grid-template-columns: 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 40% 30% 30%;
     grid-gap: 8px;
     margin: 0 72px;
     padding: 0;
-    max-height: 725px;
   }
 
   .object {
@@ -20,42 +19,72 @@ const StyledGrid = styled.div`
   img {
     border-radius: 9px;
     border: none;
-  }
-
-  .object:nth-child(1) {
-    grid-column: 1;
-    grid-row-start: 1;
-    grid-row-end: 5;
-  }
-
-  .object:nth-child(2) {
-    grid-column: 1;
-    grid-row-start: 5;
-    grid-row-end: 7;
-  }
-
-  .object:nth-child(3) {
-    grid-column: 2;
-    grid-row-start: 1;
-    grid-row-end: 7;
-  }
-
-  .object:nth-child(4) {
-    grid-column: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-  }
-
-  .object:nth-child(5) {
-    grid-column: 3;
-    grid-row-start: 3;
-    grid-row-end: 7;
-  }
-
-  img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+  }
+
+  .object:nth-child(1) {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+  }
+
+  .object:nth-child(2) {
+    grid-column: 4 / 11;
+    grid-row: 1/ 2;
+  }
+
+  .object:nth-child(3) {
+    grid-column: 1 / 11;
+    grid-row: 2/3;
+  }
+
+  .object:nth-child(4) {
+    grid-column: 1 / 5;
+    grid-row: 3;
+  }
+
+  .object:nth-child(5) {
+    grid-column: 5 /11;
+    grid-row: 3;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .gridcontainter {
+      grid-template-columns: 18% 45% 33%;
+      grid-template-rows: 15% 15% 15% 15% 15% 15%;
+    }
+
+    .object:nth-child(1) {
+      grid-column: 1;
+      grid-row: 1/5;
+    }
+
+    .object:nth-child(2) {
+      grid-column: 1;
+      grid-row: 5/ 7;
+    }
+
+    .object:nth-child(3) {
+      grid-column: 2;
+      grid-row: 1 / 7;
+    }
+
+    .object:nth-child(4) {
+      grid-column: 3;
+      grid-row: 1 / 3;
+    }
+
+    .object:nth-child(5) {
+      grid-column: 3;
+      grid-row: 3 / 7;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
   }
 `;
 

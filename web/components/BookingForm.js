@@ -1,12 +1,8 @@
 import styled from 'styled-components';
 
-const StyledForm = styled.div`
-  p {
-    color: red;
-  }
-`;
+const StyledForm = styled.div``;
 
-export default function ContactForm() {
+export default function BookingForm() {
   return (
     <StyledForm>
       <h4>Boka biljett</h4>
