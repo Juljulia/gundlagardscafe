@@ -4,10 +4,12 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import urlBuild from '../sanity/imageBuilder';
 import BookingForm from '../components/BookingForm';
+import ImageGrid from '../components/ImageGrid';
 
 const Event = ({ content }) => {
   const heroImage = urlBuild(content.hero.heroImage.asset);
   const heroIcon = urlBuild(content.hero.heroIcon.asset);
+  const imageGrid = content.imageGrid;
   const eventList = content.eventList;
   return (
     <Layout pageTitle={content.header}>
@@ -30,6 +32,7 @@ const Event = ({ content }) => {
             </div>
           ))}
       </div>
+      <ImageGrid images={imageGrid}></ImageGrid>
       <BookingForm></BookingForm>
     </Layout>
   );
@@ -39,6 +42,7 @@ const query = groq`*[_type == 'event'][0]{
     header,
     hero,
     eventList,
+    imageGrid
   }`;
 
 export const getStaticProps = async function () {

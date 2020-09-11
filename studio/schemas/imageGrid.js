@@ -13,21 +13,27 @@ export default {
           title: 'Bild',
           name: 'image',
           type: 'image',
-        },
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Beskrivande text',
-          description: 'Viktigt för sökbarhet och träffar på Google',
-          options: {
-            isHighlighted: true,
-          },
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Beskrivande text',
+              description: 'Viktigt för sökbarhet och träffar på Google',
+            },
+          ],
         },
       ],
       preview: {
         select: {
           media: 'image',
-          title: 'Bilder till Grid',
+          title: '',
+        },
+        prepare(selection) {
+          const { title = '', media } = selection;
+          return {
+            title: title,
+            media: media,
+          };
         },
       },
     },
