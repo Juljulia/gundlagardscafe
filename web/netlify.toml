@@ -2,8 +2,3 @@
   command   = "npm run build"
   functions = "out_functions"
   publish   = "out_publish"
-
-[[redirects]]
-  from = "/*"
-  to = "/web/pages/"
-  status = 200
