@@ -1,7 +1,7 @@
 {
   "name": "web",
   "version": "1.0.0",
-  "description": "",
+  "description": "Next.js project for Gundla gardscafé.",
   "main": "index.js",
   "dependencies": {
     "@sanity/client": "^1.150.1",
