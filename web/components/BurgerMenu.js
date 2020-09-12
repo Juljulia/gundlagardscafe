@@ -1,12 +1,12 @@
 import { Squash as Hamburger } from 'hamburger-react';
 import styled from 'styled-components';
 
-import Menu from '../components/Menu';
+import Menu from './Menu';
 
 const Container = styled.div`
   width: 100%;
   top: 0;
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: flex-end;
   z-index: 10;

@@ -2,16 +2,15 @@ export default {
   name: 'iconLink',
   title: 'Ikon och Länk',
   type: 'array',
-  validation: (Rule) => [Rule.required().length(4).error('Välj 4 bilder')],
   of: [
     {
-      title: 'Ikon',
       name: 'icons',
+      title: 'Ikon',
       type: 'object',
       fields: [
         {
-          title: 'Ikon',
           name: 'image',
+          title: 'Ikon',
           type: 'image',
           fields: [
             {
@@ -22,21 +21,23 @@ export default {
           ],
         },
         {
+          name: 'links',
           title: 'Länk',
           type: 'object',
-          name: 'links',
           fieldsets: [{ name: 'iconLink' }],
           fields: [
             {
-              title: 'Välj en sida',
               name: 'link',
+              title: 'Välj en sida',
               type: 'string',
               options: {
                 list: [
-                  { title: 'Mat', value: 'mat', name: 'mat' },
-                  { title: 'Privata event', value: 'privata-event' },
-                  { title: 'Hitta hit', value: 'hitta-hit' },
+                  { title: 'Evenemang', value: 'event' },
                   { title: 'Frågor och svar', value: 'fragor-svar' },
+                  { title: 'Hitta hit', value: 'hitta-hit' },
+                  { title: 'Privata event', value: 'privata-event' },
+                  { title: 'Om', value: 'om' },
+                  { title: 'Äta', value: 'mat', name: 'mat' },
                 ],
               },
             },
@@ -50,5 +51,8 @@ export default {
         },
       },
     },
+  ],
+  validation: (Rule) => [
+    Rule.required().min(3).max(4).unique().error('Välj 3-4 st.'),
   ],
 };

@@ -42,8 +42,9 @@ const Index = ({ content, instagram }) => {
             instaFour.map((image, i) => (
               <img key={i} src={image.node.display_url}></img>
             ))}
-        </div>
-        <div>
+        </div>{' '}
+        */}
+        {/* <div>
           <h4>{content.aboutUs.header}</h4>
           <p>{content.aboutUs.text}</p>
         </div>
@@ -51,7 +52,7 @@ const Index = ({ content, instagram }) => {
           <h4>{content.history.header}</h4>
           <p>{content.history.text}</p>
           <img src={urlBuild(content.history.image.asset)}></img>
-        </div>
+        </div> */}
       </section>
     </Layout>
   );
