@@ -15,6 +15,11 @@ export default {
       description: 'Första helbilden på sidan',
     },
     {
+      title: 'Beskrivning',
+      name: 'description',
+      type: 'text',
+    },
+    {
       title: 'Evenemang',
       name: 'eventList',
       type: 'array',
@@ -56,8 +61,8 @@ export default {
                 list: [
                   { title: 'Musik', value: '#BD4101;' },
                   { title: 'Marknad', value: '#959967' },
-                  { title: 'Teater', value: '#CD8501' },
-                  { title: 'Aktiviteter', value: '#FF5D84' },
+                  { title: 'Teater', value: '#E5B770' },
+                  { title: 'Aktiviteter', value: 'rgba(255, 93, 132, 0.81);' },
                   { title: 'Barn', value: '##6C5301' },
                 ],
               },

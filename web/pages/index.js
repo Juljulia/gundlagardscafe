@@ -43,7 +43,6 @@ const Index = ({ content, instagram }) => {
               <img key={i} src={image.node.display_url}></img>
             ))}
         </div>{' '}
-        */}
         {/* <div>
           <h4>{content.aboutUs.header}</h4>
           <p>{content.aboutUs.text}</p>
