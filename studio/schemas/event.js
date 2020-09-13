@@ -15,6 +15,11 @@ export default {
       description: 'Första helbilden på sidan',
     },
     {
+      title: 'Beskrivning',
+      name: 'description',
+      type: 'text',
+    },
+    {
       title: 'Evenemang',
       name: 'eventList',
       type: 'array',
@@ -43,25 +48,22 @@ export default {
               type: 'text',
             },
             {
-              title: 'Datum och tid',
-              name: 'date',
-              type: 'datetime',
-            },
-            {
-              title: 'Ska det vara möjligt att köpa biljetter till eventet?',
-              description: 'Grön: Ja | Blå: Nej',
-              name: 'tickets',
-              type: 'boolean',
+              title: 'Pris',
+              description: 'Om eventet går att boka, fyll i pris här',
+              name: 'price',
+              type: 'number',
             },
             {
               title: 'Välj ett tema',
-              name: 'link',
+              name: 'category',
               type: 'string',
               options: {
                 list: [
-                  { title: 'Mindfullness', value: 'Mindfullness' },
-                  { title: 'Event', value: 'Event' },
-                  { title: 'Marknad', value: 'Marknad' },
+                  { title: 'Musik', value: '#BD4101;' },
+                  { title: 'Marknad', value: '#959967' },
+                  { title: 'Teater', value: '#E5B770' },
+                  { title: 'Aktiviteter', value: 'rgba(255, 93, 132, 0.81);' },
+                  { title: 'Barn', value: '##6C5301' },
                 ],
               },
             },
@@ -71,14 +73,6 @@ export default {
               title: 'header',
               media: 'image',
               date: 'date',
-            },
-            prepare(selection) {
-              const { title, date, media } = selection;
-              return {
-                title: title,
-                media: media,
-                subtitle: date.split('T')[0], // YYYY-MM-DD --> YYYY
-              };
             },
           },
         },

@@ -15,13 +15,8 @@ export default {
       description: 'Första helbilden på sidan',
     },
     {
-      title: 'Underrubrik',
-      name: 'subheading',
-      type: 'string',
-    },
-    {
-      title: 'Beskrivning',
-      name: 'description',
+      title: 'Öppettider',
+      name: 'openHours',
       type: 'text',
     },
     {
@@ -55,7 +50,8 @@ export default {
             {
               title: 'Beskrivning',
               name: 'description',
-              type: 'text',
+              type: 'array',
+              of: [{ type: 'block' }],
             },
           ],
           preview: {

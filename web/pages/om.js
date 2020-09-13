@@ -3,10 +3,13 @@ import client from '../sanity/client';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import urlBuild from '../sanity/imageBuilder';
+import ImageGrid from '../components/ImageGrid';
 
 const About = ({ content }) => {
   const heroImage = urlBuild(content.hero.heroImage.asset);
   const heroIcon = urlBuild(content.hero.heroIcon.asset);
+  const imageGrid = content.imageGrid;
+
   return (
     <Layout pageTitle={content.header}>
       {content && (
@@ -17,7 +20,7 @@ const About = ({ content }) => {
           heroIconAlt={content.heroIconAlt}
         ></Hero>
       )}
-      <div>Om oss!!!!</div>
+      <ImageGrid images={imageGrid}></ImageGrid>
     </Layout>
   );
 };
@@ -25,6 +28,7 @@ const About = ({ content }) => {
 const query = groq`*[_type == 'about'][0]{
   header,
   hero,
+  imageGrid
 }`;
 
 export const getStaticProps = async function () {

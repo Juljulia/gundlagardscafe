@@ -4,6 +4,7 @@ import client from '../sanity/client';
 import Hero from '../components/Hero';
 import urlBuild from '../sanity/imageBuilder';
 import IconLink from '../components/Iconlink';
+import ImageGrid from '../components/ImageGrid';
 
 const Index = ({ content, instagram }) => {
   const heroImage = urlBuild(content.hero.heroImage.asset);
@@ -35,18 +36,13 @@ const Index = ({ content, instagram }) => {
               />
             ))}
         </div>
-        {/* <div>
-          {imageGrid &&
-            imageGrid.map((image, i) => (
-              <img key={i} src={urlBuild(image.image.asset)}></img>
-            ))}
-        </div> */}
-        {/* <div>
+        <ImageGrid images={imageGrid}></ImageGrid>
+        <div>
           {instaFour &&
             instaFour.map((image, i) => (
               <img key={i} src={image.node.display_url}></img>
             ))}
-        </div> */}
+        </div>{' '}
         {/* <div>
           <h4>{content.aboutUs.header}</h4>
           <p>{content.aboutUs.text}</p>
