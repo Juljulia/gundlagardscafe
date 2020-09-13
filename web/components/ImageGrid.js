@@ -7,7 +7,7 @@ const StyledGrid = styled.div`
     grid-template-columns: 10% 10% 10% 10% 10% 10%;
     grid-template-rows: 40% 30% 30%;
     grid-gap: 8px;
-    margin: 16px 0;
+    margin: 16px;
     padding: 0;
   }
 

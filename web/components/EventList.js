@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import urlBuild from '../sanity/imageBuilder';
 import StackGrid, { transitions } from 'react-stack-grid';
 import Link from 'next/link';
+import { SizeMe } from 'react-sizeme';
 
 const { scaleDown } = transitions;
 
@@ -64,7 +65,7 @@ const handleClick = (event) => {
 const EventList = ({ event }) => (
   <StyledEventList>
     <StackGrid
-      columnWidth={'100%'}
+      columnWidth="100%"
       appear={scaleDown.appear}
       appeared={scaleDown.appeared}
       enter={scaleDown.enter}

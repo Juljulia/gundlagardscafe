@@ -24,7 +24,7 @@ function Layout({ children, pageTitle = '' }) {
         </Head>
         <Header></Header>
         {children}
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
       </main>
     </ThemeProvider>
   );

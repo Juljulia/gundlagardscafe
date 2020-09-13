@@ -9,11 +9,11 @@ export const GlobalStyles = createGlobalStyle`
       outline: none;
       font-family: 'IBM Plex Sans', sans-serif;
       font-weight: normal;
+      margin: 0;
+    padding: 0;
   }
 
   html {
-    margin: 0;
-    padding: 0;
   }
   
   body {

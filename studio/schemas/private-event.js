@@ -15,14 +15,16 @@ export default {
       description: 'Första helbilden på sidan',
     },
     {
-      title: 'Underrubrik',
-      name: 'subheading',
-      type: 'string',
+      title: 'Fest eller kalas',
+      name: 'partyDescription',
+      type: 'array',
+      of: [{ type: 'block' }],
     },
     {
-      title: 'Beskrivning',
-      name: 'description',
-      type: 'text',
+      title: 'Catering',
+      name: 'cateringDescription',
+      type: 'array',
+      of: [{ type: 'block' }],
     },
     {
       name: 'imageGrid',
