@@ -44,7 +44,7 @@ export default {
                 value: 'privata-event , Privata event',
               },
               { title: 'Äta', value: 'mat Äta' },
-              { title: 'Öppettider', value: 'find-us / Öppettider' },
+              { title: 'Öppettider', value: 'hitta-hit , Öppettider' },
             ],
           },
         },

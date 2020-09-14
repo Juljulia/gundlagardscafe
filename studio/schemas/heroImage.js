@@ -1,4 +1,3 @@
-// mainImage.js
 export default {
   name: 'hero',
   title: 'hero',
