@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import urlBuild from '../sanity/imageBuilder';
 
 const StyledGrid = styled.div`
+  width: 100vw;
+
   .gridcontainter {
     display: grid;
     grid-template-columns: 10% 10% 10% 10% 10% 10%;
@@ -51,8 +53,10 @@ const StyledGrid = styled.div`
 
   @media only screen and (min-width: 768px) {
     .gridcontainter {
-      grid-template-columns: 18% 45% 33%;
+      grid-template-columns: 18% 49% 33%;
       grid-template-rows: 15% 15% 15% 15% 15% 15%;
+      margin-left: 68px;
+      margin-right: 72px;
     }
 
     .object:nth-child(1) {

@@ -73,15 +73,20 @@ const StyledFindUs = styled.div`
       flex-wrap: wrap;
       height: auto;
       background-color: #ffebe1;
+      padding: 0 72px;
     }
 
     .availabilityItems {
       height: auto;
       justify-content: flex-start;
       overflow: auto;
-      max-width: 306px;
+      max-width: 310px;
       h3 {
         margin-bottom: 0;
+      }
+
+      p {
+        margin: 16px 12px 62px 12px;
       }
     }
 

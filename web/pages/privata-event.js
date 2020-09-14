@@ -7,6 +7,7 @@ import ImageGrid from '../components/ImageGrid';
 import styled from 'styled-components';
 import ContactForm from '../components/ContactForm';
 import PortableText from '@sanity/block-content-to-react';
+import Link from 'next/link';
 
 const StyledPrivateEvent = styled.div`
   .linkToContact {
@@ -16,6 +17,7 @@ const StyledPrivateEvent = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 51px;
 
     p {
       text-align: center;
@@ -24,7 +26,7 @@ const StyledPrivateEvent = styled.div`
       line-height: 161.1%;
       letter-spacing: 0.025em;
       color: #2b2928;
-      margin: 16px 8px;
+      margin: 16px 16px;
     }
 
     button {
@@ -36,6 +38,8 @@ const StyledPrivateEvent = styled.div`
       font-size: 25px;
       color: #ffffff;
       border: none;
+      font-family: Amatic SC;
+      line-height: 32px;
     }
   }
 
@@ -64,6 +68,36 @@ const StyledPrivateEvent = styled.div`
         line-height: 161.1%;
         letter-spacing: 0.025em;
         color: #2b2928;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .linkToContact {
+      p {
+        font-size: 20px;
+        margin-bottom: 19px;
+      }
+
+      button {
+      }
+    }
+
+    .privateEventWrapper {
+      flex-direction: row;
+      margin: 62px 73px;
+
+      .privateEventInfo {
+        width: 50%;
+        margin: 16px;
+
+        h3 {
+        }
+
+        p {
+          font-size: 20px;
+          width: 100%;
+        }
       }
     }
   }
@@ -96,10 +130,16 @@ const PrivateEvent = ({ content }) => {
         </div>
         <div className="linkToContact">
           <p>Skicka gärna en förfrågan så kan vi se hur vi kan hjälpa er.</p>
-          <button>Förfrågan</button>
+          <Link href="#event-form">
+            <button>Förfrågan</button>
+          </Link>
         </div>
         <ImageGrid images={imageGrid}></ImageGrid>
-        <ContactForm></ContactForm>
+        <ContactForm
+          topic="Fira något stort?"
+          message="Berätta mer..."
+          id="event-form"
+        ></ContactForm>
       </StyledPrivateEvent>
     </Layout>
   );

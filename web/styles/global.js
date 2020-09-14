@@ -19,6 +19,10 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.primary};
 }
 
+button, link {
+  cursor: pointer;
+}
+
 
 h1 {
     font-size: 50px;
