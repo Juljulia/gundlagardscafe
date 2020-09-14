@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import client from '../sanity/client';
 import Hero from '../components/Hero';
 import urlBuild from '../sanity/imageBuilder';
-import IconLink from '../components/Iconlink';
+import IconLink from '../components/IconLink';
 import ImageGrid from '../components/ImageGrid';
 import StyledLink from '../components/StyledLink';
 import { linkBuild, titleBuild } from '../functions/link';
