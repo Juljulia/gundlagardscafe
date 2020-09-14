@@ -28,7 +28,7 @@ const Navigation = styled.nav`
     line-height: 35px;
   }
   a:hover {
-    color: ${({ theme }) => theme.colors.primary};
+    color: 'red';
   }
 `;
 

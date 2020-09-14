@@ -8,8 +8,8 @@ const StyledLink = ({ as, children, className, href }) => (
 );
 
 export default styled(StyledLink)`
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.white};
+  background-color: black;
+  color: black;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   box-shadow: drop-shadow(0px 4px 6px rgba(205, 133, 1, 0.25));
