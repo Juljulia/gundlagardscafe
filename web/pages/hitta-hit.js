@@ -16,6 +16,13 @@ const StyledFindUs = styled.div`
 
   .availabilityItems {
     background-color: #ffebe1;
+
+    p {
+      margin: 16px 35px 62px 35px;
+      font-size: 20px;
+      line-height: 161.1%;
+      letter-spacing: 0.025em;
+    }
   }
 
   h3 {
@@ -27,10 +34,11 @@ const StyledFindUs = styled.div`
     line-height: 50px;
     text-align: center;
     text-transform: uppercase;
+    margin-top: 16px;
   }
 
   p {
-    margin: 15px 16px 32px 16px;
+    margin: 15px 16px 24px 16px;
     font-size: 20px;
     line-height: 161.1%;
     letter-spacing: 0.025em;
@@ -47,22 +55,46 @@ const StyledFindUs = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
+    .openHours {
+      p {
+        text-align: left;
+        width: 636px;
+        height: 186px;
+      }
+      h3 {
+        margin-bottom: 0;
+      }
+    }
+
     .availabilityWrapper {
       display: flex;
       align-items: flex-start;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      height: auto;
+      background-color: #ffebe1;
     }
 
     .availabilityItems {
-      height: 758px;
-      border: 3px red solid;
+      height: auto;
       justify-content: flex-start;
+      overflow: auto;
+      max-width: 306px;
+      h3 {
+        margin-bottom: 0;
+      }
+    }
+
+    h3 {
+      margin-bottom: 30px;
     }
 
     img {
-      border: green 2px solid;
+      margin-top: 36px;
     }
 
     .googleMaps {
+      margin: 54px 72px;
       iframe {
         max-width: 636px;
         height: 540px;
