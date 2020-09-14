@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import urlBuild from '../functions/imageBuilder';
 import StackGrid, { transitions } from 'react-stack-grid';
 import Link from 'next/link';
 import { SizeMe } from 'react-sizeme';
+import BookingForm from '../components/BookingForm';
+import ImageGrid from '../components/ImageGrid';
+import PortableText from '@sanity/block-content-to-react';
 
 const { scaleDown } = transitions;
 
 const StyledEventList = styled.div`
   .eventCard {
-    margin: 16px 0;
+    margin: 16px;
     border-radius: 9px;
     display: flex;
     flex-direction: column;
@@ -17,6 +20,7 @@ const StyledEventList = styled.div`
   }
 
   img {
+    margin-top: -1px;
     height: 153px;
     width: 100%;
     object-fit: cover;
@@ -25,6 +29,16 @@ const StyledEventList = styled.div`
 
   .text {
     padding: 32px 24px;
+
+    div {
+      margin: 24px 0 32px 0;
+
+      p {
+        line-height: 128.35%;
+        padding: 0;
+        margin: 0;
+      }
+    }
   }
 
   h3 {
@@ -57,21 +71,10 @@ const StyledEventList = styled.div`
   }
 `;
 
-const handleClick = (event) => {
-  let header = event.target.dataset.mssg;
-  console.log(header);
-};
-
-const EventList = ({ event }) => (
-  <StyledEventList>
-    <StackGrid
-      columnWidth="100%"
-      appear={scaleDown.appear}
-      appeared={scaleDown.appeared}
-      enter={scaleDown.enter}
-      entered={scaleDown.entered}
-      leaved={scaleDown.leaved}
-    >
+const EventList = ({ event, grid }) => {
+  const [topic, setState] = useState('Ex. Frukost Yoga');
+  return (
+    <StyledEventList>
       {event &&
         event.map((object) => (
           <div key={object._key} className="eventCard">
@@ -79,14 +82,14 @@ const EventList = ({ event }) => (
             <div className="text">
               <h3>{object.header}</h3>
               {object.price && <p className="price">{object.price} kr</p>}
-              <p>{object.description}</p>
+              <PortableText blocks={object.description} />
             </div>
             {object.price && (
               <Link href={'#bookingForm'}>
                 <button
                   className="eventBtn"
                   data-mssg={object.header}
-                  onClick={handleClick}
+                  onClick={() => setState(object.header)}
                 >
                   Boka
                 </button>
@@ -99,8 +102,10 @@ const EventList = ({ event }) => (
             `}</style>
           </div>
         ))}
-    </StackGrid>
-  </StyledEventList>
-);
+      <ImageGrid images={grid}></ImageGrid>
+      <BookingForm message={topic}></BookingForm>
+    </StyledEventList>
+  );
+};
 
 export default EventList;

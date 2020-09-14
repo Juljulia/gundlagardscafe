@@ -30,7 +30,7 @@ const Qa = ({ content }) => {
               </div>
             ))}
         </div>
-        <ContactForm />
+        <ContactForm topic="Fråga något" message="Berätta mer..." />
       </div>
     </Layout>
   );

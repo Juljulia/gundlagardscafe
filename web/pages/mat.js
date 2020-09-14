@@ -6,6 +6,7 @@ import urlBuild from '../functions/imageBuilder';
 import ImageGrid from '../components/ImageGrid';
 
 const Food = ({ content }) => {
+  console.log(content);
   // const heroImage = urlBuild(content.hero.heroImage.asset);
   // const heroIcon = urlBuild(content.hero.heroIcon.asset);
   const imageGrid = content.imageGrid;
@@ -32,8 +33,6 @@ const Food = ({ content }) => {
 const query = groq`*[_type == 'food'][0]{
     header,
     hero,
-    "image": image.asset->url,
-    alt,
     description,
     imageGrid
   }`;

@@ -13,6 +13,11 @@ export const GlobalStyles = createGlobalStyle`
   color: black;
 }
 
+button, link {
+  cursor: pointer;
+}
+
+
 h1 {
   font-family: Amatic SC;
   font-weight: normal;
