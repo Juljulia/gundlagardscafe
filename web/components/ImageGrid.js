@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import urlBuild from '../sanity/imageBuilder';
+import urlBuild from '../functions/imageBuilder';
 
 const StyledGrid = styled.div`
   .gridcontainter {
