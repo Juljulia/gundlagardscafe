@@ -1,8 +1,8 @@
 import groq from 'groq';
-import client from '../sanity/client';
+import client from '../functions/client';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
-import urlBuild from '../sanity/imageBuilder';
+import urlBuild from '../functions/imageBuilder';
 import PortableText from '@sanity/block-content-to-react';
 import styled from 'styled-components';
 
@@ -104,20 +104,20 @@ const StyledFindUs = styled.div`
 `;
 
 const FindUs = ({ content }) => {
-  // const heroImage = urlBuild(content.hero.heroImage.asset);
-  // const heroIcon = urlBuild(content.hero.heroIcon.asset);
+  const heroImage = urlBuild(content.hero.heroImage.asset);
+  const heroIcon = urlBuild(content.hero.heroImage.heroIcon.asset);
   const availability = content.availability;
   return (
     <Layout pageTitle={content.header}>
       <StyledFindUs>
-        {/* {content && (
-        <Hero
-          heroImage={heroImage}
-          heroImageAlt={content.heroImageAlt}
-          heroIcon={heroIcon}
-          heroIconAlt={content.heroIconAlt}
-        ></Hero>
-      )} */}
+        {content && (
+          <Hero
+            heroImage={heroImage}
+            heroImageAlt={content.heroImageAlt}
+            heroIcon={heroIcon}
+            heroIconAlt={content.heroIconAlt}
+          ></Hero>
+        )}
         <div className="openHours">
           <h3>Öppettider</h3>
           <p>{content.openHours}</p>

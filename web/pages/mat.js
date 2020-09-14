@@ -1,8 +1,8 @@
 import groq from 'groq';
-import client from '../sanity/client';
+import client from '../functions/client';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
-import urlBuild from '../sanity/imageBuilder';
+import urlBuild from '../functions/imageBuilder';
 import ImageGrid from '../components/ImageGrid';
 
 const Food = ({ content }) => {
