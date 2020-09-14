@@ -20,43 +20,10 @@ export default {
       type: 'string',
     },
     {
-      title: 'Bilder',
       name: 'imageGrid',
-      type: 'array',
-      validation: (Rule) => [Rule.required().length(5).error('Fem bilder')],
-      of: [
-        {
-          title: 'Bilder',
-          name: 'imageGrid',
-          type: 'object',
-          fields: [
-            {
-              title: 'Bild',
-              name: 'gridImage',
-              type: 'image',
-              fields: [
-                {
-                  title: 'Alternativtext',
-                  name: 'alt',
-                  type: 'string',
-                },
-              ],
-            },
-          ],
-          preview: {
-            select: {
-              media: 'gridImage',
-            },
-            prepare(selection) {
-              const { title = '', media } = selection;
-              return {
-                title: title,
-                media: media,
-              };
-            },
-          },
-        },
-      ],
+      type: 'imageGrid',
+      title: 'Bilder till collage',
+      description: 'Välj fem bilder.',
     },
   ],
 };
