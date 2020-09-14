@@ -1,17 +1,21 @@
 import styled from 'styled-components';
 
 const StyledForm = styled.div`
-  margin: 16px 0;
-
   h4 {
     font-size: 33px;
-    margin-bottom: 32px;
-    padding-top: 16px;
-    margin-top: 0;
+    padding: 16px;
+    margin-top: 56px;
     text-transform: uppercase;
   }
 
-  form {
+  label {
+    font-size: 20px;
+    line-height: 161.6%;
+    font-size: 28px;
+    line-height: 50px;
+    font-weight: 400;
+    color: black;
+    font-family: Amatic SC;
   }
 
   input,
@@ -21,15 +25,9 @@ const StyledForm = styled.div`
     font-size: 20px;
     line-height: 161.6%;
     border-radius: 9px;
-    padding: 10px 2px;
+    padding: 10px 16px;
     border: 1px solid #000000;
-  }
-
-  label {
-    font-size: 20px;
-    line-height: 161.6%;
-    font-size: 24px;
-    font-weight: 400;
+    margin-bottom: 16px;
   }
 
   textarea {
@@ -51,7 +49,7 @@ const StyledForm = styled.div`
   }
 `;
 
-export default function BookingForm() {
+export default function BookingForm({ message }) {
   return (
     <StyledForm>
       <h4>Boka biljett</h4>
@@ -59,12 +57,7 @@ export default function BookingForm() {
         <input type="hidden" name="form-name" value="contact" />
         <p>
           <label htmlFor="yourname">Ämne</label> <br />
-          <input
-            type="text"
-            name="topic"
-            id="topic"
-            placeholder="Ex. Frukostyoga"
-          />
+          <input type="text" name="topic" id="topic" placeholder={message} />
         </p>
         <p>
           <label htmlFor="yourmessage">Meddelande</label> <br />

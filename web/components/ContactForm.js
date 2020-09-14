@@ -43,8 +43,6 @@ const StyledForm = styled.div`
   }
 
   label {
-    font-size: 20px;
-    line-height: 161.6%;
     font-size: 28px;
     line-height: 50px;
     font-weight: 400;
