@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
       font-weight: normal;
       margin: 0;
     padding: 0;
+    color: black;
   }
 
   html {
@@ -20,7 +21,6 @@ export const GlobalStyles = createGlobalStyle`
 
 
 h1 {
-    color: black;
     font-size: 50px;
 }
 `;
