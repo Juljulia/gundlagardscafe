@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import urlBuild from '../sanity/imageBuilder';
+import urlBuild from '../functions/imageBuilder';
 import StackGrid, { transitions } from 'react-stack-grid';
 import Link from 'next/link';
 import { SizeMe } from 'react-sizeme';
