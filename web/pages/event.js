@@ -3,17 +3,33 @@ import client from '../sanity/client';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import urlBuild from '../sanity/imageBuilder';
-import BookingForm from '../components/BookingForm';
-import ImageGrid from '../components/ImageGrid';
 import EventList from '../components/EventList';
 import styled from 'styled-components';
 
 const StyledEvent = styled.div`
-  margin: 16px;
+  h1 {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 50px;
+    margin: 0 16px;
+  }
+
+  p {
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 161.6%;
+    letter-spacing: 0.025em;
+    margin: 16px;
+  }
 
   .category-list {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 16px;
   }
 
   li {
@@ -40,16 +56,16 @@ const StyledEvent = styled.div`
     background-color: #bd4101;
   }
   li:nth-child(2)::before {
-    background-color: #cd8501;
-  }
-  li:nth-child(3)::before {
-    background-color: #6c5301;
-  }
-  li:nth-child(4)::before {
     background-color: #959967;
   }
-  li:nth-child(5)::before {
+  li:nth-child(3)::before {
+    background-color: #cd8501;
+  }
+  li:nth-child(4)::before {
     background-color: #ff5d84;
+  }
+  li:nth-child(5)::before {
+    background-color: #6c5301;
   }
 `;
 
@@ -78,9 +94,7 @@ const Event = ({ content }) => {
           heroIconAlt={content.heroIconAlt}
         ></Hero>
       )} */}
-        <EventList event={eventList}></EventList>
-        <ImageGrid images={imageGrid}></ImageGrid>
-        <BookingForm></BookingForm>
+        <EventList event={eventList} grid={imageGrid}></EventList>
       </Layout>
     </StyledEvent>
   );
