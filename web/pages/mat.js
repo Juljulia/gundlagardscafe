@@ -24,7 +24,7 @@ const Food = ({ content }) => {
         <img src={content.image} alt={content.alt}></img>
         <p>{content.description}</p>
       </div>
-      <ImageGrid images={imageGrid}></ImageGrid>
+      {/* <ImageGrid images={imageGrid}></ImageGrid> */}
     </Layout>
   );
 };
