@@ -5,24 +5,40 @@ import Hero from '../components/Hero';
 import urlBuild from '../sanity/imageBuilder';
 import IconLink from '../components/Iconlink';
 import ImageGrid from '../components/ImageGrid';
+import StyledLink from '../components/StyledLink';
+import { linkBuild, titleBuild } from '../functions/link';
 
 const Index = ({ content, instagram }) => {
+  console.log(content);
   const heroImage = urlBuild(content.hero.heroImage.asset);
   const heroIcon = urlBuild(content.hero.heroImage.heroIcon.asset);
+
+  const homePageLink = content.homePageLink.link.split(',');
+  const name = titleBuild(homePageLink);
+  const href = linkBuild(homePageLink);
+
   const iconLinks = content.iconLink;
   const imageGrid = content.imageGrid;
+
   const instagramFeed =
     instagram.graphql.user.edge_owner_to_timeline_media.edges;
   const instaFour = instagramFeed.slice(0, 4);
+
   return (
     <Layout pageTitle={content.header}>
       {content && (
-        <Hero
-          heroImage={heroImage}
-          heroImageAlt={content.heroImageAlt}
-          heroIcon={heroIcon}
-          heroIconAlt={content.heroIconAlt}
-        />
+        <>
+          <Hero
+            heroImage={heroImage}
+            heroImageAlt={content.heroImageAlt}
+            heroIcon={heroIcon}
+            heroIconAlt={content.heroIconAlt}
+            className="heroFirstPage"
+          />
+          <StyledLink href={href} className="link-firstpage">
+            {name}
+          </StyledLink>
+        </>
       )}
       <section>
         <h1>{content.header}</h1>
@@ -37,12 +53,12 @@ const Index = ({ content, instagram }) => {
             ))}
         </div>
         <ImageGrid images={imageGrid}></ImageGrid>
-        <div>
+        {/* <div>
           {instaFour &&
             instaFour.map((image, i) => (
               <img key={i} src={image.node.display_url}></img>
             ))}
-        </div>{' '}
+        </div>{' '} */}
         {/* <div>
           <h4>{content.aboutUs.header}</h4>
           <p>{content.aboutUs.text}</p>
@@ -58,12 +74,14 @@ const Index = ({ content, instagram }) => {
 };
 
 const query = groq`*[_type == 'main'][0]{
+    aboutUs,
     header,
     hero,
+    history,
+    homePageLink,
     iconLink,
     imageGrid,
-    aboutUs,
-    history,
+    welcome,
   }`;
 
 export async function getStaticProps() {
