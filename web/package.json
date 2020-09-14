@@ -2,6 +2,7 @@
   "name": "web",
   "version": "1.0.0",
   "description": "Next.js project for Gundla gardscafé.",
+  "main": "index.js",
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^1.150.1",
