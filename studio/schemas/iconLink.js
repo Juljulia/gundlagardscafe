@@ -32,12 +32,16 @@ export default {
               type: 'string',
               options: {
                 list: [
-                  { title: 'Evenemang', value: 'event' },
-                  { title: 'Frågor och svar', value: 'fragor-svar' },
-                  { title: 'Hitta hit', value: 'hitta-hit' },
+                  { title: 'Evenemang', value: 'event', name: 'Evenemang' },
+                  {
+                    title: 'Frågor och svar',
+                    value: 'fragor-svar',
+                    name: 'Frågor och svar',
+                  },
+                  { title: 'Hitta hit', value: 'hitta-hit', name: 'Hitta hit' },
                   { title: 'Privata event', value: 'privata-event' },
-                  { title: 'Om', value: 'om' },
-                  { title: 'Äta', value: 'mat', name: 'mat' },
+                  { title: 'Äta', value: 'mat' },
+                  { title: 'Öppettider', value: 'find-us' },
                 ],
               },
             },

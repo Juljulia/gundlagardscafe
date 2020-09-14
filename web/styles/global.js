@@ -14,10 +14,6 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
   }
-  
-  body {
-    color: ${({ theme }) => theme.colors.primary};
-}
 
 button, link {
   cursor: pointer;

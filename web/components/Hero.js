@@ -8,12 +8,17 @@ const StyledHero = styled.div`
     height: 100%;
     object-fit: cover;
   }
+  .hero {
+    display: flex;
+  }
+  .heroFirstPage {
+  }
 `;
 
 const Hero = ({ heroImage, heroImageAlt, heroIcon, heroIconAlt }) => {
   return (
     <StyledHero>
-      <img src={heroImage} alt={heroImageAlt}></img>
+      <img className="hero" src={heroImage} alt={heroImageAlt}></img>
       <div>
         <img src={heroIcon} alt={heroIconAlt}></img>
       </div>

@@ -99,7 +99,7 @@ export default function ImageGrid({ images }) {
         {images &&
           images.map((image, i) => (
             <div className="object" key={i}>
-              <img src={urlBuild(image.image.asset)}></img>
+              <img key={i} src={urlBuild(image.image.asset)}></img>
             </div>
           ))}
       </div>
