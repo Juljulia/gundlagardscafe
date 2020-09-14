@@ -1,26 +1,30 @@
 import styled from 'styled-components';
 
 const StyledHero = styled.div`
-  height: 95vh;
-  width: 100vw;
+  /* height: 100%; */
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    object-position: center;
   }
-  .hero {
-    display: flex;
-  }
-  .heroFirstPage {
+  .icon {
+    height: auto;
+    justify-content: flex-start;
+    overflow: auto;
+    max-width: 253px;
   }
 `;
 
 const Hero = ({ heroImage, heroImageAlt, heroIcon, heroIconAlt }) => {
   return (
     <StyledHero>
-      <img className="hero" src={heroImage} alt={heroImageAlt}></img>
+      <img src={heroImage} alt={heroImageAlt}></img>
       <div>
-        <img src={heroIcon} alt={heroIconAlt}></img>
+        <img className="icon" src={heroIcon} alt={heroIconAlt}></img>
       </div>
     </StyledHero>
   );

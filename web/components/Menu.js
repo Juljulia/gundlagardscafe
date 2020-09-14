@@ -37,9 +37,6 @@ const Menu = ({ show = false }) => (
     <Link href="/">
       <a>Hem</a>
     </Link>
-    <Link href="/om">
-      <a>Om oss</a>
-    </Link>
 
     <Link href="/hitta-hit">
       <a>Hitta hit / Öppettider</a>
