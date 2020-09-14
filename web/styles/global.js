@@ -15,10 +15,6 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
   }
-  
-  body {
-    color: ${({ theme }) => theme.colors.primary};
-}
 
 
 h1 {
