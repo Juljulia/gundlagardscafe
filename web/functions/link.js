@@ -1,4 +1,4 @@
-const linkBuild = (homePageLink) => homePageLink[0].trim();
-const titleBuild = (homePageLink) => homePageLink[1].trim();
+const hrefBuild = (homePageLink) => homePageLink[0].trim();
+const nameBuild = (homePageLink) => homePageLink[1].trim();
 
-export { linkBuild, titleBuild };
+export { hrefBuild, nameBuild };
