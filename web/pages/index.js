@@ -1,19 +1,24 @@
-// import groq from 'groq';
+import groq from 'groq';
+import client from '../functions/client';
 import styled from 'styled-components';
+import Layout from '../components/Layout';
 
 const Title = styled.h1`
   font-size: 50px;
   color: ${({ theme }) => theme.colors.primary};
 `;
 
-export default function Home() {
-  return <Title>My page</Title>;
+export default function Home({ content }) {
+  return (
+    <Layout pageTitle={content.header}>
+      <Title>My page</Title>
+    </Layout>
+  );
 }
 
-// import client from '../functions/client';
 // import colors from '../styles/colors';
 // import Hero from '../components/Hero';
-// import Layout from '../components/Layout';
+
 // import IconLink from '../components/IconLink';
 // import ImageGrid from '../components/ImageGrid';
 // import StyledLink from '../components/StyledLink';
@@ -35,7 +40,7 @@ export default function Home() {
 //   const instaFour = instagramFeed.slice(0, 4);
 
 //   return (
-//     // <Layout pageTitle={content.header}>
+
 //       <Container>
 //         {heroImage && (
 //           <div className="hero">
@@ -86,30 +91,30 @@ export default function Home() {
 //   );
 // };
 
-// const query = groq`*[_type == 'main'][0]{
-//     aboutUs,
-//     header,
-//     hero,
-//     history,
-//     homePageLink,
-//     iconLink,
-//     imageGrid,
-//     welcome,
-//   }`;
+const query = groq`*[_type == 'main'][0]{
+    aboutUs,
+    header,
+    hero,
+    history,
+    homePageLink,
+    iconLink,
+    imageGrid,
+    welcome,
+  }`;
 
-// export async function getStaticProps() {
-//   const content = await client.fetch(query);
+export async function getStaticProps() {
+  const content = await client.fetch(query);
 
-//   const res = await fetch('https://www.instagram.com/gundlagardscafe/?__a=1');
-//   const json = await res.json();
+  // const res = await fetch('https://www.instagram.com/gundlagardscafe/?__a=1');
+  // const json = await res.json();
 
-//   return {
-//     props: {
-//       content,
-//       instagram: json,
-//     },
-//   };
-// }
+  return {
+    props: {
+      content,
+      // instagram: json,
+    },
+  };
+}
 
 // const Container = styled.div`
 //   .hero {
@@ -136,5 +141,3 @@ export default function Home() {
 //     padding-bottom: 32px;
 //   }
 // `;
-
-// export default Index;
