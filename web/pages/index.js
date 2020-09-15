@@ -2,61 +2,48 @@ import groq from 'groq';
 import client from '../functions/client';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
+import urlBuild from '../functions/imageBuilder';
+import StyledLink from '../components/StyledLink';
+import { hrefBuild, nameBuild } from '../functions/link';
+import ImageGrid from '../components/ImageGrid';
+import InstaGrid from '../components/InstaGrid';
 
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`;
+// import IconLink from '../components/IconLink';
 
 export default function Home({ content }) {
+  const imageGrid = content.imageGrid;
+  const link = content.homePageLink.link.split(',');
+  const name = nameBuild(link);
+  const href = hrefBuild(link);
+  const heroImage = urlBuild(content.hero.heroImage.asset);
+
+  // const instaGrid = instaPictures.slice(0, 4);
   return (
     <Layout pageTitle={content.header}>
-      <Title>My page</Title>
+      <Container>
+        {heroImage && (
+          <div className="hero">
+            <img src={heroImage}></img>
+            <div className="hero__content">
+              <h1 className="hero__title">{content.welcome}</h1>
+              <StyledLink href={href} className="hero__link">
+                {name}
+              </StyledLink>
+            </div>
+          </div>
+        )}
+        <ImageGrid images={imageGrid}></ImageGrid>
+        {/* <InstaGrid images={instaGrid}></InstaGrid> */}
+      </Container>
     </Layout>
   );
 }
 
-// import colors from '../styles/colors';
-// import Hero from '../components/Hero';
-
-// import IconLink from '../components/IconLink';
-// import ImageGrid from '../components/ImageGrid';
-// import StyledLink from '../components/StyledLink';
-// import urlBuild from '../functions/imageBuilder';
-// import { hrefBuild, nameBuild } from '../functions/link';
-
-// const Index = ({ content, instagram }) => {
-//   const heroImage = urlBuild(content.hero.heroImage.asset);
-
-//   const link = content.homePageLink.link.split(',');
-//   const name = nameBuild(link);
-//   const href = hrefBuild(link);
-
 //   const iconLinks = content.iconLink;
-//   const imageGrid = content.imageGrid;
-
-//   const instagramFeed =
-//     instagram.graphql.user.edge_owner_to_timeline_media.edges;
-//   const instaFour = instagramFeed.slice(0, 4);
 
 //   return (
 
 //       <Container>
-//         {heroImage && (
-//           <div className="hero">
-//             <Hero
-//               heroImage={heroImage}
-//               heroImageAlt={content.heroImageAlt}
-//               className="hero__image"
-//             />
-//             <div className="hero__content">
-//               <h1 className="hero__title">{content.welcome}</h1>
-//               <StyledLink href={href} className="hero__link">
-//                 {name}
-//               </StyledLink>
-//             </div>
-//           </div>
-//         )}
 //         <section>
 //           <h1>{content.header}</h1>
 //           <div>
@@ -69,7 +56,6 @@ export default function Home({ content }) {
 //                 />
 //               ))}
 //           </div>
-//           <ImageGrid images={imageGrid}></ImageGrid>
 //           <div>
 //             {instaFour &&
 //               instaFour.map((image, i) => (
@@ -111,33 +97,41 @@ export async function getStaticProps() {
   return {
     props: {
       content,
-      // instagram: json,
+      // instaPictures: json.graphql.user.edge_owner_to_timeline_media.edges,
     },
   };
 }
 
-// const Container = styled.div`
-//   .hero {
-//     display: flex;
-//     flex-direction: column;
-//     width: 100%;
-//     height: 90vh; /* keep it 90vh*/
-//   }
-//   .hero__content {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     z-index: 2;
-//     width: 100%;
-//     height: 100%;
-//     padding: 0 48px 0 48px; /*top 64px navmenu*/
-//   }
-//   .hero__title {
-//     font-size: 25px;
-//     line-height: 32px;
-//     color: ${colors.white};
-//     text-align: center;
-//     padding-bottom: 32px;
-//   }
-// `;
+const Container = styled.div`
+  .hero {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh; /* keep it 90vh*/
+  }
+  .hero img {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    object-position: center;
+  }
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+  }
+  .hero__title {
+    font-size: 25px;
+    line-height: 32px;
+    color: ${({ theme }) => theme.colors.white};
+    text-align: center;
+    padding: 0 48px 32px 48px;
+  }
+`;
