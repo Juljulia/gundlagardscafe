@@ -15,7 +15,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-stack-grid": "^0.7.1",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.11.1"
