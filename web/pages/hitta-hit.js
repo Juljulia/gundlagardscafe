@@ -115,14 +115,14 @@ const FindUs = ({ content }) => {
   return (
     <Layout pageTitle={content.header}>
       <StyledFindUs>
-        {content && (
+        {/* {content && (
           <Hero
             heroImage={heroImage}
             heroImageAlt={content.heroImageAlt}
             heroIcon={heroIcon}
             heroIconAlt={content.heroIconAlt}
           ></Hero>
-        )}
+        )} */}
         <div className="openHours">
           <h3>Öppettider</h3>
           <p>{content.openHours}</p>

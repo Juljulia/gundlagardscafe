@@ -23,6 +23,7 @@ export default {
       title: 'Evenemang',
       name: 'eventList',
       type: 'array',
+      options: [{ sortable: true }],
       of: [
         {
           title: 'Evenemang',
@@ -60,10 +61,13 @@ export default {
               type: 'string',
               options: {
                 list: [
-                  { title: 'Musik', value: '#BD4101;' },
+                  { title: 'Musik', value: '#BD4101' },
                   { title: 'Marknad', value: '#959967' },
-                  { title: 'Teater', value: '#E5B770' },
-                  { title: 'Aktiviteter', value: 'rgba(255, 93, 132, 0.81);' },
+                  { title: 'Teater', value: '#CD8501' },
+                  {
+                    title: 'Aktiviteter',
+                    value: '#FF5D84',
+                  },
                   { title: 'Barn', value: '##6C5301' },
                 ],
               },
