@@ -5,11 +5,12 @@ import Layout from '../components/Layout';
 import urlBuild from '../functions/imageBuilder';
 import StyledLink from '../components/StyledLink';
 import { hrefBuild, nameBuild } from '../functions/link';
+import ImageGrid from '../components/ImageGrid';
 
 // import IconLink from '../components/IconLink';
-// import ImageGrid from '../components/ImageGrid';
 
 export default function Home({ content }) {
+  const imageGrid = content.imageGrid;
   const link = content.homePageLink.link.split(',');
   const name = nameBuild(link);
   const href = hrefBuild(link);
@@ -28,13 +29,13 @@ export default function Home({ content }) {
             </div>
           </div>
         )}
+        <ImageGrid images={imageGrid}></ImageGrid>
       </Container>
     </Layout>
   );
 }
 
 //   const iconLinks = content.iconLink;
-//   const imageGrid = content.imageGrid;
 
 //   const instagramFeed =
 //     instagram.graphql.user.edge_owner_to_timeline_media.edges;
@@ -55,7 +56,6 @@ export default function Home({ content }) {
 //                 />
 //               ))}
 //           </div>
-//           <ImageGrid images={imageGrid}></ImageGrid>
 //           <div>
 //             {instaFour &&
 //               instaFour.map((image, i) => (
