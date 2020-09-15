@@ -28,7 +28,7 @@ const StyledEvent = styled.div`
     margin: 16px;
   }
 
-  .category-list {
+  .categoryList {
     display: flex;
     flex-wrap: wrap;
     margin: 0 16px;
@@ -69,6 +69,31 @@ const StyledEvent = styled.div`
   li:nth-child(5)::before {
     background-color: #6c5301;
   }
+
+  @media only screen and (min-width: 768px) {
+    .textContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 635px;
+      margin: 0 auto;
+    }
+
+    .categoryList {
+      flex-wrap: nowrap;
+      width: 609px;
+      float: right;
+      margin-right: 56px;
+    }
+
+    li {
+      margin-right: 21px;
+    }
+
+    li::before {
+      margin-right: 14px;
+    }
+  }
 `;
 
 const Event = ({ content }) => {
@@ -79,9 +104,11 @@ const Event = ({ content }) => {
   return (
     <StyledEvent>
       <Layout pageTitle={content.header}>
-        <h1>{content.header}</h1>
-        <p>{content.description}</p>
-        <div class="category-list">
+        <div className="textContainer">
+          <h1>{content.header}</h1>
+          <p>{content.description}</p>
+        </div>
+        <div className="categoryList">
           <li>Musik</li>
           <li>Marknad</li>
           <li>Teater</li>

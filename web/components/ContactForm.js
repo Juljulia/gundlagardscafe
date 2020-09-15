@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { useState } from 'react';
 
-const StyledForm = styled.div`
+const StyledContactForm = styled.div`
   height: auto;
   background: #959967;
   overflow: auto;
@@ -100,7 +100,6 @@ const StyledForm = styled.div`
 }
 
   @media only screen and (min-width: 768px) {
-    /* margin-top: 0px; */
 
     input {
       width: 50%;
@@ -124,7 +123,8 @@ const StyledForm = styled.div`
 
   .formMessage {
     margin-left: -72px;
-  }}`;
+  }
+  }`;
 
 export default function ContactForm({ topic, message, id }) {
   const [status, setStatus] = useState('');
@@ -148,7 +148,7 @@ export default function ContactForm({ topic, message, id }) {
   };
 
   return (
-    <StyledForm>
+    <StyledContactForm>
       <form
         name="contact"
         action="https://formspree.io/xdopnegr"
@@ -186,6 +186,6 @@ export default function ContactForm({ topic, message, id }) {
           </div>
         )}
       </form>
-    </StyledForm>
+    </StyledContactForm>
   );
 }

@@ -11,6 +11,7 @@ const StyledGrid = styled.div`
     grid-gap: 8px;
     margin: 16px;
     padding: 0;
+    height: 584px;
   }
 
   .object {
@@ -18,7 +19,7 @@ const StyledGrid = styled.div`
     height: 100%;
   }
 
-  img {
+  .gridImage {
     border-radius: 9px;
     border: none;
     height: 100%;
@@ -55,8 +56,8 @@ const StyledGrid = styled.div`
     .gridcontainter {
       grid-template-columns: 18% 49% 33%;
       grid-template-rows: 15% 15% 15% 15% 15% 15%;
-      margin-left: 68px;
-      margin-right: 72px;
+      margin-left: 72px;
+      margin-right: 88px;
     }
 
     .object:nth-child(1) {
@@ -99,7 +100,11 @@ export default function ImageGrid({ images }) {
         {images &&
           images.map((image, i) => (
             <div className="object" key={i}>
-              <img key={i} src={urlBuild(image.image.asset)}></img>
+              <img
+                className="gridImage"
+                key={i}
+                src={urlBuild(image.image.asset)}
+              ></img>
             </div>
           ))}
       </div>

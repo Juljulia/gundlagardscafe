@@ -6,8 +6,8 @@ import urlBuild from '../functions/imageBuilder';
 import ImageGrid from '../components/ImageGrid';
 import styled from 'styled-components';
 import ContactForm from '../components/ContactForm';
+import LinkToContact from '../components/LinkToContact';
 import PortableText from '@sanity/block-content-to-react';
-import Link from 'next/link';
 
 const StyledPrivateEvent = styled.div`
   .linkToContact {
@@ -128,12 +128,7 @@ const PrivateEvent = ({ content }) => {
             <PortableText blocks={content.cateringDescription} />
           </div>
         </div>
-        <div className="linkToContact">
-          <p>Skicka gärna en förfrågan så kan vi se hur vi kan hjälpa er.</p>
-          <Link href="#event-form">
-            <button>Förfrågan</button>
-          </Link>
-        </div>
+        <LinkToContact></LinkToContact>
         <ImageGrid images={imageGrid}></ImageGrid>
         <ContactForm
           topic="Fira något stort?"
