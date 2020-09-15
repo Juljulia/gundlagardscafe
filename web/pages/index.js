@@ -12,12 +12,9 @@ import urlBuild from '../functions/imageBuilder';
 import { hrefBuild, nameBuild } from '../functions/link';
 
 const Index = ({ content, instagram }) => {
-  console.log(content);
   const heroImage = urlBuild(content.hero.heroImage.asset);
-  const heroIcon = urlBuild(content.hero.heroImage.heroIcon.asset);
 
   const link = content.homePageLink.link.split(',');
-  console.log(link);
   const name = nameBuild(link);
   const href = hrefBuild(link);
 
@@ -59,21 +56,21 @@ const Index = ({ content, instagram }) => {
               ))}
           </div>
           <ImageGrid images={imageGrid}></ImageGrid>
-          {/* <div>
-          {instaFour &&
-            instaFour.map((image, i) => (
-              <img key={i} src={image.node.display_url}></img>
-            ))}
-        </div>{' '} */}
-          {/* <div>
-          <h4>{content.aboutUs.header}</h4>
-          <p>{content.aboutUs.text}</p>
-        </div>
-        <div>
-          <h4>{content.history.header}</h4>
-          <p>{content.history.text}</p>
-          <img src={urlBuild(content.history.image.asset)}></img>
-        </div> */}
+          <div>
+            {instaFour &&
+              instaFour.map((image, i) => (
+                <img key={i} src={image.node.display_url}></img>
+              ))}
+          </div>{' '}
+          <div>
+            <h4>{content.aboutUs.header}</h4>
+            <p>{content.aboutUs.text}</p>
+          </div>
+          <div>
+            <h4>{content.history.header}</h4>
+            <p>{content.history.text}</p>
+            <img src={urlBuild(content.history.image.asset)}></img>
+          </div>
         </section>
       </Container>
     </Layout>
