@@ -37,13 +37,12 @@ const Container = styled.div`
 `;
 
 export default function IconLinks({ icons }) {
-  console.log(nameBuild(linkBuild(icons[0].links.link)));
   return (
     <Container>
       {icons.map((icon, i) => (
-        <div className="icon-link">
+        <div className="icon-link" key={i}>
           <div className="container">
-            <Link href={hrefBuild(linkBuild(icon.links.link))} key={i}>
+            <Link href={hrefBuild(linkBuild(icon.links.link))}>
               <img className="iconLink" src={urlBuild(icon.image.asset)}></img>
             </Link>
             <h3>{nameBuild(linkBuild(icon.links.link))}</h3>

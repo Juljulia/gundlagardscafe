@@ -7,9 +7,20 @@ import StyledLink from '../components/StyledLink';
 import { hrefBuild, nameBuild } from '../functions/link';
 import IconLinks from '../components/IconLinks';
 import ImageGrid from '../components/ImageGrid';
-// import InstaGrid from '../components/InstaGrid';
+import InstaGrid from '../components/InstaGrid';
 
 export default function Home({ content }) {
+  const [instaData, setInstaData] = React.useState('');
+  React.useEffect(() => {
+    fetch('https://www.instagram.com/gundlagardscafe/?__a=1')
+      .then((resp) => resp.json())
+      .then((json) => setInstaData(json));
+  }, [0]);
+  let instaGrid = [];
+  if (instaData) {
+    instaGrid = instaData.graphql.user.edge_owner_to_timeline_media.edges;
+  }
+
   const imageGrid = content.imageGrid;
   const link = content.homePageLink.link.split(',');
   const name = nameBuild(link);
@@ -33,7 +44,6 @@ export default function Home({ content }) {
         )}
         <IconLinks icons={iconLinks}></IconLinks>
         <ImageGrid images={imageGrid}></ImageGrid>
-        {/* <InstaGrid images={instaGrid}></InstaGrid> */}
         <section>
           <article className="article-first">
             <h2>{content.aboutUs.header}</h2>
@@ -47,6 +57,7 @@ export default function Home({ content }) {
             <img src={urlBuild(content.history.image.asset)}></img>
           </article>
         </section>
+        <InstaGrid images={instaGrid} className="insta-grid" />
       </Container>
     </Layout>
   );

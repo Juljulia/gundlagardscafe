@@ -7,6 +7,7 @@ const StyledGrid = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 64px 0 32px 0;
 
   .wrapper {
     width: calc(50% - 4px);
@@ -18,17 +19,19 @@ const StyledGrid = styled.div`
     object-fit: cover;
     filter: drop-shadow(4px 7px 6px rgba(0, 0, 0, 0.25));
   }
+
   .wrapper:nth-child(1),
   .wrapper:nth-child(2) {
     padding-bottom: 8px;
   }
 `;
 
-export default function InstaGrid({ images }) {
+export default function InstaGrid(props) {
+  let instaFour = props.images.slice(0, 4);
   return (
     <StyledGrid>
-      {images &&
-        images.map((image, i) => (
+      {instaFour &&
+        instaFour.map((image, i) => (
           <div className="wrapper" key={i}>
             <img key={i} src={image.node.display_url}></img>
           </div>
