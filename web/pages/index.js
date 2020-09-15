@@ -10,14 +10,14 @@ import InstaGrid from '../components/InstaGrid';
 
 // import IconLink from '../components/IconLink';
 
-export default function Home({ content, instaPictures }) {
+export default function Home({ content }) {
   const imageGrid = content.imageGrid;
   const link = content.homePageLink.link.split(',');
   const name = nameBuild(link);
   const href = hrefBuild(link);
   const heroImage = urlBuild(content.hero.heroImage.asset);
 
-  const instaGrid = instaPictures.slice(0, 4);
+  // const instaGrid = instaPictures.slice(0, 4);
   return (
     <Layout pageTitle={content.header}>
       <Container>
@@ -33,7 +33,7 @@ export default function Home({ content, instaPictures }) {
           </div>
         )}
         <ImageGrid images={imageGrid}></ImageGrid>
-        <InstaGrid images={instaGrid}></InstaGrid>
+        {/* <InstaGrid images={instaGrid}></InstaGrid> */}
       </Container>
     </Layout>
   );
@@ -88,16 +88,16 @@ const query = groq`*[_type == 'main'][0]{
     welcome,
   }`;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const content = await client.fetch(query);
 
-  const res = await fetch('https://www.instagram.com/gundlagardscafe/?__a=1');
-  const json = await res.json();
+  // const res = await fetch('https://www.instagram.com/gundlagardscafe/?__a=1');
+  // const json = await res.json();
 
   return {
     props: {
       content,
-      instaPictures: json.graphql.user.edge_owner_to_timeline_media.edges,
+      // instaPictures: json.graphql.user.edge_owner_to_timeline_media.edges,
     },
   };
 }
