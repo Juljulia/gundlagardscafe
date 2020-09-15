@@ -6,15 +6,19 @@ import urlBuild from '../functions/imageBuilder';
 import StyledLink from '../components/StyledLink';
 import { hrefBuild, nameBuild } from '../functions/link';
 import ImageGrid from '../components/ImageGrid';
+import InstaGrid from '../components/InstaGrid';
 
 // import IconLink from '../components/IconLink';
 
-export default function Home({ content }) {
+export default function Home({ content, instagram }) {
   const imageGrid = content.imageGrid;
   const link = content.homePageLink.link.split(',');
   const name = nameBuild(link);
   const href = hrefBuild(link);
   const heroImage = urlBuild(content.hero.heroImage.asset);
+  const instagramFeed =
+    instagram.graphql.user.edge_owner_to_timeline_media.edges;
+  const instaGrid = instagramFeed.slice(0, 4);
   return (
     <Layout pageTitle={content.header}>
       <Container>
@@ -30,16 +34,13 @@ export default function Home({ content }) {
           </div>
         )}
         <ImageGrid images={imageGrid}></ImageGrid>
+        <InstaGrid images={instaGrid}></InstaGrid>
       </Container>
     </Layout>
   );
 }
 
 //   const iconLinks = content.iconLink;
-
-//   const instagramFeed =
-//     instagram.graphql.user.edge_owner_to_timeline_media.edges;
-//   const instaFour = instagramFeed.slice(0, 4);
 
 //   return (
 
@@ -91,13 +92,13 @@ const query = groq`*[_type == 'main'][0]{
 export async function getStaticProps() {
   const content = await client.fetch(query);
 
-  // const res = await fetch('https://www.instagram.com/gundlagardscafe/?__a=1');
-  // const json = await res.json();
+  const res = await fetch('https://www.instagram.com/gundlagardscafe/?__a=1');
+  const json = await res.json();
 
   return {
     props: {
       content,
-      // instagram: json,
+      instagram: json,
     },
   };
 }
