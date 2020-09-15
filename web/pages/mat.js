@@ -4,9 +4,10 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import urlBuild from '../functions/imageBuilder';
 import ImageGrid from '../components/ImageGrid';
+import PortableText from '@sanity/block-content-to-react';
+import LinkToContact from '../components/LinkToContact';
 
 const Food = ({ content }) => {
-  console.log(content);
   // const heroImage = urlBuild(content.hero.heroImage.asset);
   // const heroIcon = urlBuild(content.hero.heroIcon.asset);
   const imageGrid = content.imageGrid;
@@ -14,19 +15,19 @@ const Food = ({ content }) => {
     <>
       <Layout pageTitle={content.header}>
         {/* {content && (
-        <Hero
-          heroImage={heroImage}
-          heroImageAlt={content.heroImageAlt}
-          heroIcon={heroIcon}
-          heroIconAlt={content.heroIconAlt}
-        ></Hero>
-      )} */}
+          <Hero
+            heroImage={heroImage}
+            heroImageAlt={content.heroImageAlt}
+            heroIcon={heroIcon}
+            heroIconAlt={content.heroIconAlt}
+          ></Hero>
+        )} */}
         <div>
           <h1>{content.header}</h1>
-          <img src={content.image} alt={content.alt}></img>
-          <p>{content.description}</p>
+          <PortableText blocks={content.description} />
         </div>
-        {/* <ImageGrid images={imageGrid}></ImageGrid> */}
+        <LinkToContact></LinkToContact>
+        <ImageGrid images={imageGrid}></ImageGrid>
       </Layout>
     </>
   );

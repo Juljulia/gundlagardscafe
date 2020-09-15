@@ -17,7 +17,8 @@ export default {
     {
       title: 'Beskrivning',
       name: 'description',
-      type: 'string',
+      type: 'array',
+      of: [{ type: 'block' }],
     },
     {
       name: 'imageGrid',
