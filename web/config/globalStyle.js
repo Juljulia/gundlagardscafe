@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
+import { normalize } from 'styled-normalize';
 
 const GlobalStyle = createGlobalStyle`
+ ${normalize}
+
   html,
   body {
     margin: 0;
@@ -10,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
+    margin: 0;
     font-family: Amatic SC;
     font-weight: normal;
     font-size: 40px;
@@ -17,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
+    margin: 0;
     font-family: Amatic SC;
     font-weight: bold;
     font-size: 24px;
@@ -24,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p {
+    margin: 0;
     font-weight: 300;
     font-size: 20px;
     line-height: 32px;
