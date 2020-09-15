@@ -10,15 +10,14 @@ import InstaGrid from '../components/InstaGrid';
 
 // import IconLink from '../components/IconLink';
 
-export default function Home({ content, instagram }) {
+export default function Home({ content, instaPictures }) {
   const imageGrid = content.imageGrid;
   const link = content.homePageLink.link.split(',');
   const name = nameBuild(link);
   const href = hrefBuild(link);
   const heroImage = urlBuild(content.hero.heroImage.asset);
-  const instagramFeed =
-    instagram.graphql.user.edge_owner_to_timeline_media.edges;
-  const instaGrid = instagramFeed.slice(0, 4);
+
+  const instaGrid = instaPictures.slice(0, 4);
   return (
     <Layout pageTitle={content.header}>
       <Container>
@@ -89,7 +88,7 @@ const query = groq`*[_type == 'main'][0]{
     welcome,
   }`;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const content = await client.fetch(query);
 
   const res = await fetch('https://www.instagram.com/gundlagardscafe/?__a=1');
@@ -98,7 +97,7 @@ export async function getStaticProps() {
   return {
     props: {
       content,
-      instagram: json,
+      instaPictures: json.graphql.user.edge_owner_to_timeline_media.edges,
     },
   };
 }
