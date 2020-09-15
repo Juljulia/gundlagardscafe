@@ -108,9 +108,9 @@ const PrivateEvent = ({ content }) => {
   // const heroIcon = urlBuild(content.hero.heroIcon.asset);
   const imageGrid = content.imageGrid;
   return (
-    <Layout pageTitle={content.header}>
-      <StyledPrivateEvent>
-        {/* {content && (
+    // <Layout pageTitle={content.header}>
+    <StyledPrivateEvent>
+      {/* {content && (
         <Hero
           heroImage={heroImage}
           heroImageAlt={content.heroImageAlt}
@@ -118,30 +118,30 @@ const PrivateEvent = ({ content }) => {
           heroIconAlt={content.heroIconAlt}
         ></Hero>
       )} */}
-        <div className="privateEventWrapper">
-          <div className="privateEventInfo">
-            <h3>Fest eller kalas</h3>
-            <PortableText blocks={content.partyDescription} />
-          </div>
-          <div className="privateEventInfo">
-            <h3>Catering</h3>
-            <PortableText blocks={content.cateringDescription} />
-          </div>
+      <div className="privateEventWrapper">
+        <div className="privateEventInfo">
+          <h3>Fest eller kalas</h3>
+          <PortableText blocks={content.partyDescription} />
         </div>
-        <div className="linkToContact">
-          <p>Skicka gärna en förfrågan så kan vi se hur vi kan hjälpa er.</p>
-          <Link href="#event-form">
-            <button>Förfrågan</button>
-          </Link>
+        <div className="privateEventInfo">
+          <h3>Catering</h3>
+          <PortableText blocks={content.cateringDescription} />
         </div>
-        <ImageGrid images={imageGrid}></ImageGrid>
-        <ContactForm
-          topic="Fira något stort?"
-          message="Berätta mer..."
-          id="event-form"
-        ></ContactForm>
-      </StyledPrivateEvent>
-    </Layout>
+      </div>
+      <div className="linkToContact">
+        <p>Skicka gärna en förfrågan så kan vi se hur vi kan hjälpa er.</p>
+        <Link href="#event-form">
+          <button>Förfrågan</button>
+        </Link>
+      </div>
+      <ImageGrid images={imageGrid}></ImageGrid>
+      <ContactForm
+        topic="Fira något stort?"
+        message="Berätta mer..."
+        id="event-form"
+      ></ContactForm>
+    </StyledPrivateEvent>
+    // {/* </Layout> */}
   );
 };
 

@@ -78,17 +78,17 @@ const Event = ({ content }) => {
   const eventList = content.eventList;
   return (
     <StyledEvent>
-      <Layout pageTitle={content.header}>
-        <h1>{content.header}</h1>
-        <p>{content.description}</p>
-        <div class="category-list">
-          <li>Musik</li>
-          <li>Marknad</li>
-          <li>Teater</li>
-          <li>Aktivteter</li>
-          <li>Barn</li>
-        </div>
-        {/* {content && (
+      {/* <Layout pageTitle={content.header}> */}
+      <h1>{content.header}</h1>
+      <p>{content.description}</p>
+      <div class="category-list">
+        <li>Musik</li>
+        <li>Marknad</li>
+        <li>Teater</li>
+        <li>Aktivteter</li>
+        <li>Barn</li>
+      </div>
+      {/* {content && (
         <Hero
           heroImage={heroImage}
           heroImageAlt={content.heroImageAlt}
@@ -96,8 +96,8 @@ const Event = ({ content }) => {
           heroIconAlt={content.heroIconAlt}
         ></Hero>
       )} */}
-        <EventList event={eventList} grid={imageGrid}></EventList>
-      </Layout>
+      <EventList event={eventList} grid={imageGrid}></EventList>
+      {/* </Layout> */}
     </StyledEvent>
   );
 };

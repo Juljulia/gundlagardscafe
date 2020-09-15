@@ -11,7 +11,8 @@ const Food = ({ content }) => {
   // const heroIcon = urlBuild(content.hero.heroIcon.asset);
   const imageGrid = content.imageGrid;
   return (
-    <Layout pageTitle={content.header}>
+    <>
+      {/* <Layout pageTitle={content.header}> */}
       {/* {content && (
         <Hero
           heroImage={heroImage}
@@ -26,7 +27,8 @@ const Food = ({ content }) => {
         <p>{content.description}</p>
       </div>
       {/* <ImageGrid images={imageGrid}></ImageGrid> */}
-    </Layout>
+      {/* </Layout> */}
+    </>
   );
 };
 

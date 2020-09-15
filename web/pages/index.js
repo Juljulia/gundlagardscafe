@@ -26,54 +26,54 @@ const Index = ({ content, instagram }) => {
   const instaFour = instagramFeed.slice(0, 4);
 
   return (
-    <Layout pageTitle={content.header}>
-      <Container>
-        {heroImage && (
-          <div className="hero">
-            <Hero
-              heroImage={heroImage}
-              heroImageAlt={content.heroImageAlt}
-              className="hero__image"
-            />
-            <div className="hero__content">
-              <h1 className="hero__title">{content.welcome}</h1>
-              <StyledLink href={href} className="hero__link">
-                {name}
-              </StyledLink>
-            </div>
+    // <Layout pageTitle={content.header}>
+    <Container>
+      {heroImage && (
+        <div className="hero">
+          <Hero
+            heroImage={heroImage}
+            heroImageAlt={content.heroImageAlt}
+            className="hero__image"
+          />
+          <div className="hero__content">
+            <h1 className="hero__title">{content.welcome}</h1>
+            <StyledLink href={href} className="hero__link">
+              {name}
+            </StyledLink>
           </div>
-        )}
-        <section>
-          <h1>{content.header}</h1>
-          <div>
-            {iconLinks &&
-              iconLinks.map((icon, i) => (
-                <IconLink
-                  key={i}
-                  slug={icon.links.link}
-                  icon={urlBuild(icon.image.asset)}
-                />
-              ))}
-          </div>
-          <ImageGrid images={imageGrid}></ImageGrid>
-          <div>
-            {instaFour &&
-              instaFour.map((image, i) => (
-                <img key={i} src={image.node.display_url}></img>
-              ))}
-          </div>{' '}
-          <div>
-            <h4>{content.aboutUs.header}</h4>
-            <p>{content.aboutUs.text}</p>
-          </div>
-          <div>
-            <h4>{content.history.header}</h4>
-            <p>{content.history.text}</p>
-            <img src={urlBuild(content.history.image.asset)}></img>
-          </div>
-        </section>
-      </Container>
-    </Layout>
+        </div>
+      )}
+      <section>
+        <h1>{content.header}</h1>
+        <div>
+          {iconLinks &&
+            iconLinks.map((icon, i) => (
+              <IconLink
+                key={i}
+                slug={icon.links.link}
+                icon={urlBuild(icon.image.asset)}
+              />
+            ))}
+        </div>
+        <ImageGrid images={imageGrid}></ImageGrid>
+        <div>
+          {instaFour &&
+            instaFour.map((image, i) => (
+              <img key={i} src={image.node.display_url}></img>
+            ))}
+        </div>{' '}
+        <div>
+          <h4>{content.aboutUs.header}</h4>
+          <p>{content.aboutUs.text}</p>
+        </div>
+        <div>
+          <h4>{content.history.header}</h4>
+          <p>{content.history.text}</p>
+          <img src={urlBuild(content.history.image.asset)}></img>
+        </div>
+      </section>
+    </Container>
+    // </Layout>
   );
 };
 
