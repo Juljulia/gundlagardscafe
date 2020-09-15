@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import colors from '../styles/colors';
+import colors from '../config/colors';
 
 const StyledLink = ({ as, children, className, href }) => (
   <Link href={href} as={as} passHref>
