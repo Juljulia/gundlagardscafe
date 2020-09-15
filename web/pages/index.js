@@ -5,10 +5,9 @@ import Layout from '../components/Layout';
 import urlBuild from '../functions/imageBuilder';
 import StyledLink from '../components/StyledLink';
 import { hrefBuild, nameBuild } from '../functions/link';
+import IconLinks from '../components/IconLinks';
 import ImageGrid from '../components/ImageGrid';
-import InstaGrid from '../components/InstaGrid';
-
-// import IconLink from '../components/IconLink';
+// import InstaGrid from '../components/InstaGrid';
 
 export default function Home({ content }) {
   const imageGrid = content.imageGrid;
@@ -16,8 +15,8 @@ export default function Home({ content }) {
   const name = nameBuild(link);
   const href = hrefBuild(link);
   const heroImage = urlBuild(content.hero.heroImage.asset);
+  const iconLinks = content.iconLink;
 
-  // const instaGrid = instaPictures.slice(0, 4);
   return (
     <Layout pageTitle={content.header}>
       <Container>
@@ -32,50 +31,26 @@ export default function Home({ content }) {
             </div>
           </div>
         )}
+        <IconLinks icons={iconLinks}></IconLinks>
         <ImageGrid images={imageGrid}></ImageGrid>
         {/* <InstaGrid images={instaGrid}></InstaGrid> */}
+        <section>
+          <article className="article-first">
+            <h2>{content.aboutUs.header}</h2>
+            <p>{content.aboutUs.text}</p>
+          </article>
+          <article className="article-second">
+            <div className="article-second__content">
+              <h2>{content.history.header}</h2>
+              <p>{content.history.text}</p>
+            </div>
+            <img src={urlBuild(content.history.image.asset)}></img>
+          </article>
+        </section>
       </Container>
     </Layout>
   );
 }
-
-//   const iconLinks = content.iconLink;
-
-//   return (
-
-//       <Container>
-//         <section>
-//           <h1>{content.header}</h1>
-//           <div>
-//             {iconLinks &&
-//               iconLinks.map((icon, i) => (
-//                 <IconLink
-//                   key={i}
-//                   slug={icon.links.link}
-//                   icon={urlBuild(icon.image.asset)}
-//                 />
-//               ))}
-//           </div>
-//           <div>
-//             {instaFour &&
-//               instaFour.map((image, i) => (
-//                 <img key={i} src={image.node.display_url}></img>
-//               ))}
-//           </div>{' '}
-//           <div>
-//             <h4>{content.aboutUs.header}</h4>
-//             <p>{content.aboutUs.text}</p>
-//           </div>
-//           <div>
-//             <h4>{content.history.header}</h4>
-//             <p>{content.history.text}</p>
-//             <img src={urlBuild(content.history.image.asset)}></img>
-//           </div>
-//         </section>
-//       </Container>
-//     // </Layout>
-//   );
-// };
 
 const query = groq`*[_type == 'main'][0]{
     aboutUs,
@@ -88,7 +63,7 @@ const query = groq`*[_type == 'main'][0]{
     welcome,
   }`;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const content = await client.fetch(query);
 
   // const res = await fetch('https://www.instagram.com/gundlagardscafe/?__a=1');
@@ -102,7 +77,7 @@ export async function getStaticProps() {
   };
 }
 
-const Container = styled.div`
+const Container = styled.section`
   .hero {
     display: flex;
     flex-direction: column;
@@ -128,10 +103,35 @@ const Container = styled.div`
     height: 100%;
   }
   .hero__title {
-    font-size: 25px;
-    line-height: 32px;
+    line-height: 55px;
     color: ${({ theme }) => theme.colors.white};
     text-align: center;
     padding: 0 48px 32px 48px;
+  }
+
+  .article-first {
+    padding: 48px 16px 64px 16px;
+  }
+
+  .article-first h2 {
+    padding-bottom: 32px;
+  }
+
+  .article-second {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: ${({ theme }) => theme.colors.background};
+  }
+
+  .article-second img {
+    object-fit: cover;
+  }
+
+  .article-second__content {
+    padding: 64px 16px;
+  }
+
+  .article-second__content h2 {
+    padding-bottom: 32px;
   }
 `;
