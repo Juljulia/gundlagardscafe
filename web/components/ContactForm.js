@@ -100,7 +100,7 @@ const StyledForm = styled.div`
 }
 
   @media only screen and (min-width: 768px) {
-    margin-top: 0px;
+    /* margin-top: 0px; */
 
     input {
       width: 50%;
