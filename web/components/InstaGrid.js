@@ -25,7 +25,6 @@ const StyledGrid = styled.div`
 `;
 
 export default function InstaGrid({ images }) {
-  console.log(images);
   return (
     <StyledGrid>
       {images &&
