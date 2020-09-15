@@ -12,8 +12,8 @@ const Food = ({ content }) => {
   const imageGrid = content.imageGrid;
   return (
     <>
-      {/* <Layout pageTitle={content.header}> */}
-      {/* {content && (
+      <Layout pageTitle={content.header}>
+        {/* {content && (
         <Hero
           heroImage={heroImage}
           heroImageAlt={content.heroImageAlt}
@@ -21,13 +21,13 @@ const Food = ({ content }) => {
           heroIconAlt={content.heroIconAlt}
         ></Hero>
       )} */}
-      <div>
-        <h1>{content.header}</h1>
-        <img src={content.image} alt={content.alt}></img>
-        <p>{content.description}</p>
-      </div>
-      {/* <ImageGrid images={imageGrid}></ImageGrid> */}
-      {/* </Layout> */}
+        <div>
+          <h1>{content.header}</h1>
+          <img src={content.image} alt={content.alt}></img>
+          <p>{content.description}</p>
+        </div>
+        {/* <ImageGrid images={imageGrid}></ImageGrid> */}
+      </Layout>
     </>
   );
 };

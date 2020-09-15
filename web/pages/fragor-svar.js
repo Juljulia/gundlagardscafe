@@ -10,8 +10,7 @@ const Qa = ({ content }) => {
   const heroImage = urlBuild(content.hero.heroImage.asset);
   const heroIcon = urlBuild(content.hero.heroImage.heroIcon.asset);
   return (
-    <>
-      {/* // <Layout pageTitle={content.header}> */}
+    <Layout pageTitle={content.header}>
       {content && (
         <Hero
           heroImage={heroImage}
@@ -33,8 +32,7 @@ const Qa = ({ content }) => {
         </div>
         <ContactForm topic="Fråga något" message="Berätta mer..." />
       </div>
-      {/* </Layout> */}
-    </>
+    </Layout>
   );
 };
 
