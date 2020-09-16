@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const StyledGrid = styled.div`
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -25,6 +25,19 @@ const StyledGrid = styled.div`
   .wrapper:nth-child(2) {
     padding-bottom: 8px;
   }
+
+  @media only screen and (min-width: 768px) {
+    justify-content: center;
+    flex-wrap: nowrap;
+
+    .wrapper {
+      width: 185px;
+    }
+    .wrapper:nth-child(1),
+    .wrapper:nth-child(2) {
+      padding-bottom: 0;
+    }
+  }
 `;
 
 export default function InstaGrid(props) {
@@ -33,9 +46,14 @@ export default function InstaGrid(props) {
     <StyledGrid>
       {instaFour &&
         instaFour.map((image, i) => (
-          <div className="wrapper" key={i}>
+          <a
+            className="wrapper"
+            href="https://www.instagram.com/gundlagardscafe/"
+            target="_blank"
+            key={i}
+          >
             <img key={i} src={image.node.display_url}></img>
-          </div>
+          </a>
         ))}
     </StyledGrid>
   );
