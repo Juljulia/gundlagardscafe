@@ -57,7 +57,9 @@ export default function Home({ content }) {
             <img src={urlBuild(content.history.image.asset)}></img>
           </article>
         </section>
-        <InstaGrid images={instaGrid} className="insta-grid" />
+        <a href="https://www.instagram.com/gundlagardscafe/" target="_blank">
+          <InstaGrid images={instaGrid} className="insta-grid" />
+        </a>
       </Container>
     </Layout>
   );
@@ -93,11 +95,11 @@ const Container = styled.section`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 90vh; /* keep it 90vh*/
+    height: calc(100vh - 64px);
   }
   .hero img {
     width: 100%;
-    height: 90vh;
+    height: calc(100vh - 64px);
     object-fit: cover;
     position: absolute;
     z-index: 1;

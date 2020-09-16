@@ -12,8 +12,8 @@ const Container = styled.div`
   z-index: 10;
 
   .burger__wrapper {
-    margin-right: 20px;
-    margin-top: 15px;
+    margin-right: 24px;
+    margin-top: 8px;
   }
   .hamburger-react {
     z-index: 500;
@@ -27,6 +27,7 @@ const Burger = (props) => {
     <Container>
       <div className="burger__wrapper">
         <Hamburger
+          rounded
           size={35}
           onToggle={(toggled) => {
             setOpen(toggled);
