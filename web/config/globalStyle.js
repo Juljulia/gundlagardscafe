@@ -44,6 +44,14 @@ line-height: 114.1%;
     line-height: 32px;
     letter-spacing: 0.025em;
   }
+
+  input:focus,textarea:focus,button:focus {
+    outline:none !important;
+  }
+
+  button, a, select {
+    cursor: pointer;
+  }
 `;
 
 export default GlobalStyle;

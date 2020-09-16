@@ -58,6 +58,7 @@ const StyledGrid = styled.div`
       grid-template-rows: 15% 15% 15% 15% 15% 15%;
       margin-left: 72px;
       margin-right: 88px;
+      height: 752px;
     }
 
     .object:nth-child(1) {

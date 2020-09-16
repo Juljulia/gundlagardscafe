@@ -9,50 +9,65 @@ import EventList from '../components/EventList';
 import styled from 'styled-components';
 
 const StyledEvent = styled.div`
-  .categoryList {
+  .text-container {
+    margin: 0 16px;
+
+    h1 {
+      margin-bottom: 32px;
+    }
+  }
+
+  .calender-header {
+    margin-top: 64px;
+    margin-bottom: 32px;
+    margin-left: 16px;
+  }
+
+  .category-list {
     display: flex;
     flex-wrap: wrap;
     margin: 0 16px;
-  }
+    margin-bottom: 32px;
 
-  li {
-    list-style: none;
-    font-size: 19px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    margin: 4px 0;
-    width: 50%;
-  }
+    li {
+      font-size: 20px;
+      line-height: 26px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      margin: 4px 0;
+      width: 50%;
+    }
 
-  li::before {
-    content: '';
-    width: 27px;
-    height: 27px;
-    border-radius: 100%;
-    display: block;
-    background-color: hotpink;
-    margin-right: 20px;
-  }
+    li::before {
+      content: '';
+      width: 27px;
+      height: 27px;
+      border-radius: 100%;
+      display: block;
+      background-color: hotpink;
+      margin-right: 20px;
+    }
 
-  li:nth-child(1)::before {
-    background-color: #bd4101;
-  }
-  li:nth-child(2)::before {
-    background-color: #959967;
-  }
-  li:nth-child(3)::before {
-    background-color: #cd8501;
-  }
-  li:nth-child(4)::before {
-    background-color: #ff5d84;
-  }
-  li:nth-child(5)::before {
-    background-color: #6c5301;
+    li:nth-child(1)::before {
+      background-color: #fffa97;
+    }
+    li:nth-child(2)::before {
+      background-color: #959967;
+    }
+    li:nth-child(3)::before {
+      background-color: #fecfb1;
+    }
+    li:nth-child(4)::before {
+      background-color: #fe9eb9;
+    }
+    li:nth-child(5)::before {
+      background-color: #e96d6d;
+    }
   }
 
   @media only screen and (min-width: 768px) {
-    .textContainer {
+    .text-container {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -60,19 +75,31 @@ const StyledEvent = styled.div`
       margin: 0 auto;
     }
 
-    .categoryList {
-      flex-wrap: nowrap;
-      width: 609px;
-      float: right;
-      margin-right: 56px;
-    }
+    .calender-header-wrapper {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-left: 72px;
 
-    li {
-      margin-right: 21px;
-    }
+      h2 {
+        margin-left: 0;
+        margin-bottom: 0;
+      }
 
-    li::before {
-      margin-right: 14px;
+      .category-list {
+        flex-wrap: nowrap;
+        margin-right: 56px;
+        margin-bottom: 0;
+
+        li {
+          margin-right: 21px;
+        }
+
+        li::before {
+          margin-right: 10px;
+          margin-left: 10px;
+        }
+      }
     }
   }
 `;
@@ -93,16 +120,19 @@ const Event = ({ content }) => {
             heroIconAlt={content.heroIconAlt}
           ></Hero>
         )}
-        <div className="textContainer">
+        <div className="text-container">
           <h1>{content.header}</h1>
           <p>{content.description}</p>
         </div>
-        <div className="categoryList">
-          <li>Musik</li>
-          <li>Marknad</li>
-          <li>Teater</li>
-          <li>Aktivteter</li>
-          <li>Barn</li>
+        <div className="calender-header-wrapper">
+          <h2 className="calender-header">{content.calenderHeader}</h2>
+          <div className="category-list">
+            <li>Musik</li>
+            <li>Marknad</li>
+            <li>Teater</li>
+            <li>Aktivteter</li>
+            <li>Barn</li>
+          </div>
         </div>
 
         <EventList event={eventList} grid={imageGrid}></EventList>
@@ -115,6 +145,7 @@ const query = groq`*[_type == 'event'][0]{
     header,
     hero,
     description,
+    calenderHeader,
     eventList,
     imageGrid
   }`;

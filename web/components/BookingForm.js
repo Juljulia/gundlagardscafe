@@ -2,17 +2,17 @@ import styled from 'styled-components';
 import { useState } from 'react';
 
 const StyledBookingForm = styled.div`
-  padding-top: 48px;
+  padding-top: 21px;
   padding-left: 16px;
   padding-right: 16px;
-  padding-bottom: 100px;
-  background: rgba(149, 153, 103, 0.7);
-  margin-top: 32px;
+  padding-bottom: 121px;
+  background: #79655c;
+  margin-top: 54px;
+  margin-bottom: 64px;
 
   label {
-    font-size: 28px;
-    line-height: 50px;
-    font-weight: normal;
+    font-size: 40px;
+    line-height: 200%;
     color: white;
     font-family: Amatic SC;
   }
@@ -27,15 +27,6 @@ const StyledBookingForm = styled.div`
     border: none;
     margin-bottom: 16px;
     width: calc(100% - 32px);
-    font-family: IBM Plex Sans;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 161.6%;
-    /* or 32px */
-
-    letter-spacing: 0.025em;
-
     color: #000000;
   }
 
@@ -45,17 +36,17 @@ const StyledBookingForm = styled.div`
   }
 
   button {
-    width: 163px;
-    height: 43px;
-    background: #cd8501;
-    border-radius: 11px;
-    filter: drop-shadow(4px 4px 6px rgba(209, 158, 63, 0.25));
+    width: 130px;
+    height: 44px;
+    background: #f6ff97;
+    box-shadow: 0px 1px 4px rgba(80, 81, 71, 0.83);
     border: none;
+    border-radius: 11px;
     font-family: Amatic SC;
     font-style: normal;
     font-weight: normal;
     font-size: 25px;
-    color: #ffffff;
+    color: #2b2928;
     float: right;
     margin-bottom: 119px;
     margin-top: 16px;
@@ -77,7 +68,7 @@ const StyledBookingForm = styled.div`
     display: flex;
     align-items: center;
   }
-  .formMessage {
+  .form-message {
     position: fixed;
     top: -40px;
     z-index: 100;
@@ -114,12 +105,31 @@ const StyledBookingForm = styled.div`
 
   @media only screen and (min-width: 768px) {
     width: 100vw;
+    padding-bottom: 0;
+    height: auto;
+    margin-bottom: 34px;
+    margin-top: 10px;
 
-    form {
-      padding: 72px;
+    .achor {
+      position: absolute;
+      margin: -30px;
+      visibility: none;
     }
 
-    .inputWrapper {
+    form {
+      padding: 24px 72px;
+
+      button {
+        margin-bottom: 24px;
+        margin-top: 32px;
+      }
+    }
+
+    label {
+      line-height: 250%;
+    }
+
+    .input-wrapper {
       display: flex;
       justify-content: space-between;
       width: 100%;
@@ -154,15 +164,15 @@ export default function BookingForm({ message }) {
 
   return (
     <StyledBookingForm>
+      <div className="achor" id="booking-form"></div>
       <form
         name="contact"
         action="https://formspree.io/xdopnegr"
         method="POST"
         onSubmit={sendEmail}
-        id="bookingForm"
       >
         <input type="hidden" name="form-name" value="contact" />
-        <div className="inputWrapper">
+        <div className="input-wrapper">
           <div>
             <label htmlFor="yourname">Boka biljett till</label> <br />
             <input type="text" name="topic" id="topic" placeholder={message} />
@@ -190,12 +200,12 @@ export default function BookingForm({ message }) {
         <textarea name="message" id="yourmessage" placeholder=""></textarea>
         <button type="submit">Boka</button>
         {status === 'SUCCESS' && (
-          <div className="formMessage success">
+          <div className="form-message success">
             <p>Skickat!</p>
           </div>
         )}
         {status === 'ERROR' && (
-          <div className="formMessage error">
+          <div className="form-message error">
             <p>Något gick fel, försökt igen!</p>
           </div>
         )}
