@@ -104,20 +104,20 @@ const StyledPrivateEvent = styled.div`
 `;
 
 const PrivateEvent = ({ content }) => {
-  // const heroImage = urlBuild(content.hero.heroImage.asset);
-  // const heroIcon = urlBuild(content.hero.heroIcon.asset);
+  const heroImage = content.hero;
+  const heroIcon = content.hero.heroImage.heroIcon;
   const imageGrid = content.imageGrid;
   return (
     <Layout pageTitle={content.header}>
       <StyledPrivateEvent>
-        {/* {content && (
-        <Hero
-          heroImage={heroImage}
-          heroImageAlt={content.heroImageAlt}
-          heroIcon={heroIcon}
-          heroIconAlt={content.heroIconAlt}
-        ></Hero>
-      )} */}
+        {content && (
+          <Hero
+            heroImage={heroImage}
+            heroImageAlt={content.heroImageAlt}
+            heroIcon={heroIcon}
+            heroIconAlt={content.heroIconAlt}
+          ></Hero>
+        )}
         <div className="privateEventWrapper">
           <div className="privateEventInfo">
             <h3>Fest eller kalas</h3>

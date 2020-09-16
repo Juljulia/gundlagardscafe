@@ -109,20 +109,20 @@ const StyledFindUs = styled.div`
 `;
 
 const FindUs = ({ content }) => {
-  const heroImage = urlBuild(content.hero.heroImage.asset);
-  const heroIcon = urlBuild(content.hero.heroImage.heroIcon.asset);
+  const heroImage = content.hero;
+  const heroIcon = content.hero.heroImage.heroIcon;
   const availability = content.availability;
   return (
     <Layout pageTitle={content.header}>
       <StyledFindUs>
-        {/* {content && (
+        {content && (
           <Hero
             heroImage={heroImage}
             heroImageAlt={content.heroImageAlt}
             heroIcon={heroIcon}
             heroIconAlt={content.heroIconAlt}
           ></Hero>
-        )} */}
+        )}
         <div className="openHours">
           <h3>Öppettider</h3>
           <p>{content.openHours}</p>

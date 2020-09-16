@@ -97,13 +97,21 @@ const StyledEvent = styled.div`
 `;
 
 const Event = ({ content }) => {
-  // const heroImage = urlBuild(content.hero.heroImage.asset);
-  // const heroIcon = urlBuild(content.hero.heroIcon.asset);
+  const heroImage = content.hero;
+  const heroIcon = content.hero.heroImage.heroIcon;
   const imageGrid = content.imageGrid;
   const eventList = content.eventList;
   return (
     <StyledEvent>
       <Layout pageTitle={content.header}>
+        {content && (
+          <Hero
+            heroImage={heroImage}
+            heroImageAlt={content.heroImageAlt}
+            heroIcon={heroIcon}
+            heroIconAlt={content.heroIconAlt}
+          ></Hero>
+        )}
         <div className="textContainer">
           <h1>{content.header}</h1>
           <p>{content.description}</p>
@@ -115,14 +123,7 @@ const Event = ({ content }) => {
           <li>Aktivteter</li>
           <li>Barn</li>
         </div>
-        {/* {content && (
-        <Hero
-          heroImage={heroImage}
-          heroImageAlt={content.heroImageAlt}
-          heroIcon={heroIcon}
-          heroIconAlt={content.heroIconAlt}
-        ></Hero>
-      )} */}
+
         <EventList event={eventList} grid={imageGrid}></EventList>
       </Layout>
     </StyledEvent>
