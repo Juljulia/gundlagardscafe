@@ -7,6 +7,7 @@ const theme = {
     white: '#FFF',
     black: '#2B2928',
     background: '#FECFB1',
+    backgroundLight: '#FEF4EF',
   },
 };
 
