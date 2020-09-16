@@ -41,12 +41,13 @@ const StyledEventList = styled.div`
     }
   }
 
-  h3 {
+  h2 {
     padding: 0;
     margin: 0;
     font-size: 33px;
     line-height: 36px;
     font-weight: normal;
+    font-family: IBM Plex Sans;
   }
 
   p {
@@ -127,7 +128,7 @@ const EventList = ({ event, grid }) => {
             <div key={object._key} className="eventCard">
               <img src={urlBuild(object.image.asset)}></img>
               <div className="text">
-                <h3>{object.header}</h3>
+                <h2>{object.header}</h2>
                 {object.price && <p className="price">{object.price} kr</p>}
                 <PortableText blocks={object.description} />
               </div>

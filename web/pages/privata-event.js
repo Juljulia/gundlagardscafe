@@ -51,13 +51,8 @@ const StyledPrivateEvent = styled.div`
     .privateEventInfo {
       margin: 32px 0;
 
-      h3 {
-        font-family: Amatic SC;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 40px;
+      h2 {
         line-height: 50px;
-        color: #2b2928;
         margin-bottom: 32px;
       }
 
@@ -91,9 +86,6 @@ const StyledPrivateEvent = styled.div`
         width: 50%;
         margin: 16px;
 
-        h3 {
-        }
-
         p {
           font-size: 20px;
           width: 100%;
@@ -118,13 +110,14 @@ const PrivateEvent = ({ content }) => {
           heroIconAlt={content.heroIconAlt}
         ></Hero>
       )} */}
+        <h1>{content.header}</h1>
         <div className="privateEventWrapper">
           <div className="privateEventInfo">
-            <h3>Fest eller kalas</h3>
+            <h2>Fest eller kalas</h2>
             <PortableText blocks={content.partyDescription} />
           </div>
           <div className="privateEventInfo">
-            <h3>Catering</h3>
+            <h2>Catering</h2>
             <PortableText blocks={content.cateringDescription} />
           </div>
         </div>
@@ -141,6 +134,7 @@ const PrivateEvent = ({ content }) => {
 };
 
 const query = groq`*[_type == 'private-event'][0]{
+  header,
   hero,
   imageGrid,
   partyDescription,

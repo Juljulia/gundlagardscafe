@@ -9,25 +9,6 @@ import EventList from '../components/EventList';
 import styled from 'styled-components';
 
 const StyledEvent = styled.div`
-  h1 {
-    font-family: Amatic SC;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 40px;
-    line-height: 50px;
-    margin: 0 16px;
-  }
-
-  p {
-    font-family: IBM Plex Sans;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 161.6%;
-    letter-spacing: 0.025em;
-    margin: 16px;
-  }
-
   .categoryList {
     display: flex;
     flex-wrap: wrap;

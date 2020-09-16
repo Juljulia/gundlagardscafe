@@ -16,8 +16,8 @@ const GlobalStyle = createGlobalStyle`
   h1 {
     margin: 0;
     font-family: Amatic SC;
-    font-size: 40px;
-    line-height: 50px;
+    font-size: 50px;
+line-height: 114.1%;
     font-weight: normal;
   }
 
@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: Amatic SC;
     font-size: 40px;
-    line-height: 30px;
+    line-height: 44px;
     font-weight: normal;
   }
 

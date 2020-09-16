@@ -7,45 +7,37 @@ import PortableText from '@sanity/block-content-to-react';
 import styled from 'styled-components';
 
 const StyledFindUs = styled.div`
-  .openHours,
-  .availabilityItems {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  .open-hours {
+    margin: 0 16px;
 
-  .availabilityItems {
-    background-color: #ffebe1;
+    h1 {
+      margin-top: 64px;
+      margin-bottom: 18px;
+    }
 
     p {
-      margin: 16px 35px 62px 35px;
-      font-size: 20px;
-      line-height: 161.1%;
-      letter-spacing: 0.025em;
+      margin-bottom: 29px;
     }
   }
 
-  h3 {
-    text-align: center;
-    font-family: Amatic SC;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 40px;
-    line-height: 50px;
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 16px;
+  .availability-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px;
+    padding-bottom: 0;
+    margin-bottom: 27px;
+
+    h2 {
+      line-height: 50px;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 16px;
+    }
   }
 
-  p {
-    margin: 15px 16px 24px 16px;
-    font-size: 20px;
-    line-height: 161.1%;
-    letter-spacing: 0.025em;
-  }
-
-  .googleMaps {
-    margin: 30px 16px;
+  .google-maps {
+    margin: 85px 16px;
 
     iframe {
       border-radius: 9px;
@@ -55,50 +47,41 @@ const StyledFindUs = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
-    .openHours {
-      p {
-        text-align: left;
+    .open-hours-container {
+      display: flex;
+      justify-content: center;
+
+      .open-hours {
         width: 636px;
-        height: 186px;
-      }
-      h3 {
-        margin-bottom: 0;
+        margin-bottom: 131px;
       }
     }
 
-    .availabilityWrapper {
+    .availability-wrapper {
       display: flex;
       align-items: flex-start;
       justify-content: space-around;
       flex-wrap: wrap;
       height: auto;
       background-color: #ffebe1;
-      padding: 0 72px;
+      padding: 32px 72px;
     }
 
-    .availabilityItems {
+    .availability-items {
       height: auto;
       justify-content: flex-start;
       overflow: auto;
-      max-width: 310px;
-      h3 {
-        margin-bottom: 0;
-      }
+      width: 20%;
 
       p {
-        margin: 16px 12px 62px 12px;
+        margin: 14px 24px 15px 24px;
+        color: red;
+        border: solid 1px green;
+        padding: 50px;
       }
     }
 
-    h3 {
-      margin-bottom: 30px;
-    }
-
-    img {
-      margin-top: 36px;
-    }
-
-    .googleMaps {
+    .google-maps {
       margin: 54px 72px;
       iframe {
         max-width: 636px;
@@ -123,24 +106,25 @@ const FindUs = ({ content }) => {
             heroIconAlt={content.heroIconAlt}
           ></Hero>
         )} */}
-        <div className="openHours">
-          <h3>Öppettider</h3>
-          <p>{content.openHours}</p>
+        <div className="open-hours-container">
+          <div className="open-hours">
+            <h1>{content.header}</h1>
+            <p>{content.openHours}</p>
+          </div>
         </div>
-        <h3>Hitta hit</h3>
-        <div className="availabilityWrapper">
+        <div className="availability-wrapper">
           {availability.map((object) => (
-            <div key={object._key} class="availabilityItems">
+            <div key={object._key} class="availability-items">
               <img
                 src={urlBuild(object.image.asset)}
                 alt={object.image.alt}
               ></img>
-              <h3>{object.header}</h3>
+              <h2>{object.header}</h2>
               <PortableText blocks={object.description} />
             </div>
           ))}
         </div>
-        <div className="googleMaps">
+        <div className="google-maps">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2132.7756947796547!2d12.02605491600651!3d57.68629018111437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464ff3a5d0157c63%3A0xdd291fa6017dc04a!2zR3VuZGxhIEfDpXJkc2NhZsOp!5e0!3m2!1sen!2sse!4v1599492272828!5m2!1sen!2sse"
             frameborder="0"
