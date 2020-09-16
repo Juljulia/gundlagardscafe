@@ -123,7 +123,7 @@ const FindUs = ({ content }) => {
             heroIconAlt={content.heroIconAlt}
           ></Hero>
         )}
-        <div className="openHours">
+        <div className="openHours" id="oppettider">
           <h3>Öppettider</h3>
           <p>{content.openHours}</p>
         </div>
