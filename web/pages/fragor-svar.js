@@ -1,37 +1,84 @@
 import groq from 'groq';
+import styled from 'styled-components';
 import client from '../functions/client';
 import ContactForm from '../components/ContactForm';
-import urlBuild from '../functions/imageBuilder';
+import InstaGrid from '../components/InstaGrid';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
+
+const Container = styled.section`
+  .qa {
+    padding: 0 16px;
+  }
+
+  .qa h1,
+  .qa h2 {
+    padding-bottom: 32px;
+  }
+
+  .qa__content {
+    padding-bottom: 48px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .qa {
+      padding: 0 72px;
+      /* column-count: 2;
+      column-gap: 64px; */
+    }
+    .qa__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .qa__content {
+      border: 1px solid red;
+      flex: 1 650px;
+      padding: 0 72px 72px 0;
+    }
+  }
+`;
 
 const Qa = ({ content }) => {
   const questionAndAnswer = content.questionAndAnswer;
   const heroImage = content.hero;
   const heroIcon = content.hero.heroImage.heroIcon;
+  const [instaData, setInstaData] = React.useState('');
+  React.useEffect(() => {
+    fetch('https://www.instagram.com/gundlagardscafe/?__a=1')
+      .then((resp) => resp.json())
+      .then((json) => setInstaData(json));
+  }, [0]);
+  let instaGrid = [];
+  if (instaData) {
+    instaGrid = instaData.graphql.user.edge_owner_to_timeline_media.edges;
+  }
   return (
     <Layout pageTitle={content.header}>
-      {content && (
-        <Hero
-          heroImage={heroImage}
-          heroImageAlt={content.heroImageAlt}
-          heroIcon={heroIcon}
-          heroIconAlt={content.heroIconAlt}
-        ></Hero>
-      )}
-      <div>
-        <h1>{content.header}</h1>
-        <div>
-          {questionAndAnswer &&
-            questionAndAnswer.map((object) => (
-              <div key={object._key}>
-                <h3>{object.question}</h3>
-                <p>{object.answer}</p>
-              </div>
-            ))}
-        </div>
+      <Container>
+        {content && (
+          <Hero
+            heroImage={heroImage}
+            heroImageAlt={content.heroImageAlt}
+            heroIcon={heroIcon}
+            heroIconAlt={content.heroIconAlt}
+          ></Hero>
+        )}
+        <section className="qa">
+          <h1>{content.header}</h1>
+          <article className="qa__wrapper">
+            {questionAndAnswer &&
+              questionAndAnswer.map((object) => (
+                <div key={object._key} className="qa__content">
+                  <h2>{object.question}</h2>
+                  <p>{object.answer}</p>
+                </div>
+              ))}
+          </article>
+        </section>
         <ContactForm topic="Fråga något" message="Berätta mer..." />
-      </div>
+        <InstaGrid images={instaGrid} className="insta-grid" />
+      </Container>
     </Layout>
   );
 };
