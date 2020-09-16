@@ -57,9 +57,7 @@ export default function Home({ content }) {
             <img src={urlBuild(content.history.image.asset)}></img>
           </article>
         </section>
-        <a href="https://www.instagram.com/gundlagardscafe/" target="_blank">
-          <InstaGrid images={instaGrid} className="insta-grid" />
-        </a>
+        <InstaGrid images={instaGrid} className="insta-grid" />
       </Container>
     </Layout>
   );
