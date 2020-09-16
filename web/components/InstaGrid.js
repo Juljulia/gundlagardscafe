@@ -8,6 +8,7 @@ const StyledGrid = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 64px 0 32px 0;
+  z-index: 30;
 
   .wrapper {
     width: calc(50% - 4px);

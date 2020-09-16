@@ -17,12 +17,12 @@ const Container = styled.div`
     cursor: pointer;
   }
 
-  .container {
+  .icon-link__container {
     min-width: 150px;
     padding-bottom: 64px;
   }
 
-  .container img {
+  .icon-link__container img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -30,7 +30,7 @@ const Container = styled.div`
     height: auto;
   }
 
-  .container h3 {
+  .icon-link__container h3 {
     padding-top: 8px;
     text-align: center;
   }
@@ -41,9 +41,9 @@ export default function IconLinks({ icons }) {
     <Container>
       {icons.map((icon, i) => (
         <div className="icon-link" key={i}>
-          <div className="container">
+          <div className="icon-link__container">
             <Link href={hrefBuild(linkBuild(icon.links.link))}>
-              <img className="iconLink" src={urlBuild(icon.image.asset)}></img>
+              <img src={urlBuild(icon.image.asset)}></img>
             </Link>
             <h3>{nameBuild(linkBuild(icon.links.link))}</h3>
           </div>

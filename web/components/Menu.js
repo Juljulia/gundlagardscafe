@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Navigation = styled.nav`
-  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,7 @@ const Navigation = styled.nav`
   transition: all 0.3s ease-in-out;
 
   visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
-  width: ${(props) => (props.show ? '100%' : '0px')};
+  height: ${(props) => (props.show ? '100%' : '0px')};
 
   a:first-child {
     margin-top: 100px;
