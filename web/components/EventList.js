@@ -91,6 +91,7 @@ const StyledEventList = styled.div`
     line-height: 109.6%;
     color: #2b2928;
     padding: 0;
+    margin-bottom: 8px;
   }
 
   @media only screen and (min-width: 768px) {
@@ -105,6 +106,7 @@ const StyledEventList = styled.div`
       display: grid;
       grid-template-columns: 50% 50%;
       grid-template-rows: auto;
+      cursor: pointer;
 
       .text {
         width: calc(100% - 48px);
@@ -132,7 +134,10 @@ const EventList = ({ event, grid }) => {
               <div className="text">
                 <h2>{object.header}</h2>
                 {object.price && <p className="price">{object.price} kr</p>}
-                <PortableText blocks={object.description} />
+                <PortableText
+                  className="event-description"
+                  blocks={object.description}
+                />
               </div>
               {object.price && (
                 <Link href={'#booking-form'}>
@@ -156,7 +161,7 @@ const EventList = ({ event, grid }) => {
       {status != 500 && (
         <div className="wrapper-more" onClick={() => setStatus(500)}>
           <button className="more">Se fler event</button>
-          <div>v</div>
+          <img src="arrow.png"></img>
         </div>
       )}
       <ImageGrid images={grid}></ImageGrid>

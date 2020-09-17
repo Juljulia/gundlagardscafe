@@ -2,77 +2,78 @@ import styled from 'styled-components';
 
 import { useState } from 'react';
 
-const StyledContactForm = styled.div`
-  height: auto;
-  background: #959967;
-  overflow: auto;
-  margin-top: 70px;
+const StyledBookingForm = styled.div`
+  padding-top: 21px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 121px;
+  background: #79655c;
+  margin-top: 54px;
   margin-bottom: 64px;
 
-  h4 {
-    font-size: 33px;
-    margin-bottom: 32px;
-    padding-top: 16px;
-    margin-top: 0;
-    text-transform: uppercase;
-  }
-
-  form {
-    margin-left: 16px;
-    margin-right: 16px;
-    padding-top: 36px;
+  label {
+    font-size: 40px;
+    line-height: 200%;
+    color: white;
+    font-family: Amatic SC;
   }
 
   input,
   textarea {
-    width: 100%;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 161.6%;
     border-radius: 9px;
-    padding: 2.5px 10px;
+    padding: 10px 16px;
     border: none;
-    letter-spacing: 0.025em;
-    color: #c4c4c4;
-    margin: 4px 0;
-  }
-
-  input {
-    width: 75%;
     margin-bottom: 16px;
-  }
-
-  label {
-    font-size: 28px;
-    line-height: 50px;
-    font-weight: 400;
-    color: #ffffff;
-    font-family: Amatic SC;
+    width: calc(100% - 32px);
+    color: #000000;
   }
 
   textarea {
-    height: 343.01px;
+    height: 274px;
+    margin-bottom: 0px;
   }
 
   button {
-    background: #cd8501;
-    border-radius: 11px;
-    width: 150px;
-    height: 43px;
-    color: white;
-    filter: drop-shadow(4px 4px 6px rgba(209, 158, 63, 0.25));
+    width: 130px;
+    height: 44px;
+    background: #f6ff97;
+    box-shadow: 0px 1px 4px rgba(80, 81, 71, 0.83);
     border: none;
-    font-family: 'Amatic SC', cursive;
+    border-radius: 11px;
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: normal;
     font-size: 25px;
+    color: #2b2928;
     float: right;
-    margin: 20px 0;
+    margin-bottom: 119px;
+    margin-top: 16px;
+    box-shadow: none;
   }
 
-  .formMessage {
+  select {
+    margin-left: 16px;
+    border-radius: 9px;
+    text-align: center;
+    color: rgba(149, 153, 103, 0.8);
+    border: none;
+    background: white;
+    width: 50px;
+    height: 25px;
+  }
+
+  .select {
+    display: flex;
+    align-items: center;
+  }
+  .form-message {
     position: fixed;
-    top: -5px;
+    top: -40px;
     z-index: 100;
-    background-color: #CD8501;
+    background-color: #cd8501;
     width: 100vw;
     margin-left: -16px;
     padding: 15px;
@@ -80,51 +81,66 @@ const StyledContactForm = styled.div`
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
     transform: translateY(-50px);
     animation: slideDown 2.5s 0.5s 1 ease forwards;
-    }
-    p {
-      color: white;
-      font-weight: 300;
-      font-size: 16px;
-      font-weight: 300;
+  }
+  p {
+    color: white;
+    font-weight: 300;
+    font-size: 16px;
+    font-weight: 300;
+  }
 
-    }
-
-    .error {
-      background-color: #BD4101;
-    }
+  .error {
+    background-color: #bd4101;
   }
 
   @keyframes slideDown {
-    0%, 100% { transform: translateY(-55px); }
-    10%, 90% { transform: translateY(0px); }
-}
+    0%,
+    100% {
+      transform: translateY(-55px);
+    }
+    10%,
+    90% {
+      transform: translateY(40px);
+    }
+  }
 
   @media only screen and (min-width: 768px) {
+    width: 100vw;
+    padding-bottom: 0;
+    height: auto;
+    margin-bottom: 34px;
+    margin-top: 10px;
 
-    input {
-      width: 50%;
-      margin-bottom: 16px;
+    .achor {
+      position: absolute;
+      margin: -30px;
+      visibility: none;
     }
 
     form {
-      margin-left: 72px;
-      margin-right: 72px;
-      padding-top: 52px;
+      padding: 24px 72px;
+
+      button {
+        margin-bottom: 24px;
+        margin-top: 32px;
+      }
     }
 
-    button {
-      margin: 52px 0;
+    label {
+      line-height: 250%;
     }
 
-    input,
-    textarea {
-      padding: 10px 16px;
-    }
+    .input-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
 
-  .formMessage {
-    margin-left: -72px;
+      div {
+        width: 48%;
+      }
+    }
   }
-  }`;
+`;
 
 export default function ContactForm({ topic, message, id }) {
   const [status, setStatus] = useState('');
@@ -148,7 +164,7 @@ export default function ContactForm({ topic, message, id }) {
   };
 
   return (
-    <StyledContactForm>
+    <StyledBookingForm>
       <form
         name="contact"
         action="https://formspree.io/xdopnegr"
@@ -157,15 +173,23 @@ export default function ContactForm({ topic, message, id }) {
         id={id}
       >
         <input type="hidden" name="Contact-form" value="contact" />
-        <label htmlFor="yourname">Ämne</label>
-        <br />
-        <input
-          type="text"
-          name="topic"
-          id="topic"
-          placeholder={topic}
-          required
-        />
+        <div className="input-wrapper">
+          <div>
+            <label htmlFor="yourname">Ämne</label> <br />
+            <input
+              type="text"
+              name="topic"
+              id="topic"
+              placeholder={topic}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="mail">Mailadress</label> <br />
+            <input type="mail" name="mail" id="mail" />
+          </div>
+        </div>
+
         <br />
         <label htmlFor="yourmessage">Meddelande</label>
         <textarea
@@ -186,6 +210,6 @@ export default function ContactForm({ topic, message, id }) {
           </div>
         )}
       </form>
-    </StyledContactForm>
+    </StyledBookingForm>
   );
 }
