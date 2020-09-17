@@ -10,7 +10,7 @@ import LinkToContact from '../components/LinkToContact';
 import PortableText from '@sanity/block-content-to-react';
 
 const StyledPrivateEvent = styled.div`
-  .linkToContact {
+  .link-to-contact {
     height: 216px;
     background: #fecfb1;
     display: flex;
@@ -43,12 +43,12 @@ const StyledPrivateEvent = styled.div`
     }
   }
 
-  .privateEventWrapper {
+  .private-event-wrapper {
     display: flex;
     flex-direction: column;
     margin: 32px 16px;
 
-    .privateEventInfo {
+    .private-event-info {
       margin: 32px 0;
 
       h2 {
@@ -68,7 +68,10 @@ const StyledPrivateEvent = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
-    .linkToContact {
+    h1 {
+      margin: 0 72px;
+    }
+    .link-to-contact {
       p {
         font-size: 20px;
         margin-bottom: 19px;
@@ -78,13 +81,12 @@ const StyledPrivateEvent = styled.div`
       }
     }
 
-    .privateEventWrapper {
+    .private-event-wrapper {
       flex-direction: row;
-      margin: 62px 73px;
+      margin: 62px 72px;
 
-      .privateEventInfo {
+      .private-event-info {
         width: 50%;
-        margin: 16px;
 
         p {
           font-size: 20px;
@@ -111,12 +113,12 @@ const PrivateEvent = ({ content }) => {
           ></Hero>
         )}
         <h1>{content.header}</h1>
-        <div className="privateEventWrapper">
-          <div className="privateEventInfo">
+        <div className="private-event-wrapper">
+          <div className="private-event-info">
             <h2>Fest eller kalas</h2>
             <PortableText blocks={content.partyDescription} />
           </div>
-          <div className="privateEventInfo">
+          <div className="private-event-info">
             <h2>Catering</h2>
             <PortableText blocks={content.cateringDescription} />
           </div>

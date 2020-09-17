@@ -36,6 +36,7 @@ const StyledLinkToContact = styled.header`
   }
   @media only screen and (min-width: 768px) {
     .linkToContact {
+      width: 100vw;
       p {
         font-size: 20px;
         margin-bottom: 19px;
@@ -52,7 +53,7 @@ const LinkToContact = () => {
     <StyledLinkToContact>
       <div className="linkToContact">
         <p>Skicka gärna en förfrågan så kan vi se hur vi kan hjälpa er.</p>
-        <Link href="#event-form">
+        <Link href="/privata-event#event-form">
           <button>Förfrågan</button>
         </Link>
       </div>
