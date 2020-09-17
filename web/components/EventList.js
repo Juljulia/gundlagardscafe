@@ -11,106 +11,110 @@ import PortableText from '@sanity/block-content-to-react';
 const { scaleDown } = transitions;
 
 const StyledEventList = styled.div`
-  .eventCard {
+  .event-card {
     margin: 16px;
     border-radius: 9px;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
 
-  img {
-    margin-top: -1px;
-    height: 153px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 9px 9px 0 0;
-  }
+    img {
+      height: 153px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 9px 9px 0 0;
+    }
 
-  .text {
-    padding: 32px 24px;
+    .text {
+      padding: 32px 24px;
 
-    div {
-      margin: 24px 0 32px 0;
-
-      p {
-        line-height: 128.35%;
-        padding: 0;
-        margin: 0;
+      h2 {
+        font-size: 33px;
+        line-height: 36px;
+        font-weight: normal;
+        font-family: IBM Plex Sans;
+        margin-bottom: 16px;
       }
+
+      .price {
+        margin-top: -8px;
+        margin-bottom: 16px;
+        font-size: 20px;
+        font-family: IBM Plex Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+      }
+
+      div {
+        margin: 0;
+        padding: 0;
+
+        p {
+          font-size: 20px;
+          line-height: 161.6%;
+          letter-spacing: 0.025em;
+          padding: 0;
+        }
+      }
+    }
+    button {
+      background: #ffdae3;
+      box-shadow: 0px 4px 6px #f24a72;
+      border-radius: 11px;
+      border: none;
+      width: 165px;
+      height: 50px;
+      margin-bottom: 35px;
+      font-family: Amatic SC;
+      font-size: 24px;
     }
   }
 
-  h3 {
-    padding: 0;
-    margin: 0;
-    font-size: 33px;
-    line-height: 36px;
-    font-weight: normal;
-  }
-
-  p {
-    font-size: 20px;
-    line-height: 161.6%;
-    letter-spacing: 0.025em;
-  }
-
-  .price {
-    margin: 0;
-    margin-top: 8px;
-    font-size: 20px;
-  }
-
-  button {
-    background: #ffdae3;
-    box-shadow: 0px 4px 6px #f24a72;
-    border-radius: 11px;
-    border: none;
-    width: 165px;
-    height: 50px;
-    margin-bottom: 35px;
-    color: #2a2928;
-    font-family: Amatic SC;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 30px;
-  }
-
-  .wrapperMore {
+  .wrapper-more {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 50px;
+    margin-top: 48px;
+    margin-bottom: 64px;
   }
 
   .more {
     background-color: white;
     border: white;
     box-shadow: none;
-    font-family: IBM Plex Sans;
+    font-family: Amatic SC;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 40px;
+    line-height: 109.6%;
+    color: #2b2928;
     padding: 0;
-    margin: 0;
   }
 
   @media only screen and (min-width: 768px) {
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 56px;
+    margin-top: 8px;
+    width: calc(100vw - 112px);
 
-    .eventWrapper {
+    .event-wrapper {
       display: grid;
       grid-template-columns: 50% 50%;
       grid-template-rows: auto;
-    }
 
-    .eventCard {
+      .text {
+        width: calc(100% - 48px);
+        padding: 24px;
+      }
+
+      button {
+        margin-top: 8px;
+        margin-bottom: 32px;
+      }
     }
   }
 `;
@@ -118,23 +122,22 @@ const StyledEventList = styled.div`
 const EventList = ({ event, grid }) => {
   const [topic, setState] = useState('');
   const [status, setStatus] = useState('3');
-  console.log(event);
   return (
     <StyledEventList>
-      <div className="eventWrapper">
+      <div className="event-wrapper">
         {event &&
           event.slice(0, status).map((object) => (
-            <div key={object._key} className="eventCard">
+            <div key={object._key} className="event-card">
               <img src={urlBuild(object.image.asset)}></img>
               <div className="text">
-                <h3>{object.header}</h3>
+                <h2>{object.header}</h2>
                 {object.price && <p className="price">{object.price} kr</p>}
                 <PortableText blocks={object.description} />
               </div>
               {object.price && (
-                <Link href={'#bookingForm'}>
+                <Link href={'#booking-form'}>
                   <button
-                    className="eventBtn"
+                    className="event-btn"
                     data-mssg={object.header}
                     onClick={() => setState(object.header)}
                   >
@@ -143,7 +146,7 @@ const EventList = ({ event, grid }) => {
                 </Link>
               )}
               <style jsx>{`
-                .eventCard {
+                .event-card {
                   background: ${object.category};
                 }
               `}</style>
@@ -151,7 +154,7 @@ const EventList = ({ event, grid }) => {
           ))}
       </div>
       {status != 500 && (
-        <div className="wrapperMore" onClick={() => setStatus(500)}>
+        <div className="wrapper-more" onClick={() => setStatus(500)}>
           <button className="more">Se fler event</button>
           <div>v</div>
         </div>

@@ -20,6 +20,11 @@ export default {
       type: 'text',
     },
     {
+      title: 'Kalender rubrik',
+      name: 'calenderHeader',
+      type: 'string',
+    },
+    {
       title: 'Evenemang',
       name: 'eventList',
       type: 'array',
@@ -61,14 +66,14 @@ export default {
               type: 'string',
               options: {
                 list: [
-                  { title: 'Musik', value: '#BD4101' },
+                  { title: 'Musik', value: '#FFFA97' },
                   { title: 'Marknad', value: '#959967' },
-                  { title: 'Teater', value: '#CD8501' },
+                  { title: 'Teater', value: '#FECFB1' },
                   {
                     title: 'Aktiviteter',
-                    value: '#FF5D84',
+                    value: '#FE9EB9',
                   },
-                  { title: 'Barn', value: '##6C5301' },
+                  { title: 'Barn', value: '#E96D6D' },
                 ],
               },
             },

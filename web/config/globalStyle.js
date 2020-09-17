@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: Amatic SC;
     font-size: 50px;
-    line-height: 50px;
+line-height: 114.1%;
     font-weight: normal;
   }
 
@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: Amatic SC;
     font-size: 40px;
-    line-height: 30px;
+    line-height: 44px;
     font-weight: normal;
   }
 
@@ -43,6 +43,14 @@ const GlobalStyle = createGlobalStyle`
     font-size: 20px;
     line-height: 32px;
     letter-spacing: 0.025em;
+  }
+
+  input:focus,textarea:focus,button:focus {
+    outline:none !important;
+  }
+
+  button, a, select {
+    cursor: pointer;
   }
 `;
 
