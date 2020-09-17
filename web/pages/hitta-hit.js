@@ -106,7 +106,7 @@ const FindUs = ({ content }) => {
             heroIconAlt={content.heroIconAlt}
           ></Hero>
         )}
-        <div className="open-hours-container">
+        <div className="open-hours-container" id="oppettider">
           <div className="open-hours">
             <h1>{content.header}</h1>
             <p>{content.openHours}</p>

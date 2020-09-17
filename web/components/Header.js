@@ -7,10 +7,9 @@ const StyledHeader = styled.header`
   position: fixed;
   z-index: 10;
   top: 0;
-  left: 0;
+  right: 0;
   background-color: ${({ theme }) => theme.colors.backgroundLight};
   /* transition: all 0.3s ease-in-out; */
-
   .header__logo {
     background-color: grey;
     height: 35px;

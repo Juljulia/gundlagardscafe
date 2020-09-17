@@ -64,7 +64,7 @@ const Qa = ({ content }) => {
             heroIconAlt={content.heroIconAlt}
           ></Hero>
         )}
-        <section className="qa">
+        <section className="qa" id="fs">
           <h1>{content.header}</h1>
           <article className="qa__wrapper">
             {questionAndAnswer &&

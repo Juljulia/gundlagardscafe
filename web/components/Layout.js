@@ -18,9 +18,9 @@ function Layout({ children, pageTitle = '' }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Header></Header>
+      <Header />
       {children}
-      {/* <Footer></Footer> */}
+      <Footer />
     </main>
   );
 }

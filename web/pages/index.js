@@ -44,7 +44,7 @@ export default function Home({ content }) {
         )}
         <IconLinks icons={iconLinks}></IconLinks>
         <ImageGrid images={imageGrid}></ImageGrid>
-        <section>
+        <section id="about">
           <article className="article-first">
             <h2>{content.aboutUs.header}</h2>
             <p>{content.aboutUs.text}</p>
