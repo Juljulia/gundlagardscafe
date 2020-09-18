@@ -11,13 +11,14 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'IBM Plex Sans', sans-serif;
     font-style: normal;
+    color: #2B2928;
   }
 
   h1 {
     margin: 0;
     font-family: Amatic SC;
     font-size: 50px;
-line-height: 114.1%;
+    line-height: 57px;
     font-weight: normal;
   }
 
