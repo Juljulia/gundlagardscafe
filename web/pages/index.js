@@ -10,16 +10,16 @@ import ImageGrid from '../components/ImageGrid';
 import InstaGrid from '../components/InstaGrid';
 
 export default function Home({ content }) {
-  const [instaData, setInstaData] = React.useState('');
-  React.useEffect(() => {
-    fetch('https://www.instagram.com/gundlagardscafe/?__a=1')
-      .then((resp) => resp.json())
-      .then((json) => setInstaData(json));
-  }, [0]);
-  let instaGrid = [];
-  if (instaData) {
-    instaGrid = instaData.graphql.user.edge_owner_to_timeline_media.edges;
-  }
+  // const [instaData, setInstaData] = React.useState('');
+  // React.useEffect(() => {
+  //   fetch('https://www.instagram.com/gundlagardscafe/?__a=1')
+  //     .then((resp) => resp.json())
+  //     .then((json) => setInstaData(json));
+  // }, [0]);
+  // let instaGrid = [];
+  // if (instaData) {
+  //   instaGrid = instaData.graphql.user.edge_owner_to_timeline_media.edges;
+  // }
 
   const imageGrid = content.imageGrid;
   const link = content.homePageLink.link.split(',');
@@ -40,11 +40,14 @@ export default function Home({ content }) {
                 {name}
               </StyledLink>
             </div>
+            <div className="hero-arrow">
+              <img src="/scroll-down.png"></img>
+            </div>
           </div>
         )}
         <IconLinks icons={iconLinks}></IconLinks>
         <ImageGrid images={imageGrid}></ImageGrid>
-        <section id="about">
+        <section id="about" className="article-first-parent">
           <article className="article-first">
             <h2>{content.aboutUs.header}</h2>
             <p>{content.aboutUs.text}</p>
@@ -57,7 +60,7 @@ export default function Home({ content }) {
             <img src={urlBuild(content.history.image.asset)}></img>
           </article>
         </section>
-        <InstaGrid images={instaGrid} className="insta-grid" />
+        {/* <InstaGrid images={instaGrid} className="insta-grid" /> */}
       </Container>
     </Layout>
   );
@@ -76,14 +79,9 @@ const query = groq`*[_type == 'main'][0]{
 
 export async function getServerSideProps() {
   const content = await client.fetch(query);
-
-  // const res = await fetch('https://www.instagram.com/gundlagardscafe/?__a=1');
-  // const json = await res.json();
-
   return {
     props: {
       content,
-      // instaPictures: json.graphql.user.edge_owner_to_timeline_media.edges,
     },
   };
 }
@@ -92,12 +90,14 @@ const Container = styled.section`
   .hero {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     width: 100%;
-    height: calc(100vh - 64px);
+    height: 100vh;
+    margin-top: 64px;
   }
-  .hero img {
+  .hero > img {
     width: 100%;
-    height: calc(100vh - 64px);
+    height: 100%;
     object-fit: cover;
     position: absolute;
     z-index: 1;
@@ -105,36 +105,64 @@ const Container = styled.section`
     object-position: center;
   }
   .hero__content {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     z-index: 2;
-    width: 100%;
-    height: 100%;
   }
   .hero__title {
     line-height: 55px;
     color: ${({ theme }) => theme.colors.white};
     text-align: center;
-    padding: 0 48px 32px 48px;
+    margin: 0 48px 32px 48px;
+  }
+
+  .hero-arrow > img {
+    width: auto;
+    height: auto;
+  }
+
+  .hero-arrow {
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+    object-fit: cover;
+    margin-bottom: 80px;
+    animation: bounce 1.5s linear infinite;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
   }
 
   .article-first {
-    padding: 48px 16px 64px 16px;
+    padding: 64px 16px;
   }
 
   .article-first h2 {
-    padding-bottom: 32px;
+    margin-bottom: 32px;
   }
 
   .article-second {
     display: flex;
     flex-direction: column-reverse;
     background-color: ${({ theme }) => theme.colors.background};
+    margin-bottom: 64px;
   }
 
   .article-second img {
+    height: 261px;
     object-fit: cover;
   }
 
@@ -143,6 +171,36 @@ const Container = styled.section`
   }
 
   .article-second__content h2 {
-    padding-bottom: 32px;
+    margin-bottom: 32px;
+  }
+
+  @media only screen and (min-width: 959px) {
+    .article-first-parent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .article-first {
+      width: 636px;
+      padding-top: 16px;
+    }
+
+    .article-second {
+      max-height: calc(100vh - 128px);
+      flex-direction: row-reverse;
+    }
+
+    .article-second__content {
+      width: 50%;
+      padding-right: 72px;
+      padding-left: 24px;
+      max-height: 624px;
+    }
+
+    .article-second img {
+      width: 50%;
+      height: auto;
+    }
   }
 `;
