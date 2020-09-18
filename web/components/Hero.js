@@ -7,16 +7,16 @@ const StyledHero = styled.section`
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
+  margin-top: 64px;
 
   .hero-image {
     width: 100%;
-    height: calc(100vh - 128px);
+    height: 100%;
     object-fit: cover;
     position: absolute;
     z-index: 1;
     top: 0;
     object-position: center;
-    padding-top: 64px;
   }
 
   .hero-icon-wrapper {
@@ -32,9 +32,25 @@ const StyledHero = styled.section`
     filter: drop-shadow(0px 4px 51px #ffffff);
   }
 
-  .hero-icon img {
-    width: auto;
-    height: auto;
+  .hero-arrow {
+    object-fit: cover;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+    margin-bottom: 80px;
+    animation: bounce 1.5s linear infinite;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
   }
 `;
 
@@ -50,6 +66,9 @@ const Hero = ({ heroImage, heroImageAlt, heroIcon, heroIconAlt }) => {
         <div className="hero-icon">
           <img src={urlBuild(heroIcon.asset)} alt={heroIconAlt}></img>
         </div>
+      </div>
+      <div className="hero-arrow">
+        <img src="/scroll-down.png"></img>
       </div>
     </StyledHero>
   );

@@ -11,7 +11,6 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: baseline;
-  padding-top: 64px;
 
   &:hover {
     cursor: pointer;

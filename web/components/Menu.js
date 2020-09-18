@@ -2,6 +2,75 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
+const Menu = ({ show = false }) => {
+  return (
+    <Navigation show={show}>
+      <div className="navigation">
+        <img src="/Ellipse.png" className="ellipse"></img>
+
+        <Link href="/">
+          <a>Hem</a>
+        </Link>
+
+        <Link href="/hitta-hit">
+          <a>Hitta hit / Öppettider</a>
+        </Link>
+
+        <Link href="/mat">
+          <a>Äta</a>
+        </Link>
+
+        <Link href="/event">
+          <a>Evenemang</a>
+        </Link>
+
+        <Link href="/privata-event">
+          <a>Privata event</a>
+        </Link>
+
+        <Link href="/#about">
+          <a>Om oss</a>
+        </Link>
+
+        <Link href="/#contact">
+          <a>Kontakt</a>
+        </Link>
+
+        <Link href="/fragor-svar">
+          <a>Frågor och svar</a>
+        </Link>
+
+        <div className="social">
+          <h3>Följ oss!</h3>
+          <a href="https://www.facebook.com/gundlagardscafe/" target="_blank">
+            <img src="/fb-dark.png"></img>
+          </a>
+          <a
+            href="https://www.instagram.com/gundlagardscafe/?__a=2"
+            target="_blank"
+          >
+            <img src="insta-dark.png"></img>
+          </a>
+        </div>
+
+        <div className="contact-info">
+          <p>Kontaktinfo:</p>
+          <p>Samantha Larsen</p>
+          <a className="mail-to" href="mailto:gundlagardscafe@gmail.com">
+            gundlagardscafe@gmail.com
+          </a>
+
+          <p>mobil: 0708-84 07 17 </p>
+        </div>
+        <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
+      </div>
+      <div className="tent">
+        <img src="/tent-menu.png"></img>
+      </div>
+    </Navigation>
+  );
+};
+
 const Navigation = styled.nav`
   position: fixed;
   top: 0;
@@ -19,25 +88,42 @@ const Navigation = styled.nav`
   .navigation {
     display: flex;
     flex-direction: column;
-    padding: 64px 0 0 48px;
+    padding: 64px 0 0 32px;
   }
 
-  a:first-child {
-    margin-top: 64px;
-  }
   a {
     z-index: 99;
     text-decoration: none;
-    color: black;
     font-family: Amatic SC;
     font-style: normal;
     font-weight: normal;
     font-size: 40px;
     line-height: 44px;
     padding-bottom: 32px;
+    color: ${({ theme }) => theme.colors.black};
   }
-  /* a:hover {
-  } */
+
+  .social {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .social h3 {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 44px;
+    padding-right: 32px;
+  }
+
+  .social img {
+    padding-right: 8px;
+  }
+
+  .social a {
+    padding: 0;
+  }
 
   p {
     font-family: IBM Plex Sans;
@@ -52,20 +138,18 @@ const Navigation = styled.nav`
     z-index: -1;
     position: absolute;
     left: 0;
-    top: 250px;
-    margin-bottom: 64px;
+    top: 410px;
   }
 
   .mail-to {
     padding: 0;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 300;
     font-size: 14px;
     line-height: 25px;
   }
 
   .contact-info {
-    padding: 32px 0;
+    padding: 64px 0 32px 0;
   }
 
   .contact-info p {
@@ -81,55 +165,9 @@ const Navigation = styled.nav`
     justify-content: center;
     flex: 0 1 auto;
     width: 100%;
-    padding: 64px 0;
+    padding-top: 64px;
   }
 `;
-
-const Menu = ({ show = false }) => (
-  <Navigation show={show}>
-    <div className="navigation">
-      <img src="/Ellipse.png" className="ellipse"></img>
-
-      <Link href="/">
-        <a>Hem</a>
-      </Link>
-
-      <Link href="/hitta-hit">
-        <a>Hitta hit / Öppettider</a>
-      </Link>
-
-      <Link href="/event">
-        <a>Evenemang</a>
-      </Link>
-
-      <Link href="/mat">
-        <a>Äta</a>
-      </Link>
-
-      <Link href="/fragor-svar">
-        <a>Frågor och svar</a>
-      </Link>
-
-      <Link href="/privata-event">
-        <a>Privata event</a>
-      </Link>
-
-      <div className="contact-info">
-        <p>Kontaktinfo:</p>
-        <p>Samantha Larsen</p>
-        <a className="mail-to" href="cc=gundlagardscafe@gmail.com">
-          gundlagardscafe@gmail.com
-        </a>
-
-        <p>Mobil: 0708 84 07 17 </p>
-      </div>
-      <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
-    </div>
-    <div className="tent">
-      <img src="/tent.png"></img>
-    </div>
-  </Navigation>
-);
 
 Menu.propTypes = {
   show: PropTypes.bool,
