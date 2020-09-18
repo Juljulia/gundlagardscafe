@@ -28,6 +28,10 @@ const StyledFindUs = styled.div`
     }
   }
 
+  .availability-wrapper {
+    margin-bottom: 64px;
+  }
+
   .availability-items {
     display: flex;
     flex-direction: column;
@@ -58,6 +62,12 @@ const StyledFindUs = styled.div`
     }
   }
 
+  @media (max-width: 900px) and (min-width: 400px) {
+    .open-hours-container {
+      flex-wrap: wrap;
+    }
+  }
+
   @media only screen and (min-width: 768px) {
     .open-hours-container {
       margin: 0 72px;
@@ -74,7 +84,7 @@ const StyledFindUs = styled.div`
       flex-wrap: wrap;
       height: auto;
       padding: 32px 72px;
-      margin-bottom: 0;
+      padding-bottom: 0;
     }
 
     .availability-items {
@@ -95,17 +105,25 @@ const StyledFindUs = styled.div`
     }
 
     .google-maps {
-      margin: -56px 72px 64px;
+      margin: 0;
       display: flex;
       align-items: center;
       iframe {
         max-width: 636px;
-        height: 540px;
+        width: 500px;
+        height: 400px;
       }
 
       p {
         margin-left: 23px;
       }
+    }
+
+    .open-hours-container {
+      display: flex;
+      justify-content: space-between;
+      width: calc(100vw - 144px);
+      margin-bottom: 20px;
     }
   }
 `;
@@ -136,6 +154,16 @@ const FindUs = ({ content }) => {
               />
             )}
           </div>
+          <div className="google-maps">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2132.7756947796547!2d12.02605491600651!3d57.68629018111437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464ff3a5d0157c63%3A0xdd291fa6017dc04a!2zR3VuZGxhIEfDpXJkc2NhZsOp!5e0!3m2!1sen!2sse!4v1599492272828!5m2!1sen!2sse"
+              frameborder="0"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            ></iframe>
+            <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
+          </div>
         </div>
         <div className="availability-wrapper">
           {availability.map((object) => (
@@ -148,16 +176,6 @@ const FindUs = ({ content }) => {
               <PortableText blocks={object.description} />
             </div>
           ))}
-        </div>
-        <div className="google-maps">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2132.7756947796547!2d12.02605491600651!3d57.68629018111437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464ff3a5d0157c63%3A0xdd291fa6017dc04a!2zR3VuZGxhIEfDpXJkc2NhZsOp!5e0!3m2!1sen!2sse!4v1599492272828!5m2!1sen!2sse"
-            frameborder="0"
-            allowfullscreen=""
-            aria-hidden="false"
-            tabindex="0"
-          ></iframe>
-          <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
         </div>
       </StyledFindUs>
     </Layout>
