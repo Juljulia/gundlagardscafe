@@ -15,9 +15,15 @@ export default {
       description: 'Första helbilden på sidan',
     },
     {
-      title: 'Öppettider',
-      name: 'openHours',
+      title: 'Beskrivning',
+      name: 'description',
       type: 'text',
+    },
+    {
+      title: 'Öppettider just nu',
+      name: 'openHours',
+      type: 'array',
+      of: [{ type: 'block' }],
     },
     {
       title: 'Tillgänglighet',

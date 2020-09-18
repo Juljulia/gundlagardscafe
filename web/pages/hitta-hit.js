@@ -11,10 +11,18 @@ const StyledFindUs = styled.div`
     margin: 0 16px;
 
     h1 {
-      margin-top: 64px;
       margin-bottom: 18px;
     }
 
+    p {
+      margin-bottom: 42px;
+    }
+  }
+
+  .open-hours-now {
+    h2 {
+      margin-bottom: 16px;
+    }
     p {
       margin-bottom: 29px;
     }
@@ -24,7 +32,7 @@ const StyledFindUs = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 35px;
+    padding: 16px;
     padding-bottom: 0;
     margin-bottom: 27px;
 
@@ -37,55 +45,66 @@ const StyledFindUs = styled.div`
   }
 
   .google-maps {
-    margin: 85px 16px;
+    margin: 64px 16px;
 
     iframe {
       border-radius: 9px;
       width: 100%;
       height: 310px;
     }
+
+    p {
+      display: none;
+    }
   }
 
   @media only screen and (min-width: 768px) {
     .open-hours-container {
-      display: flex;
-      justify-content: center;
-
+      margin: 0 72px;
       .open-hours {
         width: 636px;
-        margin-bottom: 131px;
+        margin-bottom: 16px;
       }
     }
 
     .availability-wrapper {
       display: flex;
       align-items: flex-start;
-      justify-content: space-around;
+      justify-content: space-between;
       flex-wrap: wrap;
       height: auto;
-      background-color: #ffebe1;
       padding: 32px 72px;
+      margin-bottom: 0;
     }
 
     .availability-items {
       height: auto;
       justify-content: flex-start;
       overflow: auto;
-      width: 20%;
+      width: 42%;
+      align-items: flex-start;
+      padding: 0;
+
+      h2 {
+        margin: 32px 0;
+      }
 
       p {
-        margin: 14px 24px 15px 24px;
-        color: red;
-        border: solid 1px green;
-        padding: 50px;
+        margin-bottom: 56px;
       }
     }
 
     .google-maps {
-      margin: 54px 72px;
+      margin: -56px 72px 64px;
+      display: flex;
+      align-items: center;
       iframe {
         max-width: 636px;
         height: 540px;
+      }
+
+      p {
+        margin-left: 23px;
       }
     }
   }
@@ -109,7 +128,13 @@ const FindUs = ({ content }) => {
         <div className="open-hours-container" id="oppettider">
           <div className="open-hours">
             <h1>{content.header}</h1>
-            <p>{content.openHours}</p>
+            <p>{content.description}</p>
+            {content.openHours && (
+              <PortableText
+                className="open-hours-now"
+                blocks={content.openHours}
+              />
+            )}
           </div>
         </div>
         <div className="availability-wrapper">
@@ -132,6 +157,7 @@ const FindUs = ({ content }) => {
             aria-hidden="false"
             tabindex="0"
           ></iframe>
+          <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
         </div>
       </StyledFindUs>
     </Layout>
@@ -143,6 +169,7 @@ const query = groq`*[_type == 'find-us'][0]{
     icon,
     header,
     availability,
+    description,
     openHours
   }`;
 

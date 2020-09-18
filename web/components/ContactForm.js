@@ -4,8 +4,6 @@ import { useState } from 'react';
 
 const StyledBookingForm = styled.div`
   padding-top: 21px;
-  padding-left: 16px;
-  padding-right: 16px;
   padding-bottom: 121px;
   background: #79655c;
   margin-top: 54px;
@@ -52,6 +50,16 @@ const StyledBookingForm = styled.div`
     margin-bottom: 119px;
     margin-top: 16px;
     box-shadow: none;
+  }
+
+  button:hover {
+    box-shadow: inset -1px -2px 4px rgba(80, 81, 71, 0.47);
+    border-radius: 11px;
+  }
+
+  .button:active {
+    box-shadow: inset -1px 4px 5px rgba(124, 126, 105, 0.65);
+    border-radius: 11px;
   }
 
   select {

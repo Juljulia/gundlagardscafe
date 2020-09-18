@@ -53,6 +53,16 @@ const StyledBookingForm = styled.div`
     box-shadow: none;
   }
 
+  button:hover {
+    box-shadow: inset -1px -2px 4px rgba(80, 81, 71, 0.47);
+    border-radius: 11px;
+  }
+
+  .button:active {
+    box-shadow: inset -1px 4px 5px rgba(124, 126, 105, 0.65);
+    border-radius: 11px;
+  }
+
   select {
     margin-left: 16px;
     border-radius: 9px;
@@ -74,7 +84,7 @@ const StyledBookingForm = styled.div`
     z-index: 100;
     background-color: #cd8501;
     width: 100vw;
-    margin-left: -16px;
+    margin-left: -72px;
     padding: 15px;
     text-align: center;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);

@@ -33,6 +33,16 @@ const StyledLinkToContact = styled.header`
       font-family: Amatic SC;
       line-height: 32px;
     }
+
+    button:hover {
+      box-shadow: inset -1px -1px 6px rgba(141, 93, 4, 0.73);
+      border-radius: 11px;
+    }
+
+    button:active {
+      box-shadow: inset -1px 4px 6px #ae7204;
+      border-radius: 11px;
+    }
   }
   @media only screen and (min-width: 768px) {
     .linkToContact {
