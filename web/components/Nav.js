@@ -12,15 +12,21 @@ const Nav = () => {
         <Hamburger rounded size={35} toggled={isOpen} toggle={setOpen} />
       </div>
 
-      <nav>
+      {/* MOBILE */}
+
+      <nav className="nav-mobile">
         <img src="/Ellipse.png" className="ellipse"></img>
 
         <Link href="/">
           <a onClick={() => setOpen(false)}>Hem</a>
         </Link>
 
-        <Link href="/hitta-hit">
-          <a onClick={() => setOpen(false)}>Hitta hit / Öppettider</a>
+        <Link href="/hitta-hit#oppettider">
+          <a onClick={() => setOpen(false)}>Öppettider</a>
+        </Link>
+
+        <Link href="/hitta-hit#hitta-hit">
+          <a onClick={() => setOpen(false)}>Hitta hit</a>
         </Link>
 
         <Link href="/mat">
@@ -59,20 +65,78 @@ const Nav = () => {
             <img src="insta-dark.png"></img>
           </a>
         </div>
+        <div>
+          <div className="contact-info">
+            <p>Kontaktinfo:</p>
+            <p>Samantha Larsen</p>
+            <a className="mail-to" href="mailto:gundlagardscafe@gmail.com">
+              gundlagardscafe@gmail.com
+            </a>
 
-        <div className="contact-info">
-          <p>Kontaktinfo:</p>
-          <p>Samantha Larsen</p>
-          <a className="mail-to" href="mailto:gundlagardscafe@gmail.com">
-            gundlagardscafe@gmail.com
-          </a>
-
-          <p>mobil: 0708-84 07 17 </p>
+            <p>mobil: 0708-84 07 17 </p>
+          </div>
         </div>
         <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
         <div className="tent">
           <img src="/tent-menu.png"></img>
         </div>
+      </nav>
+
+      {/* DESKTOP */}
+
+      <nav className="nav-desktop">
+        <div className="nav-desktop__links">
+          <Link href="/">
+            <a onClick={() => setOpen(false)}>Hem</a>
+          </Link>
+
+          <Link href="/hitta-hit#oppettider">
+            <a onClick={() => setOpen(false)}>Öppettider</a>
+          </Link>
+
+          <Link href="/#about">
+            <a onClick={() => setOpen(false)}>Om oss</a>
+          </Link>
+
+          <Link href="/#contact">
+            <a onClick={() => setOpen(false)}>Kontakt</a>
+          </Link>
+
+          <Link href="/fragor-svar">
+            <a onClick={() => setOpen(false)}>Frågor och svar</a>
+          </Link>
+
+          <div className="social">
+            <h3>Följ oss!</h3>
+            <a href="https://www.facebook.com/gundlagardscafe/" target="_blank">
+              <img src="/fb-dark.png"></img>
+            </a>
+            <a
+              href="https://www.instagram.com/gundlagardscafe/?__a=2"
+              target="_blank"
+            >
+              <img src="insta-dark.png"></img>
+            </a>
+          </div>
+        </div>
+
+        <div className="info-wrapper">
+          <div className="contact-info">
+            <p>Kontaktinfo:</p>
+            <p>Samantha Larsen</p>
+            <a className="mail-to" href="mailto:gundlagardscafe@gmail.com">
+              gundlagardscafe@gmail.com
+            </a>
+
+            <p>mobil: 0708-84 07 17 </p>
+          </div>
+          <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
+        </div>
+
+        <div className="tent-desktop">
+          <img src="/tent-desktop.png"></img>
+        </div>
+        <img src="/Ellipse-desktop.png" className="ellipse-desktop"></img>
       </nav>
     </Container>
   );
@@ -87,8 +151,32 @@ const Container = styled.div`
     z-index: 500;
   }
 
-  nav {
-    border: 1px solid green;
+  p {
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 25px;
+  }
+
+  a {
+    z-index: 99;
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.black};
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  .mail-to {
+    padding: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+  }
+
+  .nav-mobile {
     display: flex;
     flex-direction: column;
     padding: 64px 0 0 32px;
@@ -101,19 +189,11 @@ const Container = styled.div`
     z-index: 90;
     background-color: ${({ theme }) => theme.colors.backgroundLight};
     visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
-    height: ${(props) => (props.show ? '100%' : '0px')};
+    height: ${(props) => (props.show ? '100%' : '66px')};
     transition: all 0.2s ease-in-out;
 
     a {
-      z-index: 99;
-      text-decoration: none;
-      font-family: Amatic SC;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 40px;
-      line-height: 44px;
       padding-bottom: 32px;
-      color: ${({ theme }) => theme.colors.black};
     }
   }
 
@@ -139,28 +219,12 @@ const Container = styled.div`
     padding: 0;
   }
 
-  p {
-    font-family: IBM Plex Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 25px;
-  }
-
   .ellipse {
-    border: 1px solid red;
     visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
     z-index: -1;
     position: absolute;
     left: 0;
-    top: 410px;
-  }
-
-  .mail-to {
-    padding: 0;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 14px;
-    line-height: 25px;
+    top: 489px;
   }
 
   .contact-info {
@@ -176,14 +240,112 @@ const Container = styled.div`
   }
 
   .tent {
-    border: 1px solid pink;
     display: flex;
     justify-content: center;
     flex: 0 1 auto;
     width: 100%;
     height: 100%;
     margin-top: 64px;
-    margin-bottom: 64px;
+    margin-bottom: 128px;
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .nav-mobile {
+      display: none;
+    }
+
+    .nav-desktop {
+      display: flex;
+      flex-direction: column;
+      padding: 64px 0 0 32px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: scroll;
+      z-index: 90;
+      background-color: ${({ theme }) => theme.colors.backgroundLight};
+      visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
+      height: ${(props) => (props.show ? '100%' : '66px')};
+      transition: all 0.2s ease-in-out;
+      top: 66px;
+      padding: 0;
+
+      a,
+      .social h3 {
+        font-family: Amatic SC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 30px;
+        text-decoration: none;
+        color: ${({ theme }) => theme.colors.black};
+      }
+
+      .mail-to {
+        padding: 0;
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 14px;
+        line-height: 25px;
+      }
+    }
+
+    .nav-desktop__links {
+      display: flex;
+      flex-direction: row;
+      margin: 112px auto;
+      a {
+        margin: 0 64px;
+      }
+    }
+
+    .social h3 {
+      margin-left: 64px;
+    }
+    .social a {
+      margin: 0;
+    }
+
+    .info-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0 auto;
+    }
+    .contact-info {
+      padding: 0;
+      margin: 0;
+      margin-right: 140px;
+    }
+
+    .tent-ellipse {
+      height: 100%;
+      position: relative;
+      bottom: 0;
+    }
+
+    .ellipse-desktop {
+      visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
+      z-index: -1;
+      position: absolute;
+      left: 172px;
+      bottom: 0;
+      height: 669px;
+    }
+
+    .tent-desktop {
+      position: absolute;
+      bottom: 0;
+      right: 469px;
+      margin-bottom: 64px;
+      height: 33%;
+      visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
+    }
   }
 `;
 

@@ -8,6 +8,23 @@ const Header = ({ showHeader, show }) => {
       <Link href="/">
         <img src="gundla-small.png" className="header__logo"></img>
       </Link>
+      <div className="desktop-navlinks">
+        <Link href="/hitta-hit#hitta-hit">
+          <a>Hitta hit</a>
+        </Link>
+
+        <Link href="/mat">
+          <a>Äta</a>
+        </Link>
+
+        <Link href="/event">
+          <a>Evenemang</a>
+        </Link>
+
+        <Link href="/privata-event">
+          <a>Privata event</a>
+        </Link>
+      </div>
       <Nav show={show} />
     </StyledHeader>
   );
@@ -31,8 +48,26 @@ const StyledHeader = styled.header`
     margin-left: 24px;
   }
 
+  .desktop-navlinks {
+    display: none;
+  }
+
   @media only screen and (min-width: 768px) {
-    /* height: 84px; */
+    height: 66px;
+    .desktop-navlinks {
+      display: block;
+    }
+
+    .desktop-navlinks a {
+      font-family: Amatic SC;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 30px;
+      text-decoration: none;
+      color: ${({ theme }) => theme.colors.black};
+      padding: 0 16px;
+    }
   }
 `;
 
