@@ -11,9 +11,10 @@ import styled from 'styled-components';
 const StyledEvent = styled.div`
   .text-container {
     margin: 0 16px;
+    margin-top: -24px;
 
     h1 {
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
   }
 
@@ -87,12 +88,13 @@ const StyledEvent = styled.div`
       }
 
       .category-list {
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         margin-right: 56px;
         margin-bottom: 0;
 
         li {
           margin-right: 21px;
+          width: auto;
         }
 
         li::before {

@@ -2,18 +2,29 @@ import styled from 'styled-components';
 
 import { useState } from 'react';
 
-const StyledBookingForm = styled.div`
-  padding-top: 21px;
+const StyledContactForm = styled.div`
+  padding-top: 8px;
   padding-bottom: 121px;
   background: #79655c;
   margin-top: 54px;
   margin-bottom: 64px;
+  width: 100vw;
+
+  form {
+    margin: 16px;
+    width: calc(100vw - 32px);
+  }
 
   label {
     font-size: 40px;
     line-height: 200%;
     color: white;
     font-family: Amatic SC;
+  }
+
+  .input-wrapper {
+    width: 80%;
+    margin-bottom: -16px;
   }
 
   input,
@@ -25,8 +36,8 @@ const StyledBookingForm = styled.div`
     padding: 10px 16px;
     border: none;
     margin-bottom: 16px;
-    width: calc(100% - 32px);
     color: #000000;
+    width: calc(100% - 32px);
   }
 
   textarea {
@@ -48,7 +59,7 @@ const StyledBookingForm = styled.div`
     color: #2b2928;
     float: right;
     margin-bottom: 119px;
-    margin-top: 16px;
+    margin-top: 46px;
     box-shadow: none;
   }
 
@@ -80,11 +91,11 @@ const StyledBookingForm = styled.div`
   .form-message {
     position: fixed;
     top: -40px;
+    left: 0;
     z-index: 100;
     background-color: #cd8501;
-    width: 100vw;
-    margin-left: -16px;
-    padding: 15px;
+    width: calc(100vw);
+    padding: 15px 0;
     text-align: center;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
     transform: translateY(-50px);
@@ -115,18 +126,21 @@ const StyledBookingForm = styled.div`
   @media only screen and (min-width: 768px) {
     width: 100vw;
     padding-bottom: 0;
-    height: auto;
     margin-bottom: 34px;
-    margin-top: 10px;
+    margin-top: 0px;
+    height: 700px;
 
     .achor {
       position: absolute;
-      margin: -30px;
+      margin: -30px 0;
       visibility: none;
     }
 
     form {
       padding: 24px 72px;
+      padding-top: 0;
+      width: calc(100% - 144px);
+      margin: 0;
 
       button {
         margin-bottom: 24px;
@@ -172,7 +186,7 @@ export default function ContactForm({ topic, message, id }) {
   };
 
   return (
-    <StyledBookingForm>
+    <StyledContactForm>
       <form
         name="contact"
         action="https://formspree.io/xdopnegr"
@@ -208,16 +222,16 @@ export default function ContactForm({ topic, message, id }) {
         ></textarea>
         <button type="submit">Skicka</button>
         {status === 'SUCCESS' && (
-          <div className="formMessage success">
+          <div className="form-message success">
             <p>Skickat!</p>
           </div>
         )}
         {status === 'ERROR' && (
-          <div className="formMessage error">
+          <div className="form-message error">
             <p>Något gick fel, försökt igen!</p>
           </div>
         )}
       </form>
-    </StyledBookingForm>
+    </StyledContactForm>
   );
 }

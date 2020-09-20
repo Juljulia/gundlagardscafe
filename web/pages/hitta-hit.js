@@ -9,7 +9,7 @@ import styled from 'styled-components';
 const StyledFindUs = styled.div`
   .open-hours {
     margin: 0 16px;
-
+    margin-top: -16px;
     h1 {
       margin-bottom: 18px;
     }
