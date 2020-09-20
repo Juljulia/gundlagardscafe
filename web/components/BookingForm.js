@@ -192,11 +192,17 @@ export default function BookingForm({ message }) {
         <div className="input-wrapper">
           <div>
             <label htmlFor="yourname">Boka biljett till</label> <br />
-            <input type="text" name="topic" id="topic" placeholder={message} />
+            <input
+              type="text"
+              name="topic"
+              id="topic"
+              placeholder={message}
+              required
+            />
           </div>
           <div>
             <label htmlFor="mail">Mailadress</label> <br />
-            <input type="mail" name="topic" id="topic" />
+            <input type="mail" name="topic" id="topic" required />
           </div>
         </div>
         <div class="select">
@@ -214,7 +220,12 @@ export default function BookingForm({ message }) {
           <br />
         </div>
         <label htmlFor="yourmessage">Meddelande</label> <br />
-        <textarea name="message" id="yourmessage" placeholder=""></textarea>
+        <textarea
+          name="message"
+          id="yourmessage"
+          placeholder=""
+          required
+        ></textarea>
         <button type="submit">Boka</button>
         {status === 'SUCCESS' && (
           <div className="form-message success">

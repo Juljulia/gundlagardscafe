@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import urlBuild from '../functions/imageBuilder';
+import 'lazysizes';
 
 const StyledHero = styled.section`
   display: flex;
@@ -8,6 +9,16 @@ const StyledHero = styled.section`
   width: 100%;
   height: 100vh;
   margin-top: 64px;
+  max-height: 546px;
+
+  .lazyload,
+  .lazyloading {
+    opacity: 0;
+  }
+  .lazyloaded {
+    opacity: 1;
+    transition: opacity 1000ms;
+  }
 
   .hero-image {
     width: 100%;
@@ -17,6 +28,7 @@ const StyledHero = styled.section`
     z-index: 1;
     top: 0;
     object-position: center;
+    max-height: 546px;
   }
 
   .hero-icon-wrapper {
@@ -52,23 +64,37 @@ const StyledHero = styled.section`
       transform: translateY(0px);
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    max-height: 672px;
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      max-height: 672px;
+    }
+  }
 `;
 
 const Hero = ({ heroImage, heroImageAlt, heroIcon, heroIconAlt }) => {
   return (
     <StyledHero>
       <img
-        className="hero-image"
-        src={urlBuild(heroImage.heroImage.asset)}
+        className="hero-image lazyload"
+        data-src={urlBuild(heroImage.heroImage.asset)}
         alt={heroImageAlt}
       ></img>
       <div className="hero-icon-wrapper">
         <div className="hero-icon">
-          <img src={urlBuild(heroIcon.asset)} alt={heroIconAlt}></img>
+          <img
+            data-src={urlBuild(heroIcon.asset)}
+            alt={heroIconAlt}
+            className="lazyload"
+          ></img>
         </div>
       </div>
       <div className="hero-arrow">
-        <img src="/scroll-down.png"></img>
+        <img data-src="/scroll-down.png" className="lazyload"></img>
       </div>
     </StyledHero>
   );

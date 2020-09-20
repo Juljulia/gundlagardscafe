@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import 'lazysizes';
 
 const StyledGrid = styled.div`
   display: flex;
@@ -6,6 +7,8 @@ const StyledGrid = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   z-index: 30;
+  width: 100%;
+  margin-bottom: 64px;
 
   .wrapper {
     width: calc(50% - 4px);
@@ -27,11 +30,11 @@ const StyledGrid = styled.div`
     justify-content: center;
     flex-wrap: nowrap;
     width: 636px;
-    transition: 0.1s all ease-in-out;
+    transition: 0.1s transform ease-in-out;
     margin: 0 auto 64px auto;
 
     &:hover {
-      width: 646px;
+      transform: scale(1.03);
     }
 
     .wrapper {
@@ -57,7 +60,11 @@ export default function InstaGrid(props) {
             target="_blank"
             key={i}
           >
-            <img key={i} src={image.node.display_url}></img>
+            <img
+              key={i}
+              data-src={image.node.display_url}
+              className="lazyload"
+            ></img>
           </a>
         ))}
     </StyledGrid>

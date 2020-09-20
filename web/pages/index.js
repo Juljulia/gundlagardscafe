@@ -10,6 +10,7 @@ import { hrefBuild, nameBuild } from '../functions/link';
 import IconLinks from '../components/IconLinks';
 import ImageGrid from '../components/ImageGrid';
 import InstaGrid from '../components/InstaGrid';
+import 'lazysizes';
 
 export default function Home({ content }) {
   const [instaData, setInstaData] = React.useState('');
@@ -35,16 +36,16 @@ export default function Home({ content }) {
       <Container>
         {heroImage && (
           <div className="hero">
-            <img src={heroImage}></img>
+            <img data-src={heroImage} className="lazyload"></img>
             <div className="hero__content">
-              <img src="gundla-big.png"></img>
+              <img data-src="gundla-big.png" className="lazyload"></img>
               <PortableText blocks={content.welcome} className="hero__title" />
               <StyledLink href={href} className="hero__link">
                 {name}
               </StyledLink>
             </div>
             <div className="hero-arrow">
-              <img src="/scroll-down.png"></img>
+              <img data-src="/scroll-down.png" className="lazyload"></img>
             </div>
           </div>
         )}
@@ -63,7 +64,10 @@ export default function Home({ content }) {
               <h2>{content.history.header}</h2>
               <PortableText blocks={content.history.text} />
             </div>
-            <img src={urlBuild(content.history.image.asset)}></img>
+            <img
+              data-src={urlBuild(content.history.image.asset)}
+              className="lazyload"
+            ></img>
           </article>
         </section>
         <InstaGrid images={instaGrid} className="insta-grid" />

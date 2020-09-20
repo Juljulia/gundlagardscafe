@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import styled from 'styled-components';
+import 'lazysizes';
 
 const Footer = () => (
   <StyledFooter id="contact">
     <div className="contact-info mobile">
       <div className="logo">
-        <img src="/gundla-footer.png"></img>
+        <img data-src="/gundla-footer.png" className="lazyload"></img>
       </div>
       <div className="contact-info__content">
         <p>Kontaktinfo:</p>
@@ -21,7 +22,7 @@ const Footer = () => (
     </div>
 
     <div className="desktop">
-      <img src="/gundla-footer.png"></img>
+      <img data-src="/gundla-footer.png" className="lazyload"></img>
     </div>
     <div className="desktop">
       <p>Kontaktinfo:</p>
@@ -44,13 +45,13 @@ const Footer = () => (
     <div className="social">
       <h3>Följ oss!</h3>
       <a href="https://www.facebook.com/gundlagardscafe/" target="_blank">
-        <img src="/fb-light.png"></img>
+        <img data-src="/fb-light.png" className="lazyload"></img>
       </a>
       <a
         href="https://www.instagram.com/gundlagardscafe/?__a=2"
         target="_blank"
       >
-        <img src="insta-light.png"></img>
+        <img data-src="insta-light.png" className="lazyload"></img>
       </a>
     </div>
   </StyledFooter>
@@ -61,6 +62,15 @@ const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.backgroundDark};
+
+  .lazyload,
+.lazyloading {
+    opacity: 0;
+}
+.lazyloaded {
+    opacity: 1;
+    transition: opacity 1000ms;
+}
 
   p {
     font-family: IBM Plex Sans;
