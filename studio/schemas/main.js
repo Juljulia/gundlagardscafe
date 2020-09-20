@@ -11,7 +11,8 @@ export default {
     {
       title: 'Välkomsttext',
       name: 'welcome',
-      type: 'string',
+      type: 'array',
+      of: [{ type: 'block' }],
     },
     {
       name: 'homePageLink',
@@ -81,7 +82,8 @@ export default {
         {
           title: 'Text',
           name: 'text',
-          type: 'text',
+          type: 'array',
+          of: [{ type: 'block' }],
         },
       ],
     },
@@ -98,7 +100,8 @@ export default {
         {
           title: 'Text',
           name: 'text',
-          type: 'text',
+          type: 'array',
+          of: [{ type: 'block' }],
         },
         {
           name: 'image',
