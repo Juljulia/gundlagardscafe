@@ -7,10 +7,19 @@ import { SizeMe } from 'react-sizeme';
 import BookingForm from '../components/BookingForm';
 import ImageGrid from '../components/ImageGrid';
 import PortableText from '@sanity/block-content-to-react';
+import 'lazysizes';
 
 const { scaleDown } = transitions;
 
 const StyledEventList = styled.div`
+  .lazyload,
+  .lazyloading {
+    opacity: 0;
+  }
+  .lazyloaded {
+    opacity: 1;
+    transition: opacity 1000ms;
+  }
   .event-card {
     margin: 16px;
     border-radius: 9px;
@@ -132,7 +141,10 @@ const EventList = ({ event, grid }) => {
         {event &&
           event.slice(0, status).map((object) => (
             <div key={object._key} className="event-card">
-              <img src={urlBuild(object.image.asset)}></img>
+              <img
+                data-src={urlBuild(object.image.asset)}
+                className="lazyload"
+              ></img>
               <div className="text">
                 <h2>{object.header}</h2>
                 {object.price && <p className="price">{object.price} kr</p>}
@@ -163,7 +175,7 @@ const EventList = ({ event, grid }) => {
       {status != 500 && (
         <div className="wrapper-more" onClick={() => setStatus(500)}>
           <button className="more">Se fler event</button>
-          <img src="arrow.png"></img>
+          <img data-src="arrow.png" className="lazyload"></img>
         </div>
       )}
       <ImageGrid images={grid}></ImageGrid>

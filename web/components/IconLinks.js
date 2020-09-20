@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { hrefBuild, nameBuild, linkBuild } from '../functions/link';
 import urlBuild from '../functions/imageBuilder';
+import 'lazysizes';
 
 export default function IconLinks({ icons }) {
   return (
@@ -11,7 +12,10 @@ export default function IconLinks({ icons }) {
         <div className="icon-link" key={i}>
           <div className="icon-link__container">
             <Link href={hrefBuild(linkBuild(icon.links.link))}>
-              <img src={urlBuild(icon.image.asset)}></img>
+              <img
+                data-src={urlBuild(icon.image.asset)}
+                className="lazyload"
+              ></img>
             </Link>
             <h3>{nameBuild(linkBuild(icon.links.link))}</h3>
           </div>
