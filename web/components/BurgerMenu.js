@@ -12,8 +12,8 @@ const Container = styled.div`
   z-index: 10;
 
   .burger__wrapper {
-    margin-right: 24px;
-    margin-top: 8px;
+    margin-right: 16px;
+    padding: 8px;
   }
   .hamburger-react {
     z-index: 500;

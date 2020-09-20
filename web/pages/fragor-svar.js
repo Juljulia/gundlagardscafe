@@ -20,29 +20,54 @@ const Container = styled.section`
     padding-bottom: 48px;
   }
 
+  .read-more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50px;
+    margin-top: 8px;
+  }
+
+  .read-more__button {
+    background-color: white;
+    border: white;
+    box-shadow: none;
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 109.6%;
+    color: #2b2928;
+    padding: 0;
+    margin-bottom: 8px;
+  }
+
   @media only screen and (min-width: 768px) {
     .qa {
-      padding: 0 72px;
-      /* column-count: 2;
-      column-gap: 64px; */
+      padding-left: 72px;
+      padding-right: 56px;
     }
-    .qa__wrapper {
-      display: flex;
-      flex-wrap: wrap;
+    .qa__container {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: auto;
     }
 
     .qa__content {
-      border: 1px solid red;
-      flex: 1 650px;
-      padding: 0 72px 72px 0;
+      padding-right: 16px;
+    }
+
+    .read-more {
+      margin-top: 28px;
+      margin-bottom: 64px;
     }
   }
 `;
 
 const Qa = ({ content }) => {
-  const questionAndAnswer = content.questionAndAnswer;
-  const heroImage = content.hero;
-  const heroIcon = content.hero.heroImage.heroIcon;
+  const [amount, setAmount] = React.useState(4);
+  const questionAndAnswer = content.questionAndAnswer.slice(0, amount);
+
   const [instaData, setInstaData] = React.useState('');
   React.useEffect(() => {
     fetch('https://www.instagram.com/gundlagardscafe/?__a=1')
@@ -53,6 +78,9 @@ const Qa = ({ content }) => {
   if (instaData) {
     instaGrid = instaData.graphql.user.edge_owner_to_timeline_media.edges;
   }
+
+  const heroImage = content.hero;
+  const heroIcon = content.hero.heroImage.heroIcon;
   return (
     <Layout pageTitle={content.header}>
       <Container>
@@ -66,7 +94,7 @@ const Qa = ({ content }) => {
         )}
         <section className="qa" id="fs">
           <h1>{content.header}</h1>
-          <article className="qa__wrapper">
+          <article className="qa__container">
             {questionAndAnswer &&
               questionAndAnswer.map((object) => (
                 <div key={object._key} className="qa__content">
@@ -75,6 +103,19 @@ const Qa = ({ content }) => {
                 </div>
               ))}
           </article>
+          {amount <= 4 && (
+            <div className="read-more">
+              <button
+                className="read-more__button"
+                onClick={() => {
+                  setAmount(amount + 4);
+                }}
+              >
+                Läs mer
+              </button>
+              <img src="arrow.png"></img>
+            </div>
+          )}
         </section>
         <ContactForm topic="Fråga något" message="Berätta mer..." />
         <InstaGrid images={instaGrid} className="insta-grid" />

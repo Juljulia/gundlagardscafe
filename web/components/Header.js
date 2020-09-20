@@ -2,29 +2,26 @@ import Burger from './BurgerMenu';
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
-  height: 64px;
+  height: 66px;
   width: 100%;
   position: fixed;
   z-index: 10;
-  top: 0;
+  top: ${(props) => (props.show ? 0 : '-10px')};
   right: 0;
   background-color: ${({ theme }) => theme.colors.backgroundLight};
-  /* transition: all 0.3s ease-in-out; */
+  opacity: ${(props) => (props.show ? 1 : 0)};
+  transition: all 0.15s ease-out;
+
   .header__logo {
-    background-color: grey;
-    height: 35px;
-    width: 35px;
     margin-left: 24px;
-    margin-top: 16px;
-    border-radius: 11px;
   }
 `;
 
-const Header = () => {
+const Header = ({ show }) => {
   return (
-    <StyledHeader>
+    <StyledHeader show={show}>
       <Burger></Burger>
-      <div className="header__logo"></div>
+      <img src="gundla-small.png" className="header__logo"></img>
     </StyledHeader>
   );
 };

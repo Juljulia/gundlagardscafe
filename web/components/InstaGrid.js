@@ -7,7 +7,7 @@ const StyledGrid = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 64px 0 32px 0;
+  padding-bottom: 64px;
   z-index: 30;
 
   .wrapper {

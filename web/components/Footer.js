@@ -1,17 +1,53 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
+const Footer = () => (
+  <StyledFooter id="contact">
+    <div className="contact-info">
+      <div className="logo">
+        <img src="/gundla-footer.png"></img>
+      </div>
+      <div className="contact-info__content">
+        <p>Kontaktinfo:</p>
+        <p>Samantha Larsen</p>
+        <a className="mail-to" href="gundlagardscafe@gmail.com">
+          gundlagardscafe@gmail.com
+        </a>
+        <p>Mobil: 0708 84 07 17 </p>
+      </div>
+      <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
+    </div>
+    <div className="adress"></div>
+    <div className="link">
+      <Link href="/hitta-hit#oppettider">
+        <a className="link__item">Öppettider</a>
+      </Link>
+      <Link href="/fragor-svar#fs">
+        <a className="link__item">Frågor och svar</a>
+      </Link>
+    </div>
+    <div className="social">
+      <h3>Följ oss!</h3>
+      <a href="https://www.facebook.com/gundlagardscafe/" target="_blank">
+        <img src="/fb-light.png"></img>
+      </a>
+      <a
+        href="https://www.instagram.com/gundlagardscafe/?__a=2"
+        target="_blank"
+      >
+        <img src="insta-light.png"></img>
+      </a>
+    </div>
+  </StyledFooter>
+);
+
 const StyledFooter = styled.footer`
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: ${({ theme }) => theme.colors.backgroundDark};
-  .logo {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    background-color: #e5e5e5;
-  }
+
   p {
     font-family: IBM Plex Sans;
     font-style: normal;
@@ -20,15 +56,20 @@ const StyledFooter = styled.footer`
     line-height: 25px;
   }
 
-  .adress-link {
+  .adress {
+    text-align: center;
     width: 100%;
   }
 
-  .adress-link p {
+  .link {
+    width: 100%;
+  }
+
+  .link p {
     padding-bottom: 24px;
   }
 
-  .adress-link a::nth-child(1) {
+  .link a::nth-child(1) {
     padding-bottom: 8px;
   }
 
@@ -37,28 +78,28 @@ const StyledFooter = styled.footer`
     color: ${({ theme }) => theme.colors.black};
     font-size: 14px;
     line-height: 25px;
-    color: black;
   }
 
-  .adress-link__item {
-    font-weight: 500;
+  .link__item {
+    font-weight: normal;
   }
 
-  .adress-link__item:hover {
+  .link__item:hover {
     text-decoration: underline;
   }
 
+  .logo {
+    border: 1px solid blue;
+  }
+
   .contact-info {
-    padding: 64px 0 32px 24px;
+    border: 1px solid green;
+    padding: 32px 0;
     display: flex;
     flex-direction: row;
   }
 
-  .contact-info__content {
-    padding-left: 24px;
-  }
-
-  .adress-link {
+  .link {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,43 +119,12 @@ const StyledFooter = styled.footer`
   .social h3 {
     padding-right: 16px;
   }
-`;
 
-const Footer = () => (
-  <StyledFooter>
-    <div className="contact-info">
-      <div className="logo"></div>
-      <div className="contact-info__content">
-        <p>Kontaktinfo:</p>
-        <p>Samantha Larsen</p>
-        <a className="mail-to" href="gundlagardscafe@gmail.com">
-          gundlagardscafe@gmail.com
-        </a>
-        <p>Mobil: 0708 84 07 17 </p>
-      </div>
-    </div>
-    <div className="adress-link">
-      <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
-      <Link href="/fragor-svar#fs">
-        <a className="adress-link__item">Frågor och svar</a>
-      </Link>
-      <Link href="/hitta-hit#oppettider">
-        <a className="adress-link__item">Öppettider</a>
-      </Link>
-    </div>
-    <div className="social">
-      <h3>FÖLJ OSS!</h3>
-      <a href="https://www.facebook.com/gundlagardscafe/" target="_blank">
-        <img src="/fb.png"></img>
-      </a>
-      <a
-        href="https://www.instagram.com/gundlagardscafe/?__a=2"
-        target="_blank"
-      >
-        <img src="insta.png"></img>
-      </a>
-    </div>
-  </StyledFooter>
-);
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+`;
 
 export default Footer;
