@@ -13,7 +13,7 @@ const Footer = () => (
         <a className="mail-to" href="gundlagardscafe@gmail.com">
           gundlagardscafe@gmail.com
         </a>
-        <p>Mobil: 0708 84 07 17 </p>
+        <p className="phone-number">Mobil: 0708 84 07 17 </p>
       </div>
     </div>
     <div className="adress mobile">
@@ -29,8 +29,8 @@ const Footer = () => (
       <a className="mail-to" href="gundlagardscafe@gmail.com">
         gundlagardscafe@gmail.com
       </a>
-      <p>Mobil: 0708 84 07 17 </p>
-      <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
+      <p className="phone-number">mobil: 0708 84 07 17 </p>
+      <p className="post-adress">Adress: Gundla mosse 32, 412 76 Göteborg</p>
     </div>
 
     <div className="link">
@@ -60,7 +60,6 @@ const StyledFooter = styled.footer`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: ${({ theme }) => theme.colors.backgroundDark};
 
   p {
@@ -72,8 +71,7 @@ const StyledFooter = styled.footer`
   }
 
   .adress {
-    text-align: center;
-    width: 100%;
+    justify-content: center;
   }
 
   .link {
@@ -84,19 +82,15 @@ const StyledFooter = styled.footer`
     padding-bottom: 24px;
   }
 
-  .link a::nth-child(1) {
-    padding-bottom: 8px;
-  }
-
   a {
     text-decoration: none;
     color: ${({ theme }) => theme.colors.black};
     font-size: 14px;
-    line-height: 25px;
   }
 
   .link__item {
     font-weight: normal;
+    margin-bottom: 16px;
   }
 
   .link__item:hover {
@@ -104,27 +98,26 @@ const StyledFooter = styled.footer`
   }
 
   .logo {
-    border: 1px solid blue;
+    margin-right: 16px;
   }
 
   .contact-info {
-    border: 1px solid green;
-    padding: 32px 0;
-    display: flex;
-    flex-direction: row;
+    padding: 53px 0 32px 0;
+    margin: 0 16px;
   }
 
   .link {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 27px 0;
   }
 
   .social {
-    padding: 48px 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-bottom: 49px;
   }
 
   .social img {
@@ -135,18 +128,75 @@ const StyledFooter = styled.footer`
     padding-right: 16px;
   }
 
+  .phone-number{
+    margin-top: 8px;
+  }
+
   .desktop {
     display: none;
   }
 
   .mobile {
-    display: block;
+    display: flex;
   }
 
   @media only screen and (min-width: 768px) {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    padding-top: 61px;
+    padding-bottom: 100px;
+
+    .link {
+      align-items: flex-start;
+      margin: 0;
+      width: auto;
+    }
+
+    .social {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    .post-adress {
+      margin-top: 24px;
+    }
+
+    .link p {
+      padding-bottom: 0px;
+    }
+
+    .link__item {
+      margin-bottom: 0px;
+      margin-top: 16px;
+    }
+
+    .logo {
+      margin-right: 0;
+    }
+
+    .contact-info {
+      padding: 0;
+      margin: 0 0px;
+    }
+
+    .link {
+      margin: 0px 0;
+    }
+
+    .social {
+      margin-bottom: 0px;
+    }
+
+    .social img {
+      padding-left: 8px;
+    }
+
+    .social h3 {
+      padding-right: 32px;
+    }
 
     .mobile {
       display: none;
@@ -154,6 +204,12 @@ const StyledFooter = styled.footer`
 
     .desktop {
       display: block;
+
+      p {
+        margin-bottom: 8px;
+      }
+
+≈
     }
   }
 `;
