@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import urlBuild from '../functions/imageBuilder';
 import ImageGrid from '../components/ImageGrid';
+import InstaGrid from '../components/InstaGrid';
 import styled from 'styled-components';
 import ContactForm from '../components/ContactForm';
 import LinkToContact from '../components/LinkToContact';
@@ -110,6 +111,17 @@ const PrivateEvent = ({ content }) => {
   const heroIcon = content.hero.heroImage.heroIcon;
   const imageGrid = content.imageGrid;
 
+  const [instaData, setInstaData] = React.useState('');
+  React.useEffect(() => {
+    fetch('https://www.instagram.com/gundlagardscafe/?__a=1')
+      .then((resp) => resp.json())
+      .then((json) => setInstaData(json));
+  }, [0]);
+  let instaGrid = [];
+  if (instaData) {
+    instaGrid = instaData.graphql.user.edge_owner_to_timeline_media.edges;
+  }
+
   return (
     <Layout pageTitle={content.header}>
       <StyledPrivateEvent>
@@ -139,6 +151,7 @@ const PrivateEvent = ({ content }) => {
           message="Berätta mer..."
           id="event-form"
         ></ContactForm>
+        <InstaGrid images={instaGrid} className="insta-grid" />
       </StyledPrivateEvent>
     </Layout>
   );

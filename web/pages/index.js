@@ -1,6 +1,8 @@
 import groq from 'groq';
-import client from '../functions/client';
 import styled from 'styled-components';
+import PortableText from '@sanity/block-content-to-react';
+
+import client from '../functions/client';
 import Layout from '../components/Layout';
 import urlBuild from '../functions/imageBuilder';
 import StyledLink from '../components/StyledLink';
@@ -10,16 +12,16 @@ import ImageGrid from '../components/ImageGrid';
 import InstaGrid from '../components/InstaGrid';
 
 export default function Home({ content }) {
-  // const [instaData, setInstaData] = React.useState('');
-  // React.useEffect(() => {
-  //   fetch('https://www.instagram.com/gundlagardscafe/?__a=1')
-  //     .then((resp) => resp.json())
-  //     .then((json) => setInstaData(json));
-  // }, [0]);
-  // let instaGrid = [];
-  // if (instaData) {
-  //   instaGrid = instaData.graphql.user.edge_owner_to_timeline_media.edges;
-  // }
+  const [instaData, setInstaData] = React.useState('');
+  React.useEffect(() => {
+    fetch('https://www.instagram.com/gundlagardscafe/?__a=1')
+      .then((resp) => resp.json())
+      .then((json) => setInstaData(json));
+  }, [0]);
+  let instaGrid = [];
+  if (instaData) {
+    instaGrid = instaData.graphql.user.edge_owner_to_timeline_media.edges;
+  }
 
   const imageGrid = content.imageGrid;
   const link = content.homePageLink.link.split(',');
@@ -35,7 +37,8 @@ export default function Home({ content }) {
           <div className="hero">
             <img src={heroImage}></img>
             <div className="hero__content">
-              <h1 className="hero__title">{content.welcome}</h1>
+              <img src="gundla-big.png"></img>
+              <PortableText blocks={content.welcome} className="hero__title" />
               <StyledLink href={href} className="hero__link">
                 {name}
               </StyledLink>
@@ -45,22 +48,25 @@ export default function Home({ content }) {
             </div>
           </div>
         )}
-        <IconLinks icons={iconLinks}></IconLinks>
+        <div className="desktop-iconlinks">
+          <IconLinks icons={iconLinks}></IconLinks>
+        </div>
         <ImageGrid images={imageGrid}></ImageGrid>
         <section id="about" className="article-first-parent">
           <article className="article-first">
             <h2>{content.aboutUs.header}</h2>
-            <p>{content.aboutUs.text}</p>
+            <PortableText blocks={content.aboutUs.text} />
+            {/* <p>{content.aboutUs.text}</p> */}
           </article>
           <article className="article-second">
             <div className="article-second__content">
               <h2>{content.history.header}</h2>
-              <p>{content.history.text}</p>
+              <PortableText blocks={content.history.text} />
             </div>
             <img src={urlBuild(content.history.image.asset)}></img>
           </article>
         </section>
-        {/* <InstaGrid images={instaGrid} className="insta-grid" /> */}
+        <InstaGrid images={instaGrid} className="insta-grid" />
       </Container>
     </Layout>
   );
@@ -87,6 +93,10 @@ export async function getServerSideProps() {
 }
 
 const Container = styled.section`
+  .hero__content img {
+    display: none;
+  }
+
   .hero {
     display: flex;
     flex-direction: column;
@@ -113,6 +123,7 @@ const Container = styled.section`
     align-items: center;
     z-index: 2;
   }
+
   .hero__title {
     line-height: 55px;
     color: ${({ theme }) => theme.colors.white};
@@ -175,6 +186,10 @@ const Container = styled.section`
   }
 
   @media only screen and (min-width: 959px) {
+    .hero__content img {
+      display: block;
+      margin-bottom: 32px;
+    }
     .article-first-parent {
       display: flex;
       flex-direction: column;
@@ -201,6 +216,10 @@ const Container = styled.section`
     .article-second img {
       width: 50%;
       height: auto;
+    }
+
+    .desktop-iconlinks {
+      margin: 0 80px;
     }
   }
 `;
