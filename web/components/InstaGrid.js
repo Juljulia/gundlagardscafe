@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 
 const StyledGrid = styled.div`
-  /* width: 100%;
-  height: 100%; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-bottom: 64px;
   z-index: 30;
 
   .wrapper {
@@ -29,10 +26,19 @@ const StyledGrid = styled.div`
   @media only screen and (min-width: 768px) {
     justify-content: center;
     flex-wrap: nowrap;
+    width: 636px;
+    transition: 0.1s all ease-in-out;
+    margin: 0 auto 64px auto;
+
+    &:hover {
+      width: 646px;
+    }
 
     .wrapper {
-      width: 185px;
+      padding-right: 8px;
+      border: 1px solid red;
     }
+
     .wrapper:nth-child(1),
     .wrapper:nth-child(2) {
       padding-bottom: 0;

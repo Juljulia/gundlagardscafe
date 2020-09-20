@@ -1,8 +1,19 @@
 import Burger from './BurgerMenu';
 import styled from 'styled-components';
+import Link from 'next/link';
+
+const Header = ({ show }) => {
+  return (
+    <StyledHeader show={show}>
+      <Burger></Burger>
+      <Link href="/">
+        <img src="gundla-small.png" className="header__logo"></img>
+      </Link>
+    </StyledHeader>
+  );
+};
 
 const StyledHeader = styled.header`
-  height: 66px;
   width: 100%;
   position: fixed;
   z-index: 10;
@@ -14,16 +25,15 @@ const StyledHeader = styled.header`
 
   .header__logo {
     margin-left: 24px;
+    z-index: 11;
+  }
+
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* height: 84px; */
   }
 `;
-
-const Header = ({ show }) => {
-  return (
-    <StyledHeader show={show}>
-      <Burger></Burger>
-      <img src="gundla-small.png" className="header__logo"></img>
-    </StyledHeader>
-  );
-};
 
 export default Header;
