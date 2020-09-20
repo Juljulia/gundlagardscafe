@@ -5,6 +5,7 @@ import ContactForm from '../components/ContactForm';
 import InstaGrid from '../components/InstaGrid';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
+import 'lazysizes';
 
 const Container = styled.section`
   .qa {
@@ -113,7 +114,7 @@ const Qa = ({ content }) => {
               >
                 Läs mer
               </button>
-              <img src="arrow.png"></img>
+              <img data-src="arrow.png" className="lazyload"></img>
             </div>
           )}
         </section>

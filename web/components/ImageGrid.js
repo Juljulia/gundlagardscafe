@@ -1,8 +1,18 @@
 import styled from 'styled-components';
 import urlBuild from '../functions/imageBuilder';
+import 'lazysizes';
 
 const StyledGrid = styled.div`
   width: 100vw;
+
+  .lazyload,
+  .lazyloading {
+    opacity: 0;
+  }
+  .lazyloaded {
+    opacity: 1;
+    transition: opacity 1000ms;
+  }
 
   .gridcontainter {
     display: grid;
@@ -102,9 +112,9 @@ export default function ImageGrid({ images }) {
           images.map((image, i) => (
             <div className="object" key={i}>
               <img
-                className="gridImage"
+                className="gridImage lazyload"
                 key={i}
-                src={urlBuild(image.image.asset)}
+                data-src={urlBuild(image.image.asset)}
               ></img>
             </div>
           ))}

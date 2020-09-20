@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { Squash as Hamburger } from 'hamburger-react';
 import PropTypes from 'prop-types';
+import 'lazysizes';
 
 const Nav = () => {
   const [isOpen, setOpen] = React.useState(false);
@@ -15,7 +16,11 @@ const Nav = () => {
       {/* MOBILE */}
 
       <nav className="nav-mobile">
-        <img src="/Ellipse.png" className="ellipse"></img>
+        <img
+          data-src="/Ellipse.png"
+          className="ellipse"
+          className="lazyload"
+        ></img>
 
         <Link href="/">
           <a onClick={() => setOpen(false)}>Hem</a>
@@ -56,13 +61,13 @@ const Nav = () => {
         <div className="social">
           <h3>Följ oss!</h3>
           <a href="https://www.facebook.com/gundlagardscafe/" target="_blank">
-            <img src="/fb-dark.png"></img>
+            <img data-src="/fb-dark.png" className="lazyload"></img>
           </a>
           <a
             href="https://www.instagram.com/gundlagardscafe/?__a=2"
             target="_blank"
           >
-            <img src="insta-dark.png"></img>
+            <img data-src="insta-dark.png" className="lazyload"></img>
           </a>
         </div>
         <div>
@@ -78,7 +83,7 @@ const Nav = () => {
         </div>
         <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
         <div className="tent">
-          <img src="/tent-menu.png"></img>
+          <img data-src="/tent-menu.png" className="lazyload"></img>
         </div>
       </nav>
 
@@ -109,13 +114,13 @@ const Nav = () => {
           <div className="social">
             <h3>Följ oss!</h3>
             <a href="https://www.facebook.com/gundlagardscafe/" target="_blank">
-              <img src="/fb-dark.png"></img>
+              <img data-src="/fb-dark.png" className="lazyload"></img>
             </a>
             <a
               href="https://www.instagram.com/gundlagardscafe/?__a=2"
               target="_blank"
             >
-              <img src="insta-dark.png"></img>
+              <img data-src="insta-dark.png" className="lazyload"></img>
             </a>
           </div>
         </div>
@@ -134,9 +139,12 @@ const Nav = () => {
         </div>
 
         <div className="tent-desktop">
-          <img src="/tent-desktop.png"></img>
+          <img data-src="/tent-desktop.png" className="lazyload"></img>
         </div>
-        <img src="/Ellipse-desktop.png" className="ellipse-desktop"></img>
+        <img
+          data-src="/Ellipse-desktop.png"
+          className="ellipse-desktop lazyload"
+        ></img>
       </nav>
     </Container>
   );
@@ -341,7 +349,7 @@ const Container = styled.div`
     .tent-desktop {
       position: absolute;
       bottom: 0;
-      right: 469px;
+      right: 206px;
       margin-bottom: 64px;
       height: 33%;
       visibility: ${(props) => (props.show ? 'visible' : 'hidden')};

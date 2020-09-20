@@ -208,7 +208,7 @@ export default function ContactForm({ topic, message, id }) {
           </div>
           <div>
             <label htmlFor="mail">Mailadress</label> <br />
-            <input type="mail" name="mail" id="mail" />
+            <input type="mail" name="mail" id="mail" required />
           </div>
         </div>
 
