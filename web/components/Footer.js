@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Footer = () => (
   <StyledFooter id="contact">
-    <div className="contact-info">
+    <div className="contact-info mobile">
       <div className="logo">
         <img src="/gundla-footer.png"></img>
       </div>
@@ -15,9 +15,24 @@ const Footer = () => (
         </a>
         <p>Mobil: 0708 84 07 17 </p>
       </div>
+    </div>
+    <div className="adress mobile">
       <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
     </div>
-    <div className="adress"></div>
+
+    <div className="desktop">
+      <img src="/gundla-footer.png"></img>
+    </div>
+    <div className="desktop">
+      <p>Kontaktinfo:</p>
+      <p>Samantha Larsen</p>
+      <a className="mail-to" href="gundlagardscafe@gmail.com">
+        gundlagardscafe@gmail.com
+      </a>
+      <p>Mobil: 0708 84 07 17 </p>
+      <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
+    </div>
+
     <div className="link">
       <Link href="/hitta-hit#oppettider">
         <a className="link__item">Öppettider</a>
@@ -120,10 +135,26 @@ const StyledFooter = styled.footer`
     padding-right: 16px;
   }
 
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
   @media only screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    .mobile {
+      display: none;
+    }
+
+    .desktop {
+      display: block;
+    }
   }
 `;
 

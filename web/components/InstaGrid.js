@@ -36,7 +36,6 @@ const StyledGrid = styled.div`
 
     .wrapper {
       padding-right: 8px;
-      border: 1px solid red;
     }
 
     .wrapper:nth-child(1),
