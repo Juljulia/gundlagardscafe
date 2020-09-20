@@ -52,6 +52,16 @@ const StyledHero = styled.section`
       transform: translateY(0px);
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    max-height: 660px;
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      max-height: 672px;
+    }
+  }
 `;
 
 const Hero = ({ heroImage, heroImageAlt, heroIcon, heroIconAlt }) => {
