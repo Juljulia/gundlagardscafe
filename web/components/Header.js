@@ -58,6 +58,7 @@ const StyledHeader = styled.header`
   }
 
   .header__logo {
+    cursor: pointer;
     margin-left: 24px;
   }
 
