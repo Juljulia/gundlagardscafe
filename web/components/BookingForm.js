@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { useState } from 'react';
+import styled from 'styled-components';
 
 const StyledBookingForm = styled.div`
   padding-top: 21px;
@@ -9,6 +9,7 @@ const StyledBookingForm = styled.div`
   background: #79655c;
   margin-top: 54px;
   margin-bottom: 64px;
+  overflow: hidden;
 
   label {
     font-size: 40px;
@@ -81,11 +82,11 @@ const StyledBookingForm = styled.div`
   .form-message {
     position: fixed;
     top: -40px;
+    left: 0;
     z-index: 100;
     background-color: #cd8501;
-    width: 100vw;
-    margin-left: -72px;
-    padding: 15px;
+    width: calc(100vw);
+    padding: 15px 0;
     text-align: center;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
     transform: translateY(-50px);
@@ -114,7 +115,9 @@ const StyledBookingForm = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
-    width: 100vw;
+    width: calc(100vw - 42px);
+    border: #79655c solid 5px;
+    overflow: hidden;
     padding-bottom: 0;
     height: auto;
     margin-bottom: 34px;
@@ -147,6 +150,10 @@ const StyledBookingForm = styled.div`
       div {
         width: 48%;
       }
+    }
+
+    .form-message {
+      width: 100vw;
     }
   }
 `;

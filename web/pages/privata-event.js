@@ -11,6 +11,8 @@ import LinkToContact from '../components/LinkToContact';
 import PortableText from '@sanity/block-content-to-react';
 
 const StyledPrivateEvent = styled.div`
+  margin-top: -24px;
+
   h1 {
     margin: 0 16px;
   }
@@ -146,6 +148,7 @@ const PrivateEvent = ({ content }) => {
         </div>
         <LinkToContact></LinkToContact>
         <ImageGrid images={imageGrid}></ImageGrid>
+        <div className="achor" id="booking-form"></div>
         <ContactForm
           topic="Fira något stort?"
           message="Berätta mer..."
@@ -162,7 +165,7 @@ const query = groq`*[_type == 'private-event'][0]{
   hero,
   imageGrid,
   partyDescription,
-  cateringDescription
+  cateringDescription,
 }`;
 
 export const getStaticProps = async function () {
