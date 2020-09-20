@@ -29,7 +29,7 @@ function Layout({ children, pageTitle = '' }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Header show={header} />
+      <Header showHeader={header} />
       {children}
       <Footer />
     </main>
