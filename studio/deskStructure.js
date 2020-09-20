@@ -37,8 +37,4 @@ export default () =>
         .title('Frågor och svar')
         .child(S.editor().schemaType('qa').documentId('qa'))
         .icon(MdQuestionAnswer),
-      S.listItem()
-        .title('Om')
-        .child(S.editor().schemaType('about').documentId('about'))
-        .icon(MdAccountBox),
     ]);
