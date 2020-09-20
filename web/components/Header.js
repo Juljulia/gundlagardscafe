@@ -1,37 +1,37 @@
-import Burger from './BurgerMenu';
 import styled from 'styled-components';
 import Link from 'next/link';
+import Nav from './Nav';
 
-const Header = ({ show }) => {
+const Header = ({ showHeader, show }) => {
   return (
-    <StyledHeader show={show}>
-      <Burger></Burger>
+    <StyledHeader showHeader={showHeader}>
       <Link href="/">
         <img src="gundla-small.png" className="header__logo"></img>
       </Link>
+      <Nav show={show} />
     </StyledHeader>
   );
 };
 
 const StyledHeader = styled.header`
-  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
+  width: 100%;
   z-index: 10;
-  top: ${(props) => (props.show ? 0 : '-10px')};
+  top: ${(props) => (props.showHeader ? 0 : '-10px')};
   right: 0;
   background-color: ${({ theme }) => theme.colors.backgroundLight};
-  opacity: ${(props) => (props.show ? 1 : 0)};
+  opacity: ${(props) => (props.showHeader ? 1 : 0)};
   transition: all 0.15s ease-out;
 
   .header__logo {
     margin-left: 24px;
-    z-index: 11;
   }
 
   @media only screen and (min-width: 768px) {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     /* height: 84px; */
   }
 `;
