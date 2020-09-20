@@ -165,7 +165,7 @@ const FindUs = ({ content }) => {
             <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
           </div>
         </div>
-        <div className="availability-wrapper">
+        <div className="availability-wrapper" id="hitta-hit">
           {availability.map((object) => (
             <div key={object._key} class="availability-items">
               <img
