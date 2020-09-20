@@ -105,7 +105,8 @@ const StyledEventList = styled.div`
     .event-wrapper {
       display: grid;
       grid-template-columns: 50% 50%;
-      grid-template-rows: auto;
+      grid-template-rows: minmax(150px, auto);
+      grid-auto-flow: dense;
       cursor: pointer;
 
       .text {
@@ -123,7 +124,8 @@ const StyledEventList = styled.div`
 
 const EventList = ({ event, grid }) => {
   const [topic, setState] = useState('');
-  const [status, setStatus] = useState('3');
+  const [status, setStatus] = useState('6');
+
   return (
     <StyledEventList>
       <div className="event-wrapper">
