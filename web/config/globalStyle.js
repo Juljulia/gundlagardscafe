@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'IBM Plex Sans', sans-serif;
     font-style: normal;
     color: #2B2928;
+    scroll-behavior: smooth;
   }
 
   h1 {
