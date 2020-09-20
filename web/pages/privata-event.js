@@ -10,6 +10,9 @@ import LinkToContact from '../components/LinkToContact';
 import PortableText from '@sanity/block-content-to-react';
 
 const StyledPrivateEvent = styled.div`
+  h1 {
+    margin: 0 16px;
+  }
   .link-to-contact {
     height: 216px;
     background: #fecfb1;
@@ -46,14 +49,14 @@ const StyledPrivateEvent = styled.div`
   .private-event-wrapper {
     display: flex;
     flex-direction: column;
-    margin: 32px 16px;
+    margin: 0px 16px;
 
     .private-event-info {
       margin: 32px 0;
 
       h2 {
         line-height: 50px;
-        margin-bottom: 32px;
+        margin-bottom: 16px;
       }
 
       p {
@@ -83,14 +86,19 @@ const StyledPrivateEvent = styled.div`
 
     .private-event-wrapper {
       flex-direction: row;
-      margin: 62px 72px;
+      margin: 52px 72px;
 
       .private-event-info {
         width: 50%;
+        margin: 0;
 
         p {
           font-size: 20px;
           width: 100%;
+        }
+
+        h2 {
+          margin-bottom: 16px;
         }
       }
     }
@@ -101,6 +109,7 @@ const PrivateEvent = ({ content }) => {
   const heroImage = content.hero;
   const heroIcon = content.hero.heroImage.heroIcon;
   const imageGrid = content.imageGrid;
+
   return (
     <Layout pageTitle={content.header}>
       <StyledPrivateEvent>
