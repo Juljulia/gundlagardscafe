@@ -16,11 +16,7 @@ const Nav = () => {
       {/* MOBILE */}
 
       <nav className="nav-mobile">
-        <img
-          data-src="/Ellipse.png"
-          className="ellipse"
-          className="lazyload"
-        ></img>
+        <img data-src="/Ellipse.png" className="ellipse lazyload"></img>
 
         <Link href="/">
           <a onClick={() => setOpen(false)}>Hem</a>
