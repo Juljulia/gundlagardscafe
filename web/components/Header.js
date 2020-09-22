@@ -9,7 +9,13 @@ const Header = ({ show }) => {
       <Link href="/">
         <img
           data-src="gundla-small.png"
-          className="header__logo lazyload"
+          className="header__logo lazyload desktop"
+        ></img>
+      </Link>
+      <Link href="/">
+        <img
+          data-src="flower.png"
+          className="header__logo lazyload mobile"
         ></img>
       </Link>
       <div className="desktop-navlinks">
@@ -63,6 +69,14 @@ const StyledHeader = styled.header`
     display: none;
   }
 
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
   @media only screen and (min-width: 768px) {
     height: 66px;
     .desktop-navlinks {
@@ -84,6 +98,14 @@ const StyledHeader = styled.header`
 
     a:hover {
       transform: scale(1.05);
+    }
+
+    .desktop {
+      display: block;
+    }
+
+    .mobile {
+      display: none;
     }
   }
 `;
