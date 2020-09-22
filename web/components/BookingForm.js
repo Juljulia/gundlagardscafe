@@ -5,7 +5,7 @@ const StyledBookingForm = styled.div`
   padding-top: 21px;
   padding-left: 16px;
   padding-right: 16px;
-  padding-bottom: 121px;
+  padding-bottom: 0px;
   background: #79655c;
   margin-top: 54px;
   margin-bottom: 64px;
@@ -49,7 +49,7 @@ const StyledBookingForm = styled.div`
     font-size: 25px;
     color: #2b2928;
     float: right;
-    margin-bottom: 119px;
+    margin-bottom: 56px;
     margin-top: 16px;
     box-shadow: none;
   }

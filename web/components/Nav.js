@@ -78,7 +78,9 @@ const Nav = () => {
             <p>mobil: 0708-84 07 17 </p>
           </div>
         </div>
-        <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
+        <Link href="https://www.google.com/maps/place/Gundla+G%C3%A5rdscaf%C3%A9/@57.6862902,12.0260549,17z/data=!3m1!4b1!4m5!3m4!1s0x464ff3a5d0157c63:0xdd291fa6017dc04a!8m2!3d57.6862902!4d12.0282436">
+          <a className="mail-to">Adress: Gundla mosse 32, 412 76 Göteborg</a>
+        </Link>
         <div className="tent">
           <img data-src="/tent-menu.png" className="lazyload"></img>
         </div>
@@ -132,7 +134,9 @@ const Nav = () => {
 
             <p>mobil: 0708-84 07 17 </p>
           </div>
-          <p>Adress: Gundla mosse 32, 412 76 Göteborg</p>
+          <Link href="https://www.google.com/maps/place/Gundla+G%C3%A5rdscaf%C3%A9/@57.6862902,12.0260549,17z/data=!3m1!4b1!4m5!3m4!1s0x464ff3a5d0157c63:0xdd291fa6017dc04a!8m2!3d57.6862902!4d12.0282436">
+            <a className="mail-to">Adress: Gundla mosse 32, 412 76 Göteborg</a>
+          </Link>
         </div>
 
         <div className="tent-desktop">
@@ -184,6 +188,11 @@ const Container = styled.div`
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 14px;
     line-height: 25px;
+  }
+
+  .mail-to:hover {
+    transform: none;
+    text-decoration: underline;
   }
 
   .nav-mobile {
@@ -302,6 +311,10 @@ const Container = styled.div`
         font-family: 'IBM Plex Sans', sans-serif;
         font-size: 14px;
         line-height: 25px;
+      }
+
+      .mail-to:hover {
+        text-decoration: underline;
       }
     }
 
