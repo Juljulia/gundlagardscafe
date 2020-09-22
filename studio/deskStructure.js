@@ -16,7 +16,7 @@ export default () =>
         .child(S.editor().schemaType('main').documentId('main'))
         .icon(MdHome),
       S.listItem()
-        .title('Mat')
+        .title('Äta')
         .child(S.editor().schemaType('food').documentId('food'))
         .icon(MdRestaurant),
       S.listItem()
@@ -30,7 +30,7 @@ export default () =>
         )
         .icon(MdRoomService),
       S.listItem()
-        .title('Hitta hit/Öppettider')
+        .title('Hitta hit')
         .child(S.editor().schemaType('find-us').documentId('find-us'))
         .icon(MdPlace),
       S.listItem()
