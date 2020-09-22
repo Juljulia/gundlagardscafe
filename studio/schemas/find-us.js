@@ -1,5 +1,5 @@
 export default {
-  title: 'Hitta hit/Öppettider',
+  title: 'Hitta hit',
   name: 'find-us',
   type: 'document',
   fields: [
