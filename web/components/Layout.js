@@ -3,16 +3,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 function Layout({ children, pageTitle = '' }) {
-  const [header, setHeader] = React.useState(false);
-  React.useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 5) {
-        setHeader(true);
-      }
-    };
-    window.addEventListener('scroll', onScroll);
-  });
-
   return (
     <main>
       <Head>
@@ -29,7 +19,7 @@ function Layout({ children, pageTitle = '' }) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Header showHeader={header} />
+      <Header />
       {children}
       <Footer />
     </main>

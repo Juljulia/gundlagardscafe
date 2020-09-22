@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import 'lazysizes';
 
 const Footer = () => (
-  <StyledFooter id="contact">
-    <div className="contact-info mobile">
+  <StyledFooter>
+    <div className="contact-info mobile" id="Section2">
       <div className="logo">
         <img data-src="/gundla-footer.png" className="lazyload"></img>
       </div>
@@ -64,13 +64,13 @@ const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.colors.backgroundDark};
 
   .lazyload,
-.lazyloading {
+  .lazyloading {
     opacity: 0;
-}
-.lazyloaded {
+  }
+  .lazyloaded {
     opacity: 1;
     transition: opacity 1000ms;
-}
+  }
 
   p {
     font-family: IBM Plex Sans;
@@ -138,7 +138,7 @@ const StyledFooter = styled.footer`
     padding-right: 16px;
   }
 
-  .phone-number{
+  .phone-number {
     margin-top: 8px;
   }
 
@@ -218,8 +218,6 @@ const StyledFooter = styled.footer`
       p {
         margin-bottom: 8px;
       }
-
-≈
     }
   }
 `;

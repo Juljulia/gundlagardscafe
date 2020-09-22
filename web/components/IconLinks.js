@@ -33,6 +33,10 @@ const Container = styled.div`
   justify-content: space-around;
   align-items: baseline;
 
+  h3 {
+    font-weight: normal;
+  }
+
   &:hover {
     cursor: pointer;
   }

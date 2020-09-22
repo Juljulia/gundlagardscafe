@@ -44,27 +44,6 @@ const StyledHero = styled.section`
     filter: drop-shadow(0px 4px 51px #ffffff);
   }
 
-  .hero-arrow {
-    object-fit: cover;
-    text-align: center;
-    width: 100%;
-    z-index: 2;
-    margin-bottom: 80px;
-    animation: bounce 1.5s linear infinite;
-  }
-
-  @keyframes bounce {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-5px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-
   @media only screen and (min-width: 768px) {
     max-height: 672px;
 
@@ -86,15 +65,14 @@ const Hero = ({ heroImage, heroImageAlt, heroIcon, heroIconAlt }) => {
       ></img>
       <div className="hero-icon-wrapper">
         <div className="hero-icon">
-          <img
-            data-src={urlBuild(heroIcon.asset)}
-            alt={heroIconAlt}
-            className="lazyload"
-          ></img>
+          {heroIcon && (
+            <img
+              data-src={urlBuild(heroIcon.asset)}
+              alt={heroIconAlt}
+              className="lazyload"
+            ></img>
+          )}
         </div>
-      </div>
-      <div className="hero-arrow">
-        <img data-src="/scroll-down.png" className="lazyload"></img>
       </div>
     </StyledHero>
   );

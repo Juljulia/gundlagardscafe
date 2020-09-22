@@ -86,7 +86,7 @@ const StyledEventList = styled.div`
     align-items: center;
     height: 50px;
     margin-top: 48px;
-    margin-bottom: 64px;
+    margin-bottom: calc(48px + 24px);
   }
 
   .more {

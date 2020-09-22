@@ -3,9 +3,9 @@ import Link from 'next/link';
 import Nav from './Nav';
 import 'lazysizes';
 
-const Header = ({ showHeader, show }) => {
+const Header = ({ show }) => {
   return (
-    <StyledHeader showHeader={showHeader}>
+    <StyledHeader>
       <Link href="/">
         <img
           data-src="gundla-small.png"
@@ -13,7 +13,7 @@ const Header = ({ showHeader, show }) => {
         ></img>
       </Link>
       <div className="desktop-navlinks">
-        <Link href="/hitta-hit#hitta-hit">
+        <Link href="/hitta-hit">
           <a>Hitta hit</a>
         </Link>
 
@@ -42,11 +42,9 @@ const StyledHeader = styled.header`
   position: fixed;
   width: 100%;
   z-index: 10;
-  top: ${(props) => (props.showHeader ? 0 : '-10px')};
+  top: 0;
   right: 0;
   background-color: ${({ theme }) => theme.colors.backgroundLight};
-  opacity: ${(props) => (props.showHeader ? 1 : 0)};
-  transition: all 0.15s ease-out;
 
   .lazyload,
   .lazyloading {

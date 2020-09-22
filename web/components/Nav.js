@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { Squash as Hamburger } from 'hamburger-react';
+import { animateScroll } from 'react-scroll';
 import PropTypes from 'prop-types';
 import 'lazysizes';
 
@@ -26,7 +27,7 @@ const Nav = () => {
           <a onClick={() => setOpen(false)}>Öppettider</a>
         </Link>
 
-        <Link href="/hitta-hit#hitta-hit">
+        <Link href="/hitta-hit">
           <a onClick={() => setOpen(false)}>Hitta hit</a>
         </Link>
 
@@ -46,9 +47,9 @@ const Nav = () => {
           <a onClick={() => setOpen(false)}>Om oss</a>
         </Link>
 
-        <Link href="/#contact">
-          <a onClick={() => setOpen(false)}>Kontakt</a>
-        </Link>
+        <a onClick={() => animateScroll.scrollToBottom() + setOpen(false)}>
+          Kontakt
+        </a>
 
         <Link href="/fragor-svar">
           <a onClick={() => setOpen(false)}>Frågor och svar</a>
@@ -99,9 +100,9 @@ const Nav = () => {
             <a onClick={() => setOpen(false)}>Om oss</a>
           </Link>
 
-          <Link href="/#contact">
-            <a onClick={() => setOpen(false)}>Kontakt</a>
-          </Link>
+          <a onClick={() => animateScroll.scrollToBottom() + setOpen(false)}>
+            Kontakt
+          </a>
 
           <Link href="/fragor-svar">
             <a onClick={() => setOpen(false)}>Frågor och svar</a>
