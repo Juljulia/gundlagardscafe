@@ -7,6 +7,7 @@ export default {
       name: 'heroImage',
       type: 'image',
       title: 'Huvudbild',
+      validation: (Rule) => Rule.required(),
       options: {
         isHighlighted: true,
       },
@@ -15,6 +16,7 @@ export default {
           title: 'Beskrivande text för huvudbilden',
           name: 'heroImageAlt',
           type: 'string',
+          validation: (Rule) => Rule.required(),
         },
         {
           name: 'heroIcon',

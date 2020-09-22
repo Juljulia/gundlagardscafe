@@ -205,7 +205,7 @@ export default function BookingForm({ message }) {
             <input type="mail" name="topic" id="topic" required />
           </div>
         </div>
-        <div class="select">
+        <div className="select">
           <label htmlFor="amout">Antal biljetter</label>
           <select name="amout" id="amout" form="amout">
             <option value="1">1</option>

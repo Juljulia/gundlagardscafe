@@ -13,12 +13,14 @@ export default {
           title: 'Bild',
           name: 'image',
           type: 'image',
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               name: 'alt',
               type: 'string',
               title: 'Beskrivande text',
               description: 'Viktigt för sökbarhet och träffar på Google',
+              validation: (Rule) => Rule.required(),
             },
           ],
         },

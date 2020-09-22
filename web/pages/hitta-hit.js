@@ -169,7 +169,7 @@ const FindUs = ({ content }) => {
         </div>
         <div className="availability-wrapper" id="hitta-hit">
           {availability.map((object) => (
-            <div key={object._key} class="availability-items">
+            <div key={object._key} className="availability-items">
               <img
                 data-src={urlBuild(object.image.asset)}
                 alt={object.image.alt}

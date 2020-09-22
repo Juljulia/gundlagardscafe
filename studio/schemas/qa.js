@@ -9,12 +9,14 @@ export default {
       title: 'Rubrik',
       name: 'header',
       type: 'string',
+      validation: (Rule) => Rule.required().min(3).max(50),
     },
     {
       name: 'hero',
       type: 'hero',
       title: 'Helbild',
       description: 'Första helbilden på sidan',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Frågor och svar',
@@ -31,11 +33,13 @@ export default {
               title: 'Fråga',
               name: 'question',
               type: 'string',
+              validation: (Rule) => Rule.required(),
             },
             {
               title: 'Svar',
               name: 'answer',
               type: 'text',
+              validation: (Rule) => Rule.required(),
             },
           ],
           preview: {

@@ -43,7 +43,6 @@ export default {
                   {
                     title: 'Hitta hit',
                     value: 'hitta-hit , Hitta hit',
-                    name: 'Hitta hit',
                   },
                   {
                     title: 'Privata event',

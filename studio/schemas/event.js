@@ -7,22 +7,26 @@ export default {
       title: 'Rubrik',
       name: 'header',
       type: 'string',
+      validation: (Rule) => Rule.required().min(3).max(50),
     },
     {
       name: 'hero',
       type: 'hero',
       title: 'Helbild',
       description: 'Första helbilden på sidan',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Beskrivning',
       name: 'description',
       type: 'text',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Kalender rubrik',
       name: 'calenderHeader',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Evenemang',
@@ -41,17 +45,28 @@ export default {
               type: 'string',
               description: 'En kortare titel är att föredra',
               validation: (Rule) =>
-                Rule.max(30).warning('Shorter titles are usually better'),
+                Rule.max(30).warning('En kortare titel är att föredra'),
             },
             {
               title: 'Bild',
               name: 'image',
               type: 'image',
+              validation: (Rule) => Rule.required(),
+              fields: [
+                {
+                  name: 'alt',
+                  type: 'string',
+                  title: 'Beskrivande text',
+                  description: 'Viktigt för sökbarhet och träffar på Google',
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
             },
             {
               title: 'Beskrivning',
               name: 'description',
               type: 'array',
+              validation: (Rule) => Rule.required(),
               of: [{ type: 'block' }],
             },
             {
@@ -64,6 +79,7 @@ export default {
               title: 'Välj ett tema',
               name: 'category',
               type: 'string',
+              validation: (Rule) => Rule.required(),
               options: {
                 list: [
                   { title: 'Musik', value: '#FFFA97' },
