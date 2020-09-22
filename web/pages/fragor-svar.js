@@ -27,6 +27,7 @@ const Container = styled.section`
     align-items: center;
     height: 50px;
     margin-top: 8px;
+    cursor: pointer;
   }
 
   .read-more__button {
@@ -105,15 +106,13 @@ const Qa = ({ content }) => {
               ))}
           </article>
           {amount <= 4 && (
-            <div className="read-more">
-              <button
-                className="read-more__button"
-                onClick={() => {
-                  setAmount(amount + 4);
-                }}
-              >
-                Läs mer
-              </button>
+            <div
+              className="read-more"
+              onClick={() => {
+                setAmount(amount + 4);
+              }}
+            >
+              <button className="read-more__button">Läs mer</button>
               <img data-src="arrow.png" className="lazyload"></img>
             </div>
           )}

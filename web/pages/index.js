@@ -44,9 +44,6 @@ export default function Home({ content }) {
                 {name}
               </StyledLink>
             </div>
-            <div className="hero-arrow">
-              <img data-src="/scroll-down.png" className="lazyload"></img>
-            </div>
           </div>
         )}
         <div className="desktop-iconlinks">
@@ -133,32 +130,6 @@ const Container = styled.section`
     color: ${({ theme }) => theme.colors.white};
     text-align: center;
     margin: 0 48px 32px 48px;
-  }
-
-  .hero-arrow > img {
-    width: auto;
-    height: auto;
-  }
-
-  .hero-arrow {
-    text-align: center;
-    width: 100%;
-    z-index: 2;
-    object-fit: cover;
-    margin-bottom: 80px;
-    animation: bounce 1.5s linear infinite;
-  }
-
-  @keyframes bounce {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-5px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
   }
 
   .article-first {
