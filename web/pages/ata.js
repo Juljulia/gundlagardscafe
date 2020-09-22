@@ -46,7 +46,6 @@ const StyledFood = styled.div`
 const Food = ({ content }) => {
   const heroImage = content.hero;
   const heroIcon = content.hero.heroImage.heroIcon;
-  console.log(heroIcon);
   const imageGrid = content.imageGrid;
   return (
     <Layout pageTitle={content.header}>
