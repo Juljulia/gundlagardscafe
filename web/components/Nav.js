@@ -154,6 +154,7 @@ const Container = styled.div`
   }
   .hamburger-react {
     z-index: 500;
+    color: #3d3a39;
   }
 
   p {
