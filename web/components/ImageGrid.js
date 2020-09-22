@@ -35,6 +35,7 @@ const StyledGrid = styled.div`
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: 50% 50%;
   }
 
   .object:nth-child(1) {

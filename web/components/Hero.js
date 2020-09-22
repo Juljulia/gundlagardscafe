@@ -84,15 +84,17 @@ const Hero = ({ heroImage, heroImageAlt, heroIcon, heroIconAlt }) => {
         data-src={urlBuild(heroImage.heroImage.asset)}
         alt={heroImageAlt}
       ></img>
-      <div className="hero-icon-wrapper">
-        <div className="hero-icon">
-          <img
-            data-src={urlBuild(heroIcon.asset)}
-            alt={heroIconAlt}
-            className="lazyload"
-          ></img>
+      {heroIcon && (
+        <div className="hero-icon-wrapper">
+          <div className="hero-icon">
+            <img
+              data-src={urlBuild(heroIcon.asset)}
+              alt={heroIconAlt}
+              className="lazyload"
+            ></img>
+          </div>
         </div>
-      </div>
+      )}
       <div className="hero-arrow">
         <img data-src="/scroll-down.png" className="lazyload"></img>
       </div>
