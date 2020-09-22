@@ -1,6 +1,6 @@
 # Homepage for Gundla Gårdscafé
 
-![Image description](homepage.jpg)
+![Image description](homepage.png)
 
 This is a website made for Gundla Gårdscafé that is build with Next.js and connected to Sanity as headless CMS.
 
@@ -20,7 +20,7 @@ $ npm run dev
 - Open http://localhost:3000 to view the webpage in the browser.
 
 ## Authors
-- **Julia Karlsson** - *Initial work* - [Andreas](https://Juljulia.github.io)
+- **Julia Karlsson** - *Initial work* - [Julia](https://Juljulia.github.io)
 - **Maja Alin** - *Initial work* - [Maja](https://majaalin.github.io)
 
 ## License
