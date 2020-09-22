@@ -31,11 +31,11 @@ const Nav = () => {
           <a onClick={() => setOpen(false)}>Hitta hit</a>
         </Link>
 
-        <Link href="/mat">
+        <Link href="/ata">
           <a onClick={() => setOpen(false)}>Äta</a>
         </Link>
 
-        <Link href="/event">
+        <Link href="/evenemang">
           <a onClick={() => setOpen(false)}>Evenemang</a>
         </Link>
 

@@ -22,11 +22,11 @@ const Header = ({ show }) => {
         <Link href="/hitta-hit">
           <a>Hitta hit</a>
         </Link>
-        <Link href="/mat">
+        <Link href="/ata">
           <a>Äta</a>
         </Link>
 
-        <Link href="/event">
+        <Link href="/evenemang">
           <a>Evenemang</a>
         </Link>
 
