@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import 'lazysizes';
 
 const Footer = () => (
-  <StyledFooter id="contact">
+  <StyledFooter>
     <div className="contact-info mobile">
       <div className="logo">
         <img data-src="/gundla-footer.png" className="lazyload"></img>
@@ -42,7 +42,7 @@ const Footer = () => (
         <a className="link__item">Frågor och svar</a>
       </Link>
     </div>
-    <div className="social">
+    <div className="social" id="contact">
       <h3>Följ oss!</h3>
       <a href="https://www.facebook.com/gundlagardscafe/" target="_blank">
         <img data-src="/fb-light.png" className="lazyload"></img>

@@ -171,6 +171,11 @@ const Container = styled.div`
     font-weight: normal;
     font-size: 40px;
     line-height: 44px;
+    transition: transform 0.1s ease-in-out;
+  }
+
+  a:hover {
+    transform: scale(1.05);
   }
 
   .mail-to {
