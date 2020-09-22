@@ -1,5 +1,5 @@
 export default {
-  title: 'Mat',
+  title: 'Äta',
   name: 'food',
   type: 'document',
   fields: [

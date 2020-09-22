@@ -2,7 +2,6 @@ import S from '@sanity/desk-tool/structure-builder';
 import MdHome from 'react-icons/lib/md/home';
 import MdEvent from 'react-icons/lib/md/event';
 import MdPlace from 'react-icons/lib/md/place';
-import MdAccountBox from 'react-icons/lib/md/account-box';
 import MdRestaurant from 'react-icons/lib/md/restaurant';
 import MdQuestionAnswer from 'react-icons/lib/md/question-answer';
 import MdRoomService from 'react-icons/lib/md/room-service';
@@ -16,7 +15,7 @@ export default () =>
         .child(S.editor().schemaType('main').documentId('main'))
         .icon(MdHome),
       S.listItem()
-        .title('Mat')
+        .title('Äta')
         .child(S.editor().schemaType('food').documentId('food'))
         .icon(MdRestaurant),
       S.listItem()
