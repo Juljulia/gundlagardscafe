@@ -19,6 +19,7 @@ const StyledLinkToContact = styled.header`
       letter-spacing: 0.025em;
       color: #2b2928;
       margin: 16px 16px;
+      max-width: 280px;
     }
 
     button {
@@ -50,6 +51,7 @@ const StyledLinkToContact = styled.header`
       p {
         font-size: 20px;
         margin-bottom: 19px;
+        max-width: 100%;
       }
 
       button {

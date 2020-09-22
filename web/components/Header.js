@@ -16,7 +16,6 @@ const Header = ({ show }) => {
         <Link href="/hitta-hit">
           <a>Hitta hit</a>
         </Link>
-
         <Link href="/mat">
           <a>Äta</a>
         </Link>
@@ -78,7 +77,13 @@ const StyledHeader = styled.header`
       line-height: 30px;
       text-decoration: none;
       color: ${({ theme }) => theme.colors.black};
-      padding: 0 16px;
+      margin: 0 16px;
+      display: inline-block;
+      transition: transform 0.1s ease-in-out;
+    }
+
+    a:hover {
+      transform: scale(1.05);
     }
   }
 `;
