@@ -32,7 +32,7 @@ export default function Home({ content }) {
   const iconLinks = content.iconLink;
 
   return (
-    <Layout pageTitle={content.header}>
+    <Layout pageTitle="Hem">
       <Container>
         {heroImage && (
           <div className="hero">

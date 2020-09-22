@@ -144,6 +144,7 @@ const EventList = ({ event, grid }) => {
               <img
                 data-src={urlBuild(object.image.asset)}
                 className="lazyload"
+                alt={object.image.alt}
               ></img>
               <div className="text">
                 <h2>{object.header}</h2>
