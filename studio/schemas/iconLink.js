@@ -64,8 +64,15 @@ export default {
       ],
       preview: {
         select: {
-          media: 'image',
           title: 'links.link',
+          media: 'image',
+        },
+        prepare(selection) {
+          const { title, media } = selection;
+          return {
+            title: title.split(', ')[1],
+            media: media,
+          };
         },
       },
     },
