@@ -66,6 +66,7 @@ export default function Home({ content }) {
             </div>
             <img
               data-src={urlBuild(content.history.image.asset)}
+              alt={content.history.image.alt}
               className="lazyload"
             ></img>
           </article>

@@ -12,6 +12,8 @@ export default {
           name: 'image',
           title: 'Ikon',
           type: 'image',
+          description:
+            'Glöm inte att även gå in på "Edit" och beskriva bilden för bättre tillgänglighet',
           fields: [
             {
               title: 'Beskrivande text för ikonen',
