@@ -196,13 +196,19 @@ export default function BookingForm({ message }) {
               type="text"
               name="topic"
               id="topic"
-              placeholder={message}
+              placeholder={(message && message) || 'Fyll i evenemang och datum'}
               required
             />
           </div>
           <div>
             <label htmlFor="mail">Mailadress</label> <br />
-            <input type="mail" name="topic" id="topic" required />
+            <input
+              type="mail"
+              name="topic"
+              id="topic"
+              placeholder="namn@mailadress.com"
+              required
+            />
           </div>
         </div>
         <div className="select">
@@ -223,7 +229,7 @@ export default function BookingForm({ message }) {
         <textarea
           name="message"
           id="yourmessage"
-          placeholder=""
+          placeholder="Plats för övrig information"
           required
         ></textarea>
         <button type="submit">Boka</button>
