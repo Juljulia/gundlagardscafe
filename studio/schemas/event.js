@@ -59,7 +59,10 @@ export default {
               title: 'Bild',
               name: 'image',
               type: 'image',
-              validation: (Rule) => Rule.required(),
+              validation: (Rule) =>
+                Rule.required().warning(
+                  'Du måste lägga till en bild för att kunna trycka på "Publish" och publicera dina ändringar.'
+                ),
               fields: [
                 {
                   name: 'alt',
