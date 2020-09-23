@@ -15,15 +15,21 @@ export default {
         ),
     },
     {
+      name: 'hero',
+      type: 'hero',
+      title: 'Helbild',
+      description: 'Första helbilden på sidan.',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'homePageLink',
-      title: 'Länk',
+      title: 'Länk ovanpå förstasidans bild',
       type: 'object',
-      description: 'Länk ovanpå förstasidans bild.',
       fieldsets: [{ name: 'homePageLink' }],
       fields: [
         {
           name: 'link',
-          title: 'Välj en sida',
+          title: 'Välj en sida du vill länka till',
           type: 'string',
           options: {
             list: [
@@ -50,13 +56,6 @@ export default {
           },
         },
       ],
-    },
-    {
-      name: 'hero',
-      type: 'hero',
-      title: 'Helbild',
-      description: 'Första helbilden på sidan',
-      validation: (Rule) => Rule.required(),
     },
     {
       name: 'iconLink',

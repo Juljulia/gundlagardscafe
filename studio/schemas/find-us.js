@@ -17,7 +17,7 @@ export default {
       name: 'hero',
       type: 'hero',
       title: 'Helbild',
-      description: 'Första helbilden på sidan',
+      description: 'Första helbilden på sidan.',
       validation: (Rule) => Rule.required(),
     },
     {

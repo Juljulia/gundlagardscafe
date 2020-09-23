@@ -17,7 +17,7 @@ export default {
       },
       fields: [
         {
-          title: 'Beskrivande text för huvudbilden',
+          title: 'Beskrivande text för huvudbilden.',
           name: 'heroImageAlt',
           type: 'string',
           description:
@@ -33,7 +33,7 @@ export default {
           title: 'Ikon ovanför bilden',
           fields: [
             {
-              title: 'Beskrivande text för iconen',
+              title: 'Beskrivande text för iconen.',
               name: 'heroIconAlt',
               description:
                 'Viktigt för sökbarhet och träffar på Google samt tillgänglighet',
