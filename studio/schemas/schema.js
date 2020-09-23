@@ -13,6 +13,7 @@ import qa from './qa';
 
 export default createSchema({
   name: 'mySchema',
+  __experimental_actions: ['update', 'publish'],
   types: schemaTypes.concat([
     event,
     findUs,

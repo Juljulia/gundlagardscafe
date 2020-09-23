@@ -2,19 +2,17 @@ export default {
   title: 'Startsida',
   name: 'main',
   type: 'document',
+  __experimental_actions: ['update', 'publish'],
   fields: [
-    {
-      title: 'Rubrik',
-      name: 'header',
-      type: 'string',
-      validation: (Rule) => Rule.required().min(3).max(50),
-    },
     {
       title: 'Välkomsttext',
       name: 'welcome',
       type: 'array',
       of: [{ type: 'block' }],
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>
+        Rule.required().warning(
+          'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+        ),
     },
     {
       name: 'homePageLink',
@@ -81,14 +79,20 @@ export default {
           title: 'Rubrik',
           name: 'header',
           type: 'string',
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.required().warning(
+              'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+            ),
         },
         {
           title: 'Text',
           name: 'text',
           type: 'array',
           of: [{ type: 'block' }],
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.required().warning(
+              'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+            ),
         },
       ],
     },
@@ -101,14 +105,20 @@ export default {
           title: 'Rubrik',
           name: 'header',
           type: 'string',
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.required().warning(
+              'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+            ),
         },
         {
           title: 'Text',
           name: 'text',
           type: 'array',
           of: [{ type: 'block' }],
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.required().warning(
+              'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+            ),
         },
         {
           name: 'image',

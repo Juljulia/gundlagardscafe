@@ -16,7 +16,13 @@ export default {
             {
               title: 'Beskrivande text för ikonen',
               name: 'heroIconAlt',
+              description:
+                'Viktigt för sökbarhet och träffar på Google samt tillgänglighet',
               type: 'string',
+              validation: (Rule) =>
+                Rule.required().warning(
+                  'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+                ),
             },
           ],
         },

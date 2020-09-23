@@ -2,12 +2,16 @@ export default {
   title: 'Evenemang',
   name: 'event',
   type: 'document',
+  __experimental_actions: ['update', 'publish'],
   fields: [
     {
       title: 'Rubrik',
       name: 'header',
       type: 'string',
-      validation: (Rule) => Rule.required().min(3).max(50),
+      validation: (Rule) =>
+        Rule.required().warning(
+          'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+        ),
     },
     {
       name: 'hero',
@@ -20,13 +24,15 @@ export default {
       title: 'Beskrivning',
       name: 'description',
       type: 'text',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>
+        Rule.required().warning(
+          'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+        ),
     },
     {
       title: 'Kalender rubrik',
       name: 'calenderHeader',
       type: 'string',
-      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Evenemang',
@@ -45,7 +51,9 @@ export default {
               type: 'string',
               description: 'En kortare titel är att föredra',
               validation: (Rule) =>
-                Rule.max(30).warning('En kortare titel är att föredra'),
+                Rule.required().warning(
+                  'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+                ),
             },
             {
               title: 'Bild',
@@ -57,8 +65,12 @@ export default {
                   name: 'alt',
                   type: 'string',
                   title: 'Beskrivande text',
-                  description: 'Viktigt för sökbarhet och träffar på Google',
-                  validation: (Rule) => Rule.required(),
+                  description:
+                    'Viktigt för sökbarhet och träffar på Google samt tillgänglighet',
+                  validation: (Rule) =>
+                    Rule.required().warning(
+                      'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+                    ),
                 },
               ],
             },
@@ -66,7 +78,10 @@ export default {
               title: 'Beskrivning',
               name: 'description',
               type: 'array',
-              validation: (Rule) => Rule.required(),
+              validation: (Rule) =>
+                Rule.required().warning(
+                  'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+                ),
               of: [{ type: 'block' }],
             },
             {
@@ -79,7 +94,10 @@ export default {
               title: 'Välj ett tema',
               name: 'category',
               type: 'string',
-              validation: (Rule) => Rule.required(),
+              validation: (Rule) =>
+                Rule.required().warning(
+                  'Du måste välje ett tema för att kunna trycka på "Publish" och publicera dina ändringar.'
+                ),
               options: {
                 list: [
                   { title: 'Musik', value: '#FFFA97' },

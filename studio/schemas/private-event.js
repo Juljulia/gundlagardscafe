@@ -2,12 +2,16 @@ export default {
   title: 'Privata event',
   name: 'private-event',
   type: 'document',
+  __experimental_actions: ['update', 'publish'],
   fields: [
     {
       title: 'Rubrik',
       name: 'header',
       type: 'string',
-      validation: (Rule) => Rule.required().min(3).max(50),
+      validation: (Rule) =>
+        Rule.required().warning(
+          'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+        ),
     },
     {
       name: 'hero',
@@ -21,14 +25,20 @@ export default {
       name: 'partyDescription',
       type: 'array',
       of: [{ type: 'block' }],
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>
+        Rule.required().warning(
+          'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+        ),
     },
     {
       title: 'Catering',
       name: 'cateringDescription',
       type: 'array',
       of: [{ type: 'block' }],
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>
+        Rule.required().warning(
+          'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+        ),
     },
     {
       name: 'imageGrid',

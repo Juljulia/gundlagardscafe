@@ -2,6 +2,7 @@ export default {
   name: 'hero',
   title: 'hero',
   type: 'document',
+  __experimental_actions: ['update', 'publish'],
   fields: [
     {
       name: 'heroImage',
@@ -16,7 +17,12 @@ export default {
           title: 'Beskrivande text för huvudbilden',
           name: 'heroImageAlt',
           type: 'string',
-          validation: (Rule) => Rule.required(),
+          description:
+            'Viktigt för sökbarhet och träffar på Google samt tillgänglighet',
+          validation: (Rule) =>
+            Rule.required().warning(
+              'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+            ),
         },
         {
           name: 'heroIcon',
@@ -26,7 +32,13 @@ export default {
             {
               title: 'Beskrivande text för iconen',
               name: 'heroIconAlt',
+              description:
+                'Viktigt för sökbarhet och träffar på Google samt tillgänglighet',
               type: 'string',
+              validation: (Rule) =>
+                Rule.required().warning(
+                  'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+                ),
             },
           ],
         },

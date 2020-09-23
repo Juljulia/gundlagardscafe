@@ -9,12 +9,16 @@ import MdRoomService from 'react-icons/lib/md/room-service';
 
 export default () =>
   S.list()
-    .title('Content')
+    .title('Innehåll')
     .items([
       S.listItem()
         .title('Startsida')
         .child(S.editor().schemaType('main').documentId('main'))
         .icon(MdHome),
+      S.listItem()
+        .title('Hitta hit')
+        .child(S.editor().schemaType('find-us').documentId('find-us'))
+        .icon(MdPlace),
       S.listItem()
         .title('Äta')
         .child(S.editor().schemaType('food').documentId('food'))
@@ -29,10 +33,6 @@ export default () =>
           S.editor().schemaType('private-event').documentId('private-event')
         )
         .icon(MdRoomService),
-      S.listItem()
-        .title('Hitta hit')
-        .child(S.editor().schemaType('find-us').documentId('find-us'))
-        .icon(MdPlace),
       S.listItem()
         .title('Frågor och svar')
         .child(S.editor().schemaType('qa').documentId('qa'))
