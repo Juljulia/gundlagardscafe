@@ -11,7 +11,7 @@ const Footer = () => (
       <div className="contact-info__content">
         <p>Kontaktinfo:</p>
         <p>Samantha Larsen</p>
-        <a className="mail-to" href="gundlagardscafe@gmail.com">
+        <a className="mail-to" href="mailto:gundlagardscafe@gmail.com">
           gundlagardscafe@gmail.com
         </a>
         <p className="phone-number">Mobil: 0708 84 07 17 </p>
@@ -27,7 +27,7 @@ const Footer = () => (
     <div className="desktop">
       <p>Kontaktinfo:</p>
       <p>Samantha Larsen</p>
-      <a className="mail-to" href="gundlagardscafe@gmail.com">
+      <a className="mail-to" href="mailto:gundlagardscafe@gmail.com">
         gundlagardscafe@gmail.com
       </a>
       <p className="phone-number">mobil: 0708 84 07 17 </p>
@@ -224,6 +224,9 @@ const StyledFooter = styled.footer`
       p {
         margin-bottom: 8px;
       }
+    }
+    .mail-to:hover {
+      text-decoration: underline;
     }
   }
 `;

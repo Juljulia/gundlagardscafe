@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { Squash as Hamburger } from 'hamburger-react';
-import { animateScroll } from 'react-scroll';
 import PropTypes from 'prop-types';
 import 'lazysizes';
 
 const Nav = () => {
   const [isOpen, setOpen] = React.useState(false);
-
+  const scrollToBottom = () => {
+    window.scroll(0, document.body.scrollHeight);
+  };
   return (
     <Container show={isOpen}>
       <div className="burger__wrapper">
@@ -31,11 +32,11 @@ const Nav = () => {
           <a onClick={() => setOpen(false)}>Hitta hit</a>
         </Link>
 
-        <Link href="/mat">
+        <Link href="/ata">
           <a onClick={() => setOpen(false)}>Äta</a>
         </Link>
 
-        <Link href="/event">
+        <Link href="/evenemang">
           <a onClick={() => setOpen(false)}>Evenemang</a>
         </Link>
 
@@ -47,9 +48,7 @@ const Nav = () => {
           <a onClick={() => setOpen(false)}>Om oss</a>
         </Link>
 
-        <a onClick={() => animateScroll.scrollToBottom() + setOpen(false)}>
-          Kontakt
-        </a>
+        <a onClick={() => scrollToBottom() + setOpen(false)}>Kontakt</a>
 
         <Link href="/fragor-svar">
           <a onClick={() => setOpen(false)}>Frågor och svar</a>
@@ -102,9 +101,7 @@ const Nav = () => {
             <a onClick={() => setOpen(false)}>Om oss</a>
           </Link>
 
-          <a onClick={() => animateScroll.scrollToBottom() + setOpen(false)}>
-            Kontakt
-          </a>
+          <a onClick={() => scrollToBottom() + setOpen(false)}>Kontakt</a>
 
           <Link href="/fragor-svar">
             <a onClick={() => setOpen(false)}>Frågor och svar</a>
@@ -158,6 +155,7 @@ const Container = styled.div`
   }
   .hamburger-react {
     z-index: 500;
+    color: #3d3a39;
   }
 
   p {

@@ -14,7 +14,7 @@ const Header = ({ show }) => {
       </Link>
       <Link href="/">
         <img
-          data-src="flower.png"
+          data-src="flower1.svg"
           className="header__logo lazyload mobile"
         ></img>
       </Link>
@@ -22,11 +22,11 @@ const Header = ({ show }) => {
         <Link href="/hitta-hit">
           <a>Hitta hit</a>
         </Link>
-        <Link href="/mat">
+        <Link href="/ata">
           <a>Äta</a>
         </Link>
 
-        <Link href="/event">
+        <Link href="/evenemang">
           <a>Evenemang</a>
         </Link>
 
@@ -75,6 +75,8 @@ const StyledHeader = styled.header`
 
   .mobile {
     display: block;
+    height: 50px;
+    width: 50px;
   }
 
   @media only screen and (min-width: 768px) {
@@ -106,6 +108,10 @@ const StyledHeader = styled.header`
 
     .mobile {
       display: none;
+    }
+
+    .mail-to:hover {
+      text-decoration: underline;
     }
   }
 `;
