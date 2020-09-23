@@ -177,10 +177,6 @@ const Container = styled.div`
     transition: transform 0.1s ease-in-out;
   }
 
-  a:hover {
-    transform: scale(1.05);
-  }
-
   .mail-to {
     padding: 0;
     font-family: 'IBM Plex Sans', sans-serif;
@@ -271,6 +267,10 @@ const Container = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
+    a:hover {
+      transform: scale(1.05);
+    }
+
     .nav-mobile {
       display: none;
     }
