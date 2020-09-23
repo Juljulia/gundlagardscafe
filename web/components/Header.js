@@ -8,7 +8,7 @@ const Header = ({ show }) => {
     <StyledHeader>
       <Link href="/">
         <img
-          data-src="gundla-small.png"
+          data-src="gundla.svg"
           className="header__logo lazyload desktop"
         ></img>
       </Link>
@@ -71,6 +71,8 @@ const StyledHeader = styled.header`
 
   .desktop {
     display: none;
+    width: 56px;
+    height: 62px;
   }
 
   .mobile {
