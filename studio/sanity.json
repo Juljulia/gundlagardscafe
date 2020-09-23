@@ -14,10 +14,8 @@
     "@sanity/default-login",
     "@sanity/desk-tool"
   ],
-  "env": {
-  },
-  "parts": [
-    {
+  "env": {},
+  "parts": [{
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
     },

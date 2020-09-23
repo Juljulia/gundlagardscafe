@@ -5,9 +5,7 @@ import 'lazysizes';
 const Footer = () => (
   <StyledFooter>
     <div className="contact-info mobile">
-      <div className="logo">
-        <img data-src="/gundla-footer.png" className="lazyload"></img>
-      </div>
+      <img data-src="gundla.svg" className="lazyload logo"></img>
       <div className="contact-info__content">
         <p>Kontaktinfo:</p>
         <p>Samantha Larsen</p>
@@ -22,7 +20,7 @@ const Footer = () => (
     </div>
 
     <div className="desktop">
-      <img data-src="/gundla-footer.png" className="lazyload"></img>
+      <img data-src="gundla.svg" className="lazyload logo"></img>
     </div>
     <div className="desktop">
       <p>Kontaktinfo:</p>
@@ -114,6 +112,8 @@ const StyledFooter = styled.footer`
   }
 
   .logo {
+    height: 69px;
+    width: 71px;
     margin-right: 16px;
   }
 

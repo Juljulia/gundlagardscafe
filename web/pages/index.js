@@ -38,7 +38,10 @@ export default function Home({ content }) {
           <div className="hero">
             <img data-src={heroImage} className="lazyload"></img>
             <div className="hero__content">
-              <img data-src="gundla-big.png" className="lazyload"></img>
+              <img
+                data-src="g_logo_light.svg"
+                className="lazyload logo-home"
+              ></img>
               <PortableText blocks={content.welcome} className="hero__title" />
               <StyledLink href={href} className="hero__link">
                 {name}
@@ -195,6 +198,11 @@ const Container = styled.section`
 
     .desktop-iconlinks {
       margin: 0 80px;
+    }
+
+    .logo-home {
+      width: 146px;
+      height: 162px;
     }
   }
 `;
