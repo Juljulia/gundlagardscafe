@@ -42,8 +42,7 @@ const Container = styled.div`
   }
 
   .icon-link__container {
-    /* border: 1px solid red; */
-    min-width: 150px;
+    min-width: 185px;
     padding-bottom: 64px;
   }
 
