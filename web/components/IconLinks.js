@@ -42,7 +42,7 @@ const Container = styled.div`
   }
 
   .icon-link__container {
-    min-width: 185px;
+    min-width: 135px;
     padding-bottom: 64px;
   }
 
@@ -61,6 +61,12 @@ const Container = styled.div`
 
   .icon-link:nth-child(4) .icon-link__container h3 {
     margin-top: 20px;
+  }
+
+  @media only screen and (min-width: 411px) {
+    .icon-link__container {
+      min-width: 185px;
+    }
   }
 
   @media only screen and (min-width: 768px) {
