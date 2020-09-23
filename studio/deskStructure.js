@@ -29,7 +29,7 @@ export default () =>
         )
         .icon(MdRoomService),
       S.listItem()
-        .title('Hitta hit/Öppettider')
+        .title('Hitta hit')
         .child(S.editor().schemaType('find-us').documentId('find-us'))
         .icon(MdPlace),
       S.listItem()
