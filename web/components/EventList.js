@@ -78,6 +78,10 @@ const StyledEventList = styled.div`
       font-family: Amatic SC;
       font-size: 24px;
     }
+
+    button:hover {
+      box-shadow: inset -1px -1px 6px #f24a72;
+    }
   }
 
   .wrapper-more {

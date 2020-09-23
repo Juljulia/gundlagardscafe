@@ -117,7 +117,10 @@ const Qa = ({ content }) => {
             </div>
           )}
         </section>
-        <ContactForm topic="Fråga något" message="Berätta mer..." />
+        <ContactForm
+          topic="Vad har du på hjärtat?"
+          message="Utveckla gärna dina funderingar..."
+        />
         <InstaGrid images={instaGrid} className="insta-grid" />
       </Container>
     </Layout>

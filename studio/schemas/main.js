@@ -15,15 +15,20 @@ export default {
         ),
     },
     {
+      name: 'hero',
+      type: 'hero',
+      title: 'Huvudbild',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'homePageLink',
-      title: 'Länk',
+      title: 'Länk ovanpå förstasidans bild',
       type: 'object',
-      description: 'Länk ovanpå förstasidans bild.',
       fieldsets: [{ name: 'homePageLink' }],
       fields: [
         {
           name: 'link',
-          title: 'Välj en sida',
+          title: 'Välj en sida du vill länka till',
           type: 'string',
           options: {
             list: [
@@ -52,23 +57,16 @@ export default {
       ],
     },
     {
-      name: 'hero',
-      type: 'hero',
-      title: 'Helbild',
-      description: 'Första helbilden på sidan',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: 'iconLink',
       type: 'iconLink',
-      title: 'Ikon och länk',
-      description: 'Här väljer du vilka fyra sidor som länkas på förstasidan.',
+      title: 'Ikoner med länkar',
+      description: 'Välj vilka fyra sidor som länkas på förstasidan',
     },
     {
       name: 'imageGrid',
       type: 'imageGrid',
       title: 'Bilder till collage',
-      description: 'Välj fem bilder.',
+      description: 'Välj fem olika bilder',
     },
     {
       title: 'Om oss',
@@ -124,10 +122,25 @@ export default {
           name: 'image',
           type: 'image',
           title: 'Bild',
+          description:
+            'Glöm inte att även gå in på "Edit" och beskriva bilden för bättre tillgänglighet',
           validation: (Rule) =>
             Rule.required().warning(
               'Du måste lägga till en bild för att kunna trycka på "Publish" och publicera dina ändringar.'
             ),
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Beskrivande text',
+              description:
+                'Viktigt för sökbarhet och träffar på Google samt tillgänglighet',
+              validation: (Rule) =>
+                Rule.required().warning(
+                  'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+                ),
+            },
+          ],
         },
       ],
     },
