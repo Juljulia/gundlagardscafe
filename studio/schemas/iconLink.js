@@ -40,7 +40,7 @@ export default {
                 list: [
                   {
                     title: 'Evenemang',
-                    value: 'event , Evenemang',
+                    value: 'evenemang , Evenemang',
                   },
                   {
                     title: 'Frågor och svar',
