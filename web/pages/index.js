@@ -75,7 +75,6 @@ export default function Home({ content }) {
 
 const query = groq`*[_type == 'main'][0]{
     aboutUs,
-    header,
     hero,
     history,
     homePageLink,

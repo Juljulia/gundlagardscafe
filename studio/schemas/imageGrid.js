@@ -13,14 +13,21 @@ export default {
           title: 'Bild',
           name: 'image',
           type: 'image',
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.required().warning(
+              'Du måste lägga till en bild för att kunna trycka på "Publish" och publicera dina ändringar.'
+            ),
           fields: [
             {
               name: 'alt',
               type: 'string',
               title: 'Beskrivande text',
-              description: 'Viktigt för sökbarhet och träffar på Google',
-              validation: (Rule) => Rule.required(),
+              description:
+                'Viktigt för sökbarhet och träffar på Google samt tillgänglighet',
+              validation: (Rule) =>
+                Rule.required().warning(
+                  'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+                ),
             },
           ],
         },

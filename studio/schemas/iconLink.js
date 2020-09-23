@@ -16,7 +16,13 @@ export default {
             {
               title: 'Beskrivande text för ikonen',
               name: 'heroIconAlt',
+              description:
+                'Viktigt för sökbarhet och träffar på Google samt tillgänglighet',
               type: 'string',
+              validation: (Rule) =>
+                Rule.required().warning(
+                  'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+                ),
             },
           ],
         },
@@ -58,8 +64,15 @@ export default {
       ],
       preview: {
         select: {
-          media: 'image',
           title: 'links.link',
+          media: 'image',
+        },
+        prepare(selection) {
+          const { title, media } = selection;
+          return {
+            title: title.split(', ')[1],
+            media: media,
+          };
         },
       },
     },

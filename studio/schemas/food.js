@@ -2,12 +2,16 @@ export default {
   title: 'Äta',
   name: 'food',
   type: 'document',
+  __experimental_actions: ['update', 'publish'],
   fields: [
     {
       title: 'Rubrik',
       name: 'header',
       type: 'string',
-      validation: (Rule) => Rule.required().min(3).max(50),
+      validation: (Rule) =>
+        Rule.required().warning(
+          'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+        ),
     },
     {
       name: 'hero',
@@ -20,7 +24,10 @@ export default {
       title: 'Beskrivning',
       name: 'description',
       type: 'array',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>
+        Rule.required().warning(
+          'Du måste fylla i detta fält för att kunna trycka på "Publish" och publicera dina ändringar.'
+        ),
       of: [{ type: 'block' }],
     },
     {
