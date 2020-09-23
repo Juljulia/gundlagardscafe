@@ -13,6 +13,8 @@ export default {
           title: 'Bild',
           name: 'image',
           type: 'image',
+          description:
+            'Glöm inte att även gå in på "Edit" och beskriva bilden för bättre tillgänglighet',
           validation: (Rule) =>
             Rule.required().warning(
               'Du måste lägga till en bild för att kunna trycka på "Publish" och publicera dina ändringar.'

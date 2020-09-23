@@ -16,8 +16,7 @@ export default {
     {
       name: 'hero',
       type: 'hero',
-      title: 'Helbild',
-      description: 'Första helbilden på sidan.',
+      title: 'Huvudbild',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -34,7 +33,7 @@ export default {
       name: 'imageGrid',
       type: 'imageGrid',
       title: 'Bilder till collage',
-      description: 'Välj fem bilder.',
+      description: 'Välj fem olika bilder',
     },
   ],
 };

@@ -7,7 +7,9 @@ export default {
     {
       name: 'heroImage',
       type: 'image',
-      title: 'Huvudbild',
+      title: 'Första helbilden på sidan',
+      description:
+        'Glöm inte att även gå in på "Edit" och beskriva bilden för bättre tillgänglighet',
       validation: (Rule) =>
         Rule.required().warning(
           'Du måste lägga till en bild för att kunna trycka på "Publish" och publicera dina ändringar.'
@@ -17,7 +19,7 @@ export default {
       },
       fields: [
         {
-          title: 'Beskrivande text för huvudbilden.',
+          title: 'Beskrivande text för huvudbilden',
           name: 'heroImageAlt',
           type: 'string',
           description:
@@ -30,7 +32,9 @@ export default {
         {
           name: 'heroIcon',
           type: 'image',
-          title: 'Ikon ovanför bilden',
+          title: 'Ikon ovanför huvudbilden',
+          description:
+            'Glöm inte att även gå in på "Edit" och beskriva bilden för bättre tillgänglighet',
           fields: [
             {
               title: 'Beskrivande text för iconen.',

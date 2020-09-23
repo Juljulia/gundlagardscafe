@@ -16,8 +16,7 @@ export default {
     {
       name: 'hero',
       type: 'hero',
-      title: 'Helbild',
-      description: 'Första helbilden på sidan.',
+      title: 'Huvudbild',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -32,14 +31,18 @@ export default {
     {
       title: 'Öppettider just nu',
       name: 'openHours',
+      description:
+        'Valfritt fält, fyll i om du har tydliga öppettider, annars håll fältet tomt',
       type: 'array',
       of: [{ type: 'block' }],
     },
     {
-      title: 'Tillgänglighet',
+      title: 'Information om tillgänglighet',
       name: 'availability',
       type: 'array',
-      validation: (Rule) => [Rule.required().length(4).error('5 ikoner')],
+      validation: (Rule) => [
+        Rule.required().length(4).error('Max fyra ikoner med text'),
+      ],
       of: [
         {
           title: 'Tillgänglighet',
@@ -50,6 +53,8 @@ export default {
               title: 'Bild',
               name: 'image',
               type: 'image',
+              description:
+                'Glöm inte att även gå in på "Edit" och beskriva bilden för bättre tillgänglighet',
               validation: (Rule) =>
                 Rule.required().warning(
                   'Du måste lägga till en bild för att kunna trycka på "Publish" och publicera dina ändringar.'

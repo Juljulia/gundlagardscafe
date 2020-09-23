@@ -16,8 +16,7 @@ export default {
     {
       name: 'hero',
       type: 'hero',
-      title: 'Helbild',
-      description: 'Första helbilden på sidan.',
+      title: 'Huvudbild',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -30,12 +29,12 @@ export default {
         ),
     },
     {
-      title: 'Kalender rubrik',
+      title: 'Rubrik för kalender',
       name: 'calenderHeader',
       type: 'string',
     },
     {
-      title: 'Evenemang',
+      title: 'Lista över evenemang',
       name: 'eventList',
       type: 'array',
       options: [{ sortable: true }],
@@ -59,6 +58,8 @@ export default {
               title: 'Bild',
               name: 'image',
               type: 'image',
+              description:
+                'Gå även in på "Edit" och beskriv bilden för bättre tillgänglighet',
               validation: (Rule) =>
                 Rule.required().warning(
                   'Du måste lägga till en bild för att kunna trycka på "Publish" och publicera dina ändringar.'
@@ -89,7 +90,8 @@ export default {
             },
             {
               title: 'Pris',
-              description: 'Om eventet går att boka, fyll i pris här',
+              description:
+                'Om eventet går att boka, fyll priset här, annars håll fältet tomt',
               name: 'price',
               type: 'number',
             },
@@ -129,7 +131,7 @@ export default {
       name: 'imageGrid',
       type: 'imageGrid',
       title: 'Bilder till collage',
-      description: 'Välj fem bilder.',
+      description: 'Välj fem olika bilder',
     },
   ],
 };
