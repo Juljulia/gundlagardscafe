@@ -1,6 +1,7 @@
 # Homepage for Gundla Gårdscafé
 
 ![Image description](homepage.png)
+![Image description](sanity.png)
 
 This is a website made for Gundla Gårdscafé that is build with Next.js and connected to Sanity as headless CMS.
 
