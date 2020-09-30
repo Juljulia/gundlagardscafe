@@ -60,14 +60,14 @@ const Hero = ({ heroImage, heroImageAlt, heroIcon, heroIconAlt }) => {
     <StyledHero>
       <img
         className="hero-image lazyload"
-        data-src={urlBuild(heroImage.heroImage.asset)}
+        data-src={urlBuild(heroImage.heroImage.asset) + '?h=672'}
         alt={heroImageAlt}
       ></img>
       <div className="hero-icon-wrapper">
         <div className="hero-icon">
           {heroIcon && (
             <img
-              data-src={urlBuild(heroIcon.asset)}
+              data-src={urlBuild(heroIcon.asset) + '?h=130'}
               alt={heroIconAlt}
               className="lazyload"
             ></img>

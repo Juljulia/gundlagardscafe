@@ -4,6 +4,10 @@ import { normalize } from 'styled-normalize';
 const GlobalStyle = createGlobalStyle`
  ${normalize}
 
+ * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   html,
   body {
     margin: 0;

@@ -64,6 +64,7 @@ export default function InstaGrid(props) {
               key={i}
               data-src={image.node.display_url}
               className="lazyload"
+              alt="Instagrambild"
             ></img>
           </a>
         ))}

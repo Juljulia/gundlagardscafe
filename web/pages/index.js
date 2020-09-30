@@ -36,11 +36,16 @@ export default function Home({ content }) {
       <Container>
         {heroImage && (
           <div className="hero">
-            <img data-src={heroImage} className="lazyload"></img>
+            <img
+              data-src={heroImage}
+              className="lazyload"
+              alt={heroImage.alt}
+            ></img>
             <div className="hero__content">
               <img
                 data-src="g_logo_light.svg"
                 className="lazyload logo-home"
+                alt="Logga"
               ></img>
               <PortableText blocks={content.welcome} className="hero__title" />
               <StyledLink href={href} className="hero__link">
@@ -65,7 +70,7 @@ export default function Home({ content }) {
               <PortableText blocks={content.history.text} />
             </div>
             <img
-              data-src={urlBuild(content.history.image.asset)}
+              data-src={urlBuild(content.history.image.asset) + '?h=533'}
               alt={content.history.image.alt}
               className="lazyload"
             ></img>

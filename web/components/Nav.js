@@ -10,9 +10,9 @@ const Nav = () => {
   };
   return (
     <Container show={isOpen}>
-      <div className="burger__wrapper">
+      <button className="burger__wrapper">
         <Hamburger rounded size={35} toggled={isOpen} toggle={setOpen} />
-      </div>
+      </button>
 
       {/* MOBILE */}
 
@@ -156,6 +156,12 @@ const Container = styled.div`
     margin-right: 16px;
     padding: 8px;
   }
+
+  button {
+    background-color: #fef4ef;
+    border: none;
+  }
+
   .hamburger-react {
     z-index: 500;
     color: #3d3a39;
