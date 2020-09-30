@@ -10,12 +10,14 @@ const Header = ({ show }) => {
         <img
           data-src="gundla.svg"
           className="header__logo lazyload desktop"
+          alt="Logga"
         ></img>
       </Link>
       <Link href="/">
         <img
           data-src="flower1.svg"
           className="header__logo lazyload mobile"
+          alt="logga"
         ></img>
       </Link>
       <div className="desktop-navlinks">

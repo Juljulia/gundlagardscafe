@@ -5,8 +5,11 @@
 This is a website made for Gundla Gårdscafé that is build with Next.js and connected to Sanity as headless CMS.
 
 ## Link 
+https://gundlagardscafe-demo.vercel.app/
 
-https://gundlagardscafe.vercel.app/
+## Sanity
+![Image description](admin.png)
+
 
 ## Installation
 - Clone the repository

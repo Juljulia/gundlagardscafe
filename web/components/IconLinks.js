@@ -15,6 +15,7 @@ export default function IconLinks({ icons }) {
               <img
                 data-src={urlBuild(icon.image.asset)}
                 className="lazyload"
+                alt={icon.image.heroIconAlt}
               ></img>
             </Link>
             <h3>{nameBuild(linkBuild(icon.links.link))}</h3>

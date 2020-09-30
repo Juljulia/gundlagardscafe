@@ -146,7 +146,7 @@ const EventList = ({ event, grid }) => {
           event.slice(0, status).map((object) => (
             <div key={object._key} className="event-card">
               <img
-                data-src={urlBuild(object.image.asset)}
+                data-src={urlBuild(object.image.asset) + '?h=153'}
                 className="lazyload"
                 alt={object.image.alt}
               ></img>
