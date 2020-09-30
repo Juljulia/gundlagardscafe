@@ -19,7 +19,7 @@ const Nav = () => {
 
   return (
     <Container show={isOpen}>
-      <button className="burger__wrapper">
+      <button className="burger__wrapper" aria-label="Meny">
         <Hamburger rounded size={35} toggled={isOpen} toggle={setOpen} />
       </button>
 
