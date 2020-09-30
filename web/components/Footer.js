@@ -40,7 +40,7 @@ const Footer = () => (
       <Link href="/hitta-hit#oppettider">
         <a className="link__item">Öppettider</a>
       </Link>
-      <Link href="/fragor-svar#fs">
+      <Link href="/fragor-svar">
         <a className="link__item">Frågor och svar</a>
       </Link>
     </div>

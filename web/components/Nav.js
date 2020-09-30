@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { Squash as Hamburger } from 'hamburger-react';
-import PropTypes from 'prop-types';
 import 'lazysizes';
 
 const Nav = () => {
@@ -373,9 +372,5 @@ const Container = styled.div`
     }
   }
 `;
-
-Nav.propTypes = {
-  show: PropTypes.bool,
-};
 
 export default Nav;
