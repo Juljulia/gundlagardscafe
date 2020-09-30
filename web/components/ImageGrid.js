@@ -122,6 +122,7 @@ export default function ImageGrid({ images }) {
                 className="gridImage lazyload"
                 key={i}
                 data-src={urlBuild(image.image.asset) + '?h=720'}
+                alt={image.image.alt}
               ></img>
             </div>
           ))}
