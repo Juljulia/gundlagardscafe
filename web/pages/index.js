@@ -37,7 +37,7 @@ export default function Home({ content }) {
         {heroImage && (
           <div className="hero">
             <img
-              data-src={heroImage}
+              data-src={heroImage + '?h=656'}
               className="lazyload"
               alt={heroImage.alt}
             ></img>
