@@ -189,7 +189,7 @@ export default function ContactForm({ topic, message, id }) {
     <StyledContactForm>
       <form
         name="contact"
-        action="https://formspree.io/xdopnegr"
+        action="https://formspree.io/f/mbjplzkk"
         method="POST"
         onSubmit={sendEmail}
         id={id}

@@ -184,7 +184,7 @@ export default function BookingForm({ message }) {
       <div className="achor" id="booking-form"></div>
       <form
         name="contact"
-        action="https://formspree.io/xdopnegr"
+        action="https://formspree.io/f/mbjplzkk"
         method="POST"
         onSubmit={sendEmail}
       >
@@ -196,7 +196,8 @@ export default function BookingForm({ message }) {
               type="text"
               name="topic"
               id="topic"
-              placeholder={(message && message) || 'Fyll i evenemang och datum'}
+              placeholder="Fyll i evenemang och datum"
+              value={message && message}
               required
             />
           </div>
