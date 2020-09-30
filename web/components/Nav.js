@@ -1,13 +1,22 @@
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { Squash as Hamburger } from 'hamburger-react';
 import 'lazysizes';
 
 const Nav = () => {
-  const [isOpen, setOpen] = React.useState(false);
+  const [isOpen, setOpen] = useState(false);
   const scrollToBottom = () => {
     window.scroll(0, document.body.scrollHeight);
   };
+
+  useEffect(() => {
+    if (isOpen) document.body.className = 'no-scroll';
+    return () => {
+      document.body.className = 'visible';
+    };
+  });
+
   return (
     <Container show={isOpen}>
       <div className="burger__wrapper">
@@ -152,6 +161,10 @@ const Nav = () => {
 };
 
 const Container = styled.div`
+  body.no-scroll {
+    overflow: hidden;
+  }
+
   .burger__wrapper {
     margin-right: 16px;
     padding: 8px;
@@ -285,9 +298,9 @@ const Container = styled.div`
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: scroll;
+      width: 100vw;
+      /* height: 100vh; */
+      overflow-y: hidden;
       z-index: 90;
       background-color: ${({ theme }) => theme.colors.backgroundLight};
       visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
@@ -322,15 +335,10 @@ const Container = styled.div`
     .nav-desktop__links {
       display: flex;
       flex-direction: row;
-      margin: 112px auto;
-      a {
-        margin: 0 64px;
-      }
+      justify-content: space-around;
+      margin: 112px 168px;
     }
 
-    .social h3 {
-      margin-left: 64px;
-    }
     .social a {
       margin: 0;
     }
