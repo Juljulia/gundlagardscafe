@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import urlBuild from '../functions/imageBuilder';
 import 'lazysizes';
 
-const StyledGrid = styled.div`
+const StyledImageGrid = styled.div`
   width: 100vw;
 
   .lazyload,
@@ -64,12 +64,18 @@ const StyledGrid = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
+    max-width: calc(100vw - 144px);
+    margin: 0 72px;
+    padding: 0;
+
     .gridcontainter {
       grid-template-columns: 18% 49% 33%;
       grid-template-rows: 15% 15% 15% 15% 15% 15%;
-      margin-left: 72px;
-      margin-right: 88px;
       height: 752px;
+      margin: 0;
+      padding: 0;
+      grid-gap: 8px;
+      width: calc(100% - 16px);
     }
 
     .object:nth-child(1) {
@@ -107,7 +113,7 @@ const StyledGrid = styled.div`
 
 export default function ImageGrid({ images }) {
   return (
-    <StyledGrid>
+    <StyledImageGrid>
       <div className="gridcontainter">
         {images &&
           images.map((image, i) => (
@@ -120,6 +126,6 @@ export default function ImageGrid({ images }) {
             </div>
           ))}
       </div>
-    </StyledGrid>
+    </StyledImageGrid>
   );
 }
