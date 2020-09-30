@@ -30,7 +30,7 @@ const Footer = () => (
       </a>
       <p className="phone-number">mobil: 0708 84 07 17 </p>
       <Link href="https://www.google.com/maps/place/Gundla+G%C3%A5rdscaf%C3%A9/@57.6862902,12.0260549,17z/data=!3m1!4b1!4m5!3m4!1s0x464ff3a5d0157c63:0xdd291fa6017dc04a!8m2!3d57.6862902!4d12.0282436">
-        <a className="post-adress" target="_blank">
+        <a className="post-adress" target="_blank" rel="noopener">
           Adress: Gundla mosse 32, 412 76 Göteborg
         </a>
       </Link>
@@ -46,7 +46,11 @@ const Footer = () => (
     </div>
     <div className="social" id="contact">
       <h3>Följ oss!</h3>
-      <a href="https://www.facebook.com/gundlagardscafe/" target="_blank">
+      <a
+        href="https://www.facebook.com/gundlagardscafe/"
+        target="_blank"
+        rel="noopener"
+      >
         <img
           data-src="/fb-light.png"
           className="lazyload"
