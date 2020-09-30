@@ -13,7 +13,7 @@ const Nav = () => {
   useEffect(() => {
     if (isOpen) document.body.className = 'no-scroll';
     return () => {
-      document.body.className = 'visible';
+      document.body.className = '';
     };
   });
 
