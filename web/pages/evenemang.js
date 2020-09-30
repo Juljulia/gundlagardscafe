@@ -128,13 +128,13 @@ const Event = ({ content }) => {
         </div>
         <div className="calender-header-wrapper">
           <h2 className="calender-header">{content.calenderHeader}</h2>
-          <div className="category-list">
+          <ul className="category-list">
             <li>Musik</li>
             <li>Marknad</li>
             <li>Teater</li>
             <li>Aktivteter</li>
             <li>Barn</li>
-          </div>
+          </ul>
         </div>
 
         <EventList event={eventList} grid={imageGrid}></EventList>
