@@ -6,8 +6,6 @@ This is a website made for Gundla Gårdscafé that is build with Next.js and con
 
 ## Link 
 
-https://gundlagardscafe.vercel.app/
-
 ## Sanity
 ![Image description](admin.png)
 
