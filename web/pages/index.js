@@ -65,7 +65,7 @@ export default function Home({ content }) {
               <PortableText blocks={content.history.text} />
             </div>
             <img
-              data-src={urlBuild(content.history.image.asset)}
+              data-src={urlBuild(content.history.image.asset) + '?h=533'}
               alt={content.history.image.alt}
               className="lazyload"
             ></img>
