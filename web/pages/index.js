@@ -188,20 +188,21 @@ const Container = styled.section`
     }
 
     .article-second {
-      max-height: calc(100vh - 128px);
       flex-direction: row-reverse;
+      height: auto;
     }
 
     .article-second__content {
       width: 50%;
       padding-right: 72px;
       padding-left: 24px;
-      max-height: 624px;
+      height: 100%;
     }
 
     .article-second img {
       width: 50%;
       height: auto;
+      max-height: 624px;
     }
 
     .desktop-iconlinks {
