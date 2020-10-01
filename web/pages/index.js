@@ -102,6 +102,9 @@ export async function getServerSideProps() {
 }
 
 const Container = styled.section`
+  max-width: 100vw;
+  overflow-x: hidden;
+
   .hero__content img {
     display: none;
   }

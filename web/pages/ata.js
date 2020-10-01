@@ -9,6 +9,8 @@ import LinkToContact from '../components/LinkToContact';
 import styled from 'styled-components';
 
 const StyledFood = styled.div`
+  max-width: 100vw;
+  overflow-x: hidden;
   margin-bottom: 64px;
 
   .text-wrapper {

@@ -9,6 +9,8 @@ import EventList from '../components/EventList';
 import styled from 'styled-components';
 
 const StyledEvent = styled.div`
+  max-width: 100vw;
+  overflow-x: hidden;
   .text-container {
     margin: 0 16px;
     margin-top: -24px;

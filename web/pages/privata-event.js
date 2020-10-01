@@ -12,6 +12,8 @@ import PortableText from '@sanity/block-content-to-react';
 
 const StyledPrivateEvent = styled.div`
   margin-top: -24px;
+  max-width: 100vw;
+  overflow-x: hidden;
 
   h1 {
     margin: 0 16px;
