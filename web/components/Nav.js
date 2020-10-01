@@ -308,6 +308,7 @@ const Container = styled.div`
     }
 
     .nav-desktop {
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       padding: 64px 0 0 32px;
