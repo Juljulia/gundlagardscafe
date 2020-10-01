@@ -76,6 +76,7 @@ const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.backgroundDark};
+  padding-bottom: 48px;
 
   .post-adress:hover {
     text-decoration: underline;
@@ -147,7 +148,6 @@ const StyledFooter = styled.footer`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 49px;
   }
 
   .social img {

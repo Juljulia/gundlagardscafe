@@ -45,6 +45,15 @@ const Container = styled.div`
   .icon-link__container {
     min-width: 135px;
     padding-bottom: 64px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .icon-link__container:hover {
+    cursor: pointer;
+  }
+
+  .icon-link__container:hover img {
+    transform: scale(1.04);
   }
 
   .icon-link__container img {

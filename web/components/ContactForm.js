@@ -8,11 +8,9 @@ const StyledContactForm = styled.div`
   background: #79655c;
   margin-top: 54px;
   margin-bottom: 64px;
-  width: 100vw;
 
   form {
     margin: 16px;
-    width: calc(100vw - 32px);
   }
 
   label {
