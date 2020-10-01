@@ -39,7 +39,7 @@ export default function Home({ content }) {
             <img
               data-src={heroImage + '?h=656'}
               className="lazyload"
-              alt={heroImage.alt}
+              alt={heroImage.heroImageAlt}
             ></img>
             <div className="hero__content">
               <img
@@ -102,6 +102,9 @@ export async function getServerSideProps() {
 }
 
 const Container = styled.section`
+  max-width: 100vw;
+  overflow-x: hidden;
+
   .hero__content img {
     display: none;
   }

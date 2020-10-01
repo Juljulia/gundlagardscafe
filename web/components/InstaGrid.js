@@ -58,6 +58,7 @@ export default function InstaGrid(props) {
             className="wrapper"
             href="https://www.instagram.com/gundlagardscafe/"
             target="_blank"
+            rel="noopener"
             key={i}
           >
             <img
