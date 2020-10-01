@@ -30,10 +30,9 @@ const StyledGrid = styled.div`
     justify-content: center;
     flex-wrap: nowrap;
     width: 636px;
-    transition: 0.1s transform ease-in-out;
     margin: 0 auto 64px auto;
 
-    &:hover {
+    .wrapper:hover {
       transform: scale(1.03);
     }
 

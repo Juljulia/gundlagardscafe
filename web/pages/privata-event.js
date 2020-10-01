@@ -95,7 +95,7 @@ const StyledPrivateEvent = styled.div`
 
       .private-event-info {
         width: 50%;
-        margin: 0;
+        margin: 0 16px;
 
         p {
           font-size: 20px;
