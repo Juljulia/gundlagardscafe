@@ -295,6 +295,9 @@ const Container = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
+    body {
+      overflow: hidden;
+    }
     a:hover {
       transform: scale(1.05);
     }
@@ -304,6 +307,8 @@ const Container = styled.div`
     }
 
     .nav-desktop {
+      overflow-x: hidden !important;
+      overflow-y: hidden !important;
       display: flex;
       flex-direction: column;
       padding: 64px 0 0 32px;

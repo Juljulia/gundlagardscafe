@@ -20,6 +20,10 @@
     "@sanity/default-layout": "^1.150.8",
     "@sanity/default-login": "^1.150.1",
     "@sanity/desk-tool": "^1.150.8",
+<<<<<<< HEAD
+=======
+    "node-fetch": "^2.6.1",
+>>>>>>> 9dda71be3d55a3f8fff0c58fad059fcb767a9589
     "prop-types": "^15.6",
     "react": "^16.2",
     "react-dom": "^16.2"
