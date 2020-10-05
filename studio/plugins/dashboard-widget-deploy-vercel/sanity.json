@@ -1,9 +1,6 @@
 {
-    "parts": [
-      {
-        "implements": "part:@sanity/dashboard/widget",
-        "path": "./index.js"
-      }
-    ]
-  }
-  
+  "parts": [{
+    "implements": "part:@sanity/dashboard/widget",
+    "path": "./index.js"
+  }]
+}
