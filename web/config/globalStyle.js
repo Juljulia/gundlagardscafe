@@ -18,7 +18,6 @@ const GlobalStyle = createGlobalStyle`
     color: #2B2928;
     scroll-behavior: smooth;
     max-width: 100vw;
-  overflow-x: hidden;
   }
 
   h1 {
