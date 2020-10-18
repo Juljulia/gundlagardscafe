@@ -171,11 +171,6 @@ const Nav = () => {
 };
 
 const Container = styled.div`
-  body.no-scroll {
-    overflow: hidden;
-    position: fixed;
-  }
-
   .burger__wrapper {
     margin-right: 16px;
     padding: 8px;
@@ -321,7 +316,6 @@ const Container = styled.div`
       top: 0;
       left: 0;
       width: 100vw;
-      /* height: 100vh; */
       overflow-y: hidden;
       z-index: 90;
       background-color: ${({ theme }) => theme.colors.backgroundLight};
