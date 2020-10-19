@@ -88,7 +88,7 @@ const StyledEventList = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 50px;
+    height: auto;
     margin-top: 48px;
     margin-bottom: calc(48px + 24px);
   }
