@@ -153,7 +153,7 @@ const PrivateEvent = ({ content }) => {
         <div className="achor" id="booking-form"></div>
         <ContactForm
           topic="Vad planerar du för event?"
-          message="Berätta mer om din planer..."
+          message="Berätta mer om dina planer..."
           id="event-form"
         ></ContactForm>
         <InstaGrid images={instaGrid} className="insta-grid" />
